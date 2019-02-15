@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<pfsensepkgs>
+	<package>
+		<name>DnsSafety</name>
+		<descr><![CDATA[DNS filtering server for pfSense.]]></descr>
+		<version>%%PKGVERSION%%</version>
+		<configurationfile>dnssafety.xml</configurationfile>
+	</package>
+</pfsensepkgs>

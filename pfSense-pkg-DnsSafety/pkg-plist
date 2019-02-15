@@ -1,0 +1,8 @@
+pkg/dnssafety.xml
+pkg/dnssafety.inc
+/etc/inc/priv/dnssafety.priv.inc
+www/packages/dnssafety/dnssafety.php
+www/packages/dnssafety/dnssafety_edit.php
+www/packages/dnssafety/index.php
+%%DATADIR%%/info.xml
+@dir /etc/inc/priv
