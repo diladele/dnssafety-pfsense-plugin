@@ -746,7 +746,7 @@ EOD;
 		copy("/etc/localtime", CHROOT_LOCALBASE . "/etc/localtime");
 	}
 
-	bind_write_rcfile();
+	dnssafety_write_rcfile();
 	chown(CHROOT_LOCALBASE . "/etc/namedb/keys", "bind");
 	chown(CHROOT_LOCALBASE . "/etc/namedb", "bind");
 	chown(CHROOT_LOCALBASE . "/var/log", "bind");
