@@ -32,8 +32,8 @@
 	<title>dnssafety: DNS Settings</title>
 	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
 	<menu>
-		<name>dnssafety DNS Server</name>
-		<tooltiptext>Modify dnssafety settings</tooltiptext>
+		<name>DNS Safety</name>
+		<tooltiptext>Modify DNS Safety settings</tooltiptext>
 		<section>Services</section>
 		<url>/pkg_edit.php?xml=dnssafety.xml</url>
 	</menu>
@@ -74,9 +74,9 @@
 			<name>Daemon Settings</name>
 		</field>
 		<field>
-			<fielddescr>Enable dnssafety</fielddescr>
+			<fielddescr>Enable DNS Safety</fielddescr>
 			<fieldname>enable_dnssafety</fieldname>
-			<description>Enable dnssafety DNS server.</description>
+			<description>Enable DNS Safety filter.</description>
 			<sethelp>
 				Disable DNS Forwarder and Resolver services on selected interfaces before enabling dnssafety.
 			</sethelp>
