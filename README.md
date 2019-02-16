@@ -34,7 +34,7 @@ After package is built successfully, use the following command push the prepared
 From terminal console run the following commands to reinstall the package.
 
 	pkg delete pfSense-pkg-DnsSafety
-	pkg install pfSense-pkg-DnsSafety-0.5.0_1.txz
+	pkg install pfSense-pkg-DnsSafety-0.5.0.txz
 
 Logoff from Web UI of pfSense or just hit Ctrl + F5 in the browser.
 

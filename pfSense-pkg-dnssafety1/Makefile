@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	pfSense-pkg-DnsSafety
+PORTNAME=	pfSense-pkg-dnssafety
 PORTVERSION=	0.5.0
 CATEGORIES=	dns
 MASTER_SITES=	# empty
@@ -10,13 +10,10 @@ EXTRACT_ONLY=	# empty
 #RUN_DEPENDS=	${LOCALBASE}/opt/dnssafety/bin/dsdnsd:dns/dnssafety-pfsense
 
 MAINTAINER=	support@diladele.com
-COMMENT=	DNS Safety is simple and powerful DNS filtering forwarder
-
+COMMENT=	pfSense UI for DNS Safety
 LICENSE=	APACHE20
-
 NO_BUILD=	yes
 NO_MTREE=	yes
-
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	PORTNAME=${PORTNAME}
 
