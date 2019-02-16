@@ -1,39 +1,51 @@
 # $FreeBSD$
 
-PORTNAME=		pfSense-pkg-DnsSafety
+PORTNAME=	pfSense-pkg-DnsSafety
 PORTVERSION=	0.5.0
-PORTREVISION=	1
-CATEGORIES=		www
+CATEGORIES=	dns
 MASTER_SITES=	# empty
-DISTFILES=		# empty
+DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
+#RUN_DEPENDS=	${LOCALBASE}/opt/dnssafety/bin/dsdnsd:dns/dnssafety-pfsense
+
 MAINTAINER=	support@diladele.com
-COMMENT=	DNS Safety for pfSense
+COMMENT=	DNS Safety is simple and powerful DNS filtering forwarder
+
 LICENSE=	APACHE20
+
 NO_BUILD=	yes
 NO_MTREE=	yes
+
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	PORTNAME=${PORTNAME}
-
-do-extract:
-	${MKDIR} ${WRKSRC}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/pkg
 	${MKDIR} ${STAGEDIR}/etc/inc/priv
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/packages/dnssafety
 	${MKDIR} ${STAGEDIR}${DATADIR}
-
-	${INSTALL_DATA} -m 0644 ${FILESDIR}${PREFIX}/pkg/dnssafety.xml ${STAGEDIR}${PREFIX}/pkg
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety.xml ${STAGEDIR}${PREFIX}/pkg
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety.inc ${STAGEDIR}${PREFIX}/pkg
-	${INSTALL_DATA} ${FILESDIR}/etc/inc/priv/dnssafety.priv.inc ${STAGEDIR}/etc/inc/priv
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/packages/dnssafety/dnssafety.php ${STAGEDIR}${PREFIX}/www/packages/dnssafety
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/packages/dnssafety/dnssafety_edit.php ${STAGEDIR}${PREFIX}/www/packages/dnssafety
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/packages/dnssafety/index.php ${STAGEDIR}${PREFIX}/www/packages/dnssafety
-	${INSTALL_DATA} ${FILESDIR}${DATADIR}/info.xml ${STAGEDIR}${DATADIR}
-
-	@${REINPLACE_CMD} -i '' -e "s|%%PKGVERSION%%|${PKGVERSION}|" ${STAGEDIR}${DATADIR}/info.xml
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/widgets/widgets
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety.xml \
+		${STAGEDIR}${PREFIX}/pkg
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety_acls.xml \
+		${STAGEDIR}${PREFIX}/pkg
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety_sync.xml \
+		${STAGEDIR}${PREFIX}/pkg
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety_views.xml \
+		${STAGEDIR}${PREFIX}/pkg
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety_zones.xml \
+		${STAGEDIR}${PREFIX}/pkg
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/pkg_dnssafety.inc \
+		${STAGEDIR}${PREFIX}/pkg
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety.inc \
+		${STAGEDIR}${PREFIX}/pkg
+	${INSTALL_DATA} ${FILESDIR}/etc/inc/priv/dnssafety.priv.inc \
+		${STAGEDIR}/etc/inc/priv
+	${INSTALL_DATA} ${FILESDIR}${DATADIR}/info.xml \
+		${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/widgets/widgets/dnssafety.widget.php \
+		${STAGEDIR}${PREFIX}/www/widgets/widgets
+	@${REINPLACE_CMD} -i '' -e "s|%%PKGVERSION%%|${PKGVERSION}|" \
+		${STAGEDIR}${DATADIR}/info.xml
 
 .include <bsd.port.mk>
