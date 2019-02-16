@@ -108,7 +108,10 @@ if (!function_exists('pf_version')) {
         }
 }
 
-function bind_sync() {
+//
+// TODO: raf rewrite
+//
+function dnssafety_sync() {
 
 	global $config;
 	conf_mount_rw();
@@ -880,7 +883,11 @@ JS;
 	echo $js;
 }
 
-function bind_write_rcfile() {
+//
+// TODO: raf rewrite
+//
+function dnssafety_write_rcfile() {
+
 	global $config;
 	$bind = $config['installedpackages']['bind']['config'][0];
 	$ip_version = ($bind['bind_ip_version'] ? $bind['bind_ip_version'] : "");
