@@ -1,10 +1,9 @@
 <?php
 /*
- * cron.php
+ * dnssafety.inc
  *
  * part of pfSense (https://www.pfsense.org)
  * Copyright (c) 2015 Rubicon Communications, LLC (Netgate)
- * Copyright (c) 2008 Mark J Crane
  * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,10 +18,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-require_once("guiconfig.inc");
 
+global $shortcuts;
 
+$shortcuts['dnssafety'] = array();
+$shortcuts['dnssafety']['main'] = "pkg_edit.php?xml=dnssafety.xml";
+$shortcuts['dnssafety']['log'] = "status_logs.php?logfile=resolver";
+$shortcuts['dnssafety']['status'] = "status_services.php";
+$shortcuts['dnssafety']['service'] = "named";
 
 ?>
-
-<?php include("foot.inc"); ?>
