@@ -50,22 +50,21 @@
 			<active/>
 		</tab>
 		<tab>
-			<text>ACLs</text>
-			<url>/pkg.php?xml=dnssafety_acls.xml</url>
+			<text>Forwarders</text>
+			<url>/pkg.php?xml=dnssafety_forwarder.xml</url>
 		</tab>
 		<tab>
-			<text>Views</text>
-			<url>/pkg.php?xml=dnssafety_views.xml</url>
+			<text>Filtering Policies</text>
+			<url>/pkg.php?xml=dnssafety_filter.xml</url>
 		</tab>
 		<tab>
-			<text>Zones</text>
-			<url>/pkg.php?xml=dnssafety_zones.xml</url>
+			<text>Domains and Cache</text>
+			<url>/pkg.php?xml=dnssafety_cache.xml</url>
 		</tab>
 		<tab>
 			<text>Sync</text>
 			<url>/pkg_edit.php?xml=dnssafety_sync.xml</url>
 		</tab>
-
 	</tabs>
 	<advanced_options>enabled</advanced_options>
 	<fields>
