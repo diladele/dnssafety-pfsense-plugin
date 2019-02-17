@@ -29,7 +29,7 @@
 	]]>
 	</copyright>
 	<name>bindsync</name>
-	<title>BIND: XMLRPC Sync</title>
+	<title>DNS Safety</title>
 	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
 	<tabs>
 		<tab>
