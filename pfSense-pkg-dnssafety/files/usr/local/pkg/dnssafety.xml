@@ -7,11 +7,7 @@
 /*
  * dnssafety.xml
  *
- * part of pfSense (https://www.pfsense.org)
- * Copyright (c) 2015 Rubicon Communications, LLC (Netgate)
- * Copyright (c) 2013 Juliano Oliveira
- * Copyright (c) 2013 Adriano Brancher
- * Copyright (c) 2016 Voleatech GmbH
+ * Copyright (c) 2019 Diladele B.V.
  * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,10 +34,10 @@
 		<url>/pkg_edit.php?xml=dnssafety.xml</url>
 	</menu>
 	<service>
-		<name>named</name>
-		<rcfile>named.sh</rcfile>
-		<executable>named</executable>
-		<description>Domain Name Service</description>
+		<name>dsdnsd</name>
+		<rcfile>dsdnsd.sh</rcfile>
+		<executable>dsdnsd</executable>
+		<description>DNS Safety Server</description>
 	</service>
 	<tabs>
 		<tab>
@@ -73,11 +69,11 @@
 			<name>Daemon Settings</name>
 		</field>
 		<field>
-			<fielddescr>Enable DNS Safety</fielddescr>
+			<fielddescr>Enable</fielddescr>
 			<fieldname>enable_dnssafety</fieldname>
 			<description>Enable DNS Safety filter.</description>
 			<sethelp>
-				Disable DNS Forwarder and Resolver services on selected interfaces before enabling dnssafety.
+				DNS Safety runs as non-privileged system user and thus cannot bind to port 53 on pfSense. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in https://docs.dnssafety.io/install/pfsense/.
 			</sethelp>
 			<type>checkbox</type>
 		</field>
