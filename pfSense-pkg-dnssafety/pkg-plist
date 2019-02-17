@@ -1,9 +1,9 @@
 pkg/dnssafety.inc
 pkg/dnssafety.xml
-pkg/dnssafety_acls.xml
+pkg/dnssafety_filter.xml
+pkg/dnssafety_forwarder.xml
+pkg/dnssafety_cache.xml
 pkg/dnssafety_sync.xml
-pkg/dnssafety_views.xml
-pkg/dnssafety_zones.xml
 pkg/pkg_dnssafety.inc
 www/widgets/widgets/dnssafety.widget.php
 /etc/inc/priv/dnssafety.priv.inc

@@ -29,30 +29,31 @@
 	</copyright>
 	<name>bindzone</name>
 	<version>0.4.3</version>
-	<title>BIND: Zones Settings</title>
+	<title>DNS Safety Domains and Cache</title>
 	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
 	<tabs>
 		<tab>
 			<text>Settings</text>
-			<url>/pkg_edit.php?xml=bind.xml</url>
+			<url>/pkg_edit.php?xml=dnssafety.xml</url>			
 		</tab>
 		<tab>
-			<text>ACLs</text>
-			<url>/pkg.php?xml=bind_acls.xml</url>
+			<text>Forwarder</text>
+			<url>/pkg.php?xml=dnssafety_forwarder.xml</url>
 		</tab>
 		<tab>
-			<text>Views</text>
-			<url>/pkg.php?xml=bind_views.xml</url>
+			<text>Filtering</text>
+			<url>/pkg.php?xml=dnssafety_filter.xml</url>
 		</tab>
 		<tab>
-			<text>Zones</text>
-			<url>/pkg.php?xml=bind_zones.xml&amp;id=0</url>
+			<text>Domains and Cache</text>
+			<url>/pkg.php?xml=dnssafety_cache.xml</url>
 			<active/>
 		</tab>
 		<tab>
 			<text>Sync</text>
-			<url>/pkg_edit.php?xml=bind_sync.xml</url>
+			<url>/pkg_edit.php?xml=dnssafety_sync.xml</url>
 		</tab>
+
 	</tabs>
 	<adddeleteeditpagefields>
 		<columnitem>
