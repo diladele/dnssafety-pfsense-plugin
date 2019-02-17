@@ -50,11 +50,11 @@
 			<active/>
 		</tab>
 		<tab>
-			<text>Forwarder</text>
+			<text>Forwarders</text>
 			<url>/pkg.php?xml=dnssafety_forwarder.xml</url>
 		</tab>
 		<tab>
-			<text>Filtering</text>
+			<text>Filtering Policies</text>
 			<url>/pkg.php?xml=dnssafety_filter.xml</url>
 		</tab>
 		<tab>
@@ -65,7 +65,6 @@
 			<text>Sync</text>
 			<url>/pkg_edit.php?xml=dnssafety_sync.xml</url>
 		</tab>
-
 	</tabs>
 	<advanced_options>enabled</advanced_options>
 	<fields>

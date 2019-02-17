@@ -29,7 +29,7 @@
 	</copyright>
 	<name>bindzone</name>
 	<version>0.4.3</version>
-	<title>DNS Safety Domains and Cache</title>
+	<title>DNS Safety</title>
 	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
 	<tabs>
 		<tab>
@@ -37,11 +37,11 @@
 			<url>/pkg_edit.php?xml=dnssafety.xml</url>			
 		</tab>
 		<tab>
-			<text>Forwarder</text>
+			<text>Forwarders</text>
 			<url>/pkg.php?xml=dnssafety_forwarder.xml</url>
 		</tab>
 		<tab>
-			<text>Filtering</text>
+			<text>Filtering Policies</text>
 			<url>/pkg.php?xml=dnssafety_filter.xml</url>
 		</tab>
 		<tab>
