@@ -73,7 +73,7 @@
 			<fieldname>enable_dnssafety</fieldname>
 			<description>Enable DNS Safety filter.</description>
 			<sethelp>
-				DNS Safety runs as non-privileged system user and thus cannot bind to port 53 on pfSense. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in https://docs.dnssafety.io/install/pfsense/.
+				DNS Safety runs as non-privileged system user and thus cannot bind to port 53 on pfSense. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in <a href="https://docs.dnssafety.io/install/pfsense/">here</a>.
 			</sethelp>
 			<type>checkbox</type>
 		</field>
