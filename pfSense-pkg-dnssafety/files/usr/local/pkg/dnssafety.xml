@@ -29,7 +29,7 @@
 	]]>
 	</copyright>
 	<name>dnssafety</name>
-	<title>dnssafety: DNS Settings</title>
+	<title>DNS Safety</title>
 	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
 	<menu>
 		<name>DNS Safety</name>
