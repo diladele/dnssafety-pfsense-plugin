@@ -901,7 +901,7 @@ function dnssafety_write_rcfile() {
     }
 
     # construct the text to write to rc file
-    $colon = ":";
+    $colon = ": \$\{dsdnsd_enable:=$enable\}";
     $text  = <<<EOD
         #!/bin/sh
         #
@@ -917,13 +917,14 @@ function dnssafety_write_rcfile() {
         command_args="-P /var/run/dsdnsd.pid -u daemon -o /opt/dnssafety/var/log/dsdnsd.log /opt/dnssafety/bin/dsdnsd"
 
         load_rc_config dsdnsd
-        {$colon} ${dsdnsd_enable{$colon}=$enable}
+        $colon
 
         run_rc_command "$1"
 EOD;
 
-    var_dump($dnssafety);
     var_dump($enable);
+    var_dump($colon);
+    var_dump($dnssafety);
     var_dump($text);
 
     conf_mount_rw();
