@@ -894,7 +894,17 @@ function dnssafety_write_rcfile() {
 	# get the dns safety config node
 	$dnssafety = $config['installedpackages']['dnssafety']['config'][0];
 
+	# see if we are enabled
+	$enable = false
+	{
+		$tmp = $dnssafety["enable_dnssafety"]
+		if ($tmp == "on") {
+			$enable = true
+		}
+	}
+
 	var_dump($dnssafety);
+	var_dump($enable);
 
 	/*
 
