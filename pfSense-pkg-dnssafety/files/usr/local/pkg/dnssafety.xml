@@ -83,28 +83,12 @@
 			<description>
 				<![CDATA[
 				TCP and UDP port DNS Safety daemon listens for incoming queries on. Remember to create firewall rules to allow queries on this port.<br />
-				Note that DNS Safety runs as non-privileged system user and thus cannot bind to normal port 53. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in the <a href="https://docs.dnssafety.io/install/pfsense">tutorial</a>.
+				Note that DNS Safety runs as non-privileged system user and thus cannot bind to normal port 53. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in the <a target="new" href="https://docs.dnssafety.io/install/pfsense">tutorial</a>.
 				]]>
 			</description>
 			<type>input</type>
 			<size>5</size>
 			<default_value>5353</default_value>			
-		</field>
-		<field>
-			<fielddescr>IP Version</fielddescr>
-			<fieldname>dnssafety_ip_version</fieldname>
-			<description>
-				<![CDATA[
-				Select IP transport version.<br />
-				This controls which transports are used when resolving queries.
-				]]>
-			</description>
-			<type>select</type>
-			<options>
-				<option><name>IPv4+IPv6</name><value></value></option>
-				<option><name>IPv4</name><value>-4</value></option>
-				<option><name>IPv6</name><value>-6</value></option>
-			</options>
 		</field>
 		<field>
 			<fielddescr>Listen on</fielddescr>
