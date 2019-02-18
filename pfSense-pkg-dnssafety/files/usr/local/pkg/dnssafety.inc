@@ -888,14 +888,53 @@ JS;
 //
 function dnssafety_write_rcfile() {
 
-	throw new Exception("dnssafety_write_rcfile: RAF testing errors!"); 
-
+	# get the global config
 	global $config;
-	$bind = $config['installedpackages']['bind']['config'][0];
+
+	# get the dns safety config node
+	$dnssafety = $config['installedpackages']['dnssafety']['config'][0];
+
+	var_dump($dnssafety);
+
+	/*
+
+
+	#!/bin/sh
+#
+# PROVIDE: dsdnsd
+# REQUIRE: networking
+# KEYWORD:
+
+. /etc/rc.subr
+
+name="dsdnsd"
+rcvar="dsdnsd_enable"
+dsdnsd_command="/opt/dnssafety/bin/dsdnsd"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -u daemon -o /opt/dnssafety/var/log/dsdnsd.log ${dsdnsd_command}"
+
+load_rc_config $name
+: ${dsdnsd_enable:=yes}
+
+run_rc_command "$1"
+
+*/
+
+
+	
+
+	
 	$ip_version = ($bind['bind_ip_version'] ? $bind['bind_ip_version'] : "");
+
+	// rc is map with special keys	
 	$rc = array();
+
+	// this is the name that will be put into /usr/local/etc/rc.d/ folder	
+	$rc['file'] = 'dsdnsd.sh';
+
 	$BIND_LOCALBASE = "/usr/local";
-	$rc['file'] = 'named.sh';
+	
 	// Curly braces in the following <<<EOD are PHP {$variable}, not named.conf text { value; }
 	$rc['start'] = <<<EOD
 		if [ -z "`/bin/ps auxw | /usr/bin/grep "[n]amed " | /usr/bin/awk '{print $2}'`" ]; then
