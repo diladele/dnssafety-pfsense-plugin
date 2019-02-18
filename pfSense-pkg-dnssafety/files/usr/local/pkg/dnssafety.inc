@@ -888,6 +888,8 @@ JS;
 //
 function dnssafety_write_rcfile() {
 
+	throw new Exception("dnssafety_write_rcfile: RAF testing errors!"); 
+
 	global $config;
 	$bind = $config['installedpackages']['bind']['config'][0];
 	$ip_version = ($bind['bind_ip_version'] ? $bind['bind_ip_version'] : "");
