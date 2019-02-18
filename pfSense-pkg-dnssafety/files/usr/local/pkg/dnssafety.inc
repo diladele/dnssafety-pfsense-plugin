@@ -901,7 +901,7 @@ function dnssafety_write_rcfile() {
     }
 
     # construct the text to write to rc file
-    $colon = ":"
+    $colon = ":";
     $text  = <<<EOD
         #!/bin/sh
         #
