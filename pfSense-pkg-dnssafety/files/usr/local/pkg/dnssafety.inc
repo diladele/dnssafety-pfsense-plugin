@@ -895,11 +895,11 @@ function dnssafety_write_rcfile() {
 	$dnssafety = $config['installedpackages']['dnssafety']['config'][0];
 
 	# see if we are enabled
-	$enable = false
+	$enable = false;
 	{
-		$tmp = $dnssafety["enable_dnssafety"]
+		$tmp = $dnssafety["enable_dnssafety"];
 		if ($tmp == "on") {
-			$enable = true
+			$enable = true;
 		}
 	}
 
