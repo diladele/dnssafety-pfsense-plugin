@@ -903,29 +903,24 @@ function dnssafety_write_rcfile() {
     # construct the text to write to rc file
     $colon = ": \${dsdnsd_enable:=$enable}";
     $text  = <<<EOD
-        #!/bin/sh
-        #
-        # PROVIDE: dsdnsd
-        # REQUIRE: networking
-        # KEYWORD:
+#!/bin/sh
+#
+# PROVIDE: dsdnsd
+# REQUIRE: networking
+# KEYWORD:
 
-        . /etc/rc.subr
+. /etc/rc.subr
 
-        name="dsdnsd"
-        rcvar="dsdnsd_enable"
-        command="/usr/sbin/daemon"
-        command_args="-P /var/run/dsdnsd.pid -u daemon -o /opt/dnssafety/var/log/dsdnsd.log /opt/dnssafety/bin/dsdnsd"
+name="dsdnsd"
+rcvar="dsdnsd_enable"
+command="/usr/sbin/daemon"
+command_args="-P /var/run/dsdnsd.pid -u daemon -o /opt/dnssafety/var/log/dsdnsd.log /opt/dnssafety/bin/dsdnsd"
 
-        load_rc_config dsdnsd
-        $colon
+load_rc_config dsdnsd
+$colon
 
-        run_rc_command "$1"
+run_rc_command "$1"
 EOD;
-
-    var_dump($enable);
-    var_dump($colon);
-    var_dump($dnssafety);
-    var_dump($text);
 
     conf_mount_rw();
     @file_put_contents("/usr/local/etc/rc.d/dsdnsd.sh", $text);

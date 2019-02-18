@@ -73,7 +73,7 @@
 			<fieldname>enable_dnssafety</fieldname>
 			<description>Enable DNS Safety filter.</description>
 			<sethelp>
-				Enables or disables the main DNS Safety filtering daemon at /opt/dnssafety/bin/dsdnsd.
+				Enables or disables the startup of DNS Safety filtering daemon at /usr/local/etc/rc.d/dsdnsd.sh script.
 			</sethelp>
 			<type>checkbox</type>
 		</field>
@@ -83,7 +83,7 @@
 			<description>
 				<![CDATA[
 				TCP and UDP port DNS Safety daemon listens for incoming queries on. Remember to create firewall rules to allow queries on this port.<br />
-				Note that DNS Safety runs as non-privileged system user and thus cannot bind to normal port 53. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in the <a target="new" href="https://docs.dnssafety.io/install/pfsense">tutorial</a>.
+				Note that DNS Safety runs as non-privileged <strong>daemon</strong> user and thus cannot bind to normal port 53. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in the <a target="new" href="https://docs.dnssafety.io/install/pfsense">tutorial</a>.
 				]]>
 			</description>
 			<type>input</type>
