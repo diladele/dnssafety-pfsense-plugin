@@ -896,11 +896,8 @@ function dnssafety_write_rcfile() {
 
 	# see if we are enabled
 	$enable = false;
-	{
-		$tmp = $dnssafety["enable_dnssafety"];
-		if ($tmp == "on") {
-			$enable = true;
-		}
+	if ($dnssafety["enable_dnssafety"] == "on") {
+		$enable = true;
 	}
 
 	var_dump($dnssafety);
