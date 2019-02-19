@@ -7,11 +7,7 @@
 /*
  * dnssafety.xml
  *
- * part of pfSense (https://www.pfsense.org)
- * Copyright (c) 2015 Rubicon Communications, LLC (Netgate)
- * Copyright (c) 2013 Juliano Oliveira
- * Copyright (c) 2013 Adriano Brancher
- * Copyright (c) 2016 Voleatech GmbH
+ * Copyright (c) 2019 Diladele B.V.
  * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,10 +34,10 @@
 		<url>/pkg_edit.php?xml=dnssafety.xml</url>
 	</menu>
 	<service>
-		<name>named</name>
-		<rcfile>named.sh</rcfile>
-		<executable>named</executable>
-		<description>Domain Name Service</description>
+		<name>dsdnsd</name>
+		<rcfile>dsdnsd.sh</rcfile>
+		<executable>dsdnsd</executable>
+		<description>DNS Safety Server</description>
 	</service>
 	<tabs>
 		<tab>
@@ -73,29 +69,26 @@
 			<name>Daemon Settings</name>
 		</field>
 		<field>
-			<fielddescr>Enable DNS Safety</fielddescr>
+			<fielddescr>Enable</fielddescr>
 			<fieldname>enable_dnssafety</fieldname>
 			<description>Enable DNS Safety filter.</description>
 			<sethelp>
-				Disable DNS Forwarder and Resolver services on selected interfaces before enabling dnssafety.
+				Enables or disables the startup of DNS Safety filtering daemon at /usr/local/etc/rc.d/dsdnsd.sh script.
 			</sethelp>
 			<type>checkbox</type>
 		</field>
 		<field>
-			<fielddescr>IP Version</fielddescr>
-			<fieldname>dnssafety_ip_version</fieldname>
+			<fielddescr>Listen port</fielddescr>
+			<fieldname>listenport</fieldname>
 			<description>
 				<![CDATA[
-				Select IP transport version.<br />
-				This controls which transports are used when resolving queries.
+				TCP and UDP port DNS Safety daemon listens for incoming queries on. Remember to create firewall rules to allow queries on this port.<br />
+				Note that DNS Safety runs as non-privileged <strong>daemon</strong> user and thus cannot bind to normal port 53. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in the <a target="new" href="https://docs.dnssafety.io/install/pfsense">tutorial</a>.
 				]]>
 			</description>
-			<type>select</type>
-			<options>
-				<option><name>IPv4+IPv6</name><value></value></option>
-				<option><name>IPv4</name><value>-4</value></option>
-				<option><name>IPv6</name><value>-6</value></option>
-			</options>
+			<type>input</type>
+			<size>5</size>
+			<default_value>5353</default_value>			
 		</field>
 		<field>
 			<fielddescr>Listen on</fielddescr>
@@ -301,20 +294,6 @@
 			</description>
 			<type>input</type>
 			<size>80</size>
-		</field>
-		<field>
-			<fielddescr>Listen port</fielddescr>
-			<fieldname>listenport</fieldname>
-			<description>
-				<![CDATA[
-				TCP and UDP port dnssafety listens for queries on. Remember to create firewall rules to allow queries on this port.<br />
-				Must be changed if also running DNS Forwarder or Resolver on this Firewall.
-				]]>
-			</description>
-			<type>input</type>
-			<size>5</size>
-			<default_value>53</default_value>
-			<advancedfield/>
 		</field>
 		<field>
 			<fielddescr>Control port</fielddescr>
