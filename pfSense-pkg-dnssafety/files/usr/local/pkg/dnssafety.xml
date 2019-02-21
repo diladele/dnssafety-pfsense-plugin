@@ -103,7 +103,7 @@
 		<field>
 			<fielddescr>Listen TCP</fielddescr>
 			<fieldname>listentcp</fieldname>
-			<description>Listen for DNS requests on TCP port too in addition to default listening for DNS requests to UDP port.</description>
+			<description>Listen for DNS requests on TCP port too in addition to default listening for DNS requests on UDP port.</description>
 			<type>checkbox</type>
 		</field>
 		<field>

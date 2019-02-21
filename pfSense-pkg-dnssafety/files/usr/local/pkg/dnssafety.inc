@@ -156,6 +156,11 @@ function dnssafety_conf_generate_network($conf) {
                 // if it is an IP address (IPv6 or IPv4 does not matter, just add it to the array)
                 if (is_ipaddrv6($interface) || is_ipaddr($interface)) {
 
+                    // specific encodings for IPv6 addresses
+                    if (is_ipaddrv6($interface)) {
+                        $interface = "[" . $interface . "]"
+                    }
+
                     array_push($addrs, "udp://$interface:$port");
                     if ($tcp) {
                         array_push($addrs, "tcp://$interface:$port");
@@ -181,9 +186,9 @@ function dnssafety_conf_generate_network($conf) {
 
                     if (is_ipaddrv6($addr6)) {
 
-                        array_push($addrs, "udp://$addr6:$port");                        
+                        array_push($addrs, "udp://[$addr6]:$port");                        
                         if ($tcp) {
-                            array_push($addrs, "tcp://$addr6:$port");
+                            array_push($addrs, "tcp://[$addr6]:$port");
                         }
                     }
                 }
