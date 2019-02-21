@@ -144,7 +144,7 @@
 			<default_value>30</default_value>			
 		</field>
 		<field>
-			<fielddescr>Listen on</fielddescr>
+			<fielddescr>Resolve On</fielddescr>
 			<fieldname>arp_interfaces</fieldname>
 			<description>
 				<![CDATA[
