@@ -220,7 +220,7 @@ function dnssafety_conf_generate_arp($conf) {
         if ($timeout == ''){
             $timeout = 30;
         } else {
-            $timeout = intval($timeout)
+            $timeout = intval($timeout);
         }
         if ($timeout <= 0 || $timeout > 60) {
             $timeout = 30;
