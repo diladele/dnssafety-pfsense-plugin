@@ -113,7 +113,7 @@ if (!function_exists('pf_version')) {
 //
 function dnssafety_conf_generate_network($conf) {
 
-    throw new Exception("at dnssafety_conf_generate_network!" . str($conf));
+    throw new Exception("at dnssafety_conf_generate_network!" . var_export($conf,true));
 
     /*
 
