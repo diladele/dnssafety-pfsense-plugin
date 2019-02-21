@@ -107,14 +107,16 @@
 		</field>
 		<field>
 			<type>listtopic</type>
-			<name>ARP to IP Resolve</name>
+			<name>ARP Resolver</name>
 		</field>
 		<field>
 			<fielddescr>Enable</fielddescr>
-			<fieldname>enable_dnssafety</fieldname>
-			<description>Enable DNS Safety filter.</description>
+			<fieldname>enable_arp</fieldname>
+			<description>Enable Arp Resolver.</description>
 			<sethelp>
-				Enables or disables the startup of DNS Safety filtering daemon at /usr/local/etc/rc.d/dsdnsd.sh script.
+				<![CDATA[
+				Enables or disables the ARP resolve functionality of DNS Safety. ARP resolve is needed to be able to specify MAC addresses as members in the filtering policies. Default value is <strong>Disabled</strong>.
+				]]>
 			</sethelp>
 			<type>checkbox</type>
 		</field>
