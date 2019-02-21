@@ -107,7 +107,7 @@
 		</field>
 		<field>
 			<type>listtopic</type>
-			<name>ARP Resolver</name>
+			<name>Arp Resolver</name>
 		</field>
 		<field>
 			<fielddescr>Enable</fielddescr>
@@ -115,11 +115,23 @@
 			<description>Enable Arp Resolver.</description>
 			<sethelp>
 				<![CDATA[
-				Enables or disables the ARP resolve functionality of DNS Safety. ARP resolve is needed to be able to specify MAC addresses as members in the filtering policies. Default value is <strong>Disabled</strong>.
+				Enables or disables the Arp resolve functionality of DNS Safety. Arp resolve is needed to be able to specify MAC addresses as members in the filtering policies. Default value is <strong>Disabled</strong>.
 				]]>
 			</sethelp>
 			<type>checkbox</type>
 		</field>
+		<field>
+			<fielddescr>Disable Cache</fielddescr>
+			<fieldname>arp_nocache</fieldname>
+			<description>Disable Arp Resolve Cache.</description>
+			<sethelp>
+				<![CDATA[
+				Disables ARP resolve cache (IP to MAC address mapping). It is recommended to have this value cleared. In this case Arp resolver remembers the IP to MAC mapping for 15 minutes thus making policy matching fast. You might need to disable caching to debug the incorrect workings of Arp Resolver.
+				]]>
+			</sethelp>
+			<type>checkbox</type>
+		</field>
+		nocache
 		<field>
 			<fielddescr>Listen on</fielddescr>
 			<fieldname>listenon</fieldname>

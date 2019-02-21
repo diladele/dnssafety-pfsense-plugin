@@ -193,7 +193,12 @@ function dnssafety_conf_generate_logging($conf) {
     return $data;
 }
 
-
+//
+//
+//
+function dnssafety_conf_generate_arp($conf) {
+    enable_arp
+}
 
 //
 //
@@ -315,16 +320,17 @@ function dnssafety_sync() {
     $network = dnssafety_conf_generate_network($conf);
     $logging = dnssafety_conf_generate_logging($conf);
     $blocker = dnssafety_conf_generate_blocker($conf);
+    $arp     = dnssafety_conf_generate_arp($conf);
 
     # save them into JSON
     $data = "{
         \"logging\"    : $logging,
         \"network\"    : $network,
         \"blocker\"    : $blocker,
+        \"arp\"        : $arp,
         \"forwarders\" : \"TODO forwarders\",
         \"cache\"      : \"TODO cache\",
         \"history\"    : \"TODO history\",
-        \"arp\"        : \"TODO arp\",
         \"policies\"   : \"TODO policies\",
         \"settings\"   : \"TODO settings\"
     }";
