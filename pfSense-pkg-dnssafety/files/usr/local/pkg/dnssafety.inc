@@ -230,84 +230,66 @@ function dnssafety_conf_generate_arp($conf) {
     # by default we do arp resolve on all interfaces
     $ifaces = array();
 
-    # 
-    # arp_interfaces
-    #    \"ifaces\"  : $ifaces
-
-
-    
-
-    
-
-    
-    
-
-    # fill in the addresses
+    # fill in the interfaces we will run arp on
     if (true) {
-
-        /*
 
         // for convinience
         $value = $conf['arp_interfaces'];
-        
-        // see if we have to listen on all
-        if (preg_match("/All/", $value)) {
 
-            // do nothing as we already listening on all by default
+        // split the interfaces string
+        $items = explode(",", $value);
 
-        } else {
+        // loop over each interface            
+        foreach ($items as $item) {
 
-            // we have to listen on specific interfaces only, so reset the defaults
-            $addrs = array();
+            # convert it
+            $real = convert_friendly_interface_to_real_interface_name($item);
 
-            // split the interfaces string
-            $interfaces = explode(",", $value);
+            # and save
+            array_push($ifaces, $real);
 
-            // loop over each interface            
-            foreach ($interfaces as $interface) {
+            /*
 
-                // if it is an IP address (IPv6 or IPv4 does not matter, just add it to the array)
-                if (is_ipaddrv6($interface) || is_ipaddr($interface)) {
+            // if it is an IP address (IPv6 or IPv4 does not matter, just add it to the array)
+            if (is_ipaddrv6($interface) || is_ipaddr($interface)) {
 
-                    // specific encodings for IPv6 addresses
-                    if (is_ipaddrv6($interface)) {
-                        $interface = "[" . $interface . "]";
-                    }
+                // specific encodings for IPv6 addresses
+                if (is_ipaddrv6($interface)) {
+                    $interface = "[" . $interface . "]";
+                }
 
-                    array_push($addrs, "udp://$interface:$port");
+                array_push($addrs, "udp://$interface:$port");
+                if ($tcp) {
+                    array_push($addrs, "tcp://$interface:$port");
+                }
+
+            } else {
+
+                // it is not the IP address, then must be an interface name, look it up
+                $info  = pfSense_get_interface_addresses(convert_friendly_interface_to_real_interface_name($interface));
+
+                // get the actual values
+                $addr4 = $info['ipaddr'];
+                $addr6 = $info['ipaddr6'];
+
+                // validate and add them
+                if (is_ipaddr($addr4)) {
+
+                    array_push($addrs, "udp://$addr4:$port");                        
                     if ($tcp) {
-                        array_push($addrs, "tcp://$interface:$port");
-                    }
-
-                } else {
-
-                    // it is not the IP address, then must be an interface name, look it up
-                    $info  = pfSense_get_interface_addresses(convert_friendly_interface_to_real_interface_name($interface));
-
-                    // get the actual values
-                    $addr4 = $info['ipaddr'];
-                    $addr6 = $info['ipaddr6'];
-
-                    // validate and add them
-                    if (is_ipaddr($addr4)) {
-
-                        array_push($addrs, "udp://$addr4:$port");                        
-                        if ($tcp) {
-                            array_push($addrs, "tcp://$addr4:$port");
-                        }
-                    }
-
-                    if (is_ipaddrv6($addr6)) {
-
-                        array_push($addrs, "udp://[$addr6]:$port");                        
-                        if ($tcp) {
-                            array_push($addrs, "tcp://[$addr6]:$port");
-                        }
+                        array_push($addrs, "tcp://$addr4:$port");
                     }
                 }
-            }
+
+                if (is_ipaddrv6($addr6)) {
+
+                    array_push($addrs, "udp://[$addr6]:$port");                        
+                    if ($tcp) {
+                        array_push($addrs, "tcp://[$addr6]:$port");
+                    }
+                }
+            }*/
         }
-        */
     }
 
     // good now, encode addresses as JSON

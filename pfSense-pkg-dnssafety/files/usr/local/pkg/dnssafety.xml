@@ -148,10 +148,10 @@
 			<fieldname>arp_interfaces</fieldname>
 			<description>
 				<![CDATA[
-				Choose the interfaces on which DNS Safety will be running ARP resolve requests. It is recommended to select <strong>ONLY LAN</strong> interfaces.]]>
+				Choose the interfaces on which DNS Safety will be running ARP resolve requests. It is recommended to select <strong>ONLY LAN</strong> interfaces. Note, if no interfaces are selected, ARP resolve requests are sent out on all interfaces!
+				]]>
 			</description>
 			<type>interfaces_selection</type>
-			<showlistenall/>
 			<showvirtualips/>
 			<multiple/>
 		</field>
