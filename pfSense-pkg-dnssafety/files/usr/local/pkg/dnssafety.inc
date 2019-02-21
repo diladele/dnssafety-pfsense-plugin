@@ -113,7 +113,7 @@ if (!function_exists('pf_version')) {
 //
 function dnssafety_conf_generate_network($conf) {
 
-    throw Exception("at dnssafety_conf_generate_network!" . str($conf))
+    throw Exception("at dnssafety_conf_generate_network!" . str($conf));
 
     /*
 
@@ -188,7 +188,7 @@ function dnssafety_sync() {
     @file_put_contents("/opt/dnssafety/etc/config.json.new", $data);
 
     # 
-    throw Exception("OK check the generated config file!")
+    throw Exception("OK check the generated config file!");
 
     /*
 
