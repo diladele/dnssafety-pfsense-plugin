@@ -188,9 +188,6 @@ function dnssafety_conf_generate_network($conf) {
 
     # and return it
     return $data;
-
-    // throw new Exception("at dnssafety_conf_generate_network!" . var_export($conf,true));
-
 }
 
 //
@@ -229,7 +226,7 @@ function dnssafety_sync() {
     @file_put_contents($json_new, $data);
 
     # 
-    throw new Exception("OK check the generated config file $json_new!");
+    // throw new Exception("OK check the generated config file $json_new!");
 
     /*
 
