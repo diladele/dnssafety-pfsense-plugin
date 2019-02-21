@@ -169,7 +169,7 @@ function dnssafety_sync() {
     $conf = $config['installedpackages']['dnssafety']['config'][0];
 
     # generate various configuration parts
-    $network = dnssafety_conf_generate_network($conf)
+    $network = dnssafety_conf_generate_network($conf);
 
     # save them into JSON
     $data = '{
