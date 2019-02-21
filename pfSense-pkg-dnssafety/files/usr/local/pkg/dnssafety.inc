@@ -125,9 +125,11 @@ function dnssafety_conf_generate_logging($conf) {
             $level = "INFO";
     }
 
+    $tmp = json_encode($level);
+
     # generate data
     $data = "{
-        \"level\" : $level
+        \"level\" : $tmp
     }";
 
     # and return it
