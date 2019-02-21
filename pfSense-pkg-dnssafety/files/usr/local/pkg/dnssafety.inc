@@ -158,7 +158,7 @@ function dnssafety_conf_generate_network($conf) {
 
                     // specific encodings for IPv6 addresses
                     if (is_ipaddrv6($interface)) {
-                        $interface = "[" . $interface . "]"
+                        $interface = "[" . $interface . "]";
                     }
 
                     array_push($addrs, "udp://$interface:$port");
