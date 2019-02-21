@@ -206,6 +206,8 @@ function dnssafety_conf_generate_arp($conf) {
         }
     }
 
+    var_dump($enable);
+
     throw new Exception($enable);
 
     # set no cache
