@@ -127,6 +127,52 @@
 			</options>
 		</field>
 		<field>
+			<type>listtopic</type>
+			<name>Actions</name>
+		</field>
+		<field>
+			<fielddescr>Block Action</fielddescr>
+			<fieldname>action</fieldname>
+			<description>
+				<![CDATA[
+				Choose how to block the prohibited domains. Possible values are <strong>NXDOMAIN</strong> and <strong>Redirect</strong>. Default and recommended value is <strong>NXDOMAIN</strong>. If you set action to <strong>Redirect</strong> be sure to specify the redirect IPv4 and IPv6 addresses below.
+				]]>
+			</description>
+			<type>select</type>
+			<options>
+				<option><name>NXDOMAIN</name><value>nxdomain</value></option>
+				<option><name>Redirect</name><value>redirect</value></option>				
+			</options>
+		</field>
+		<field>
+			<fielddescr>Redirect IPv4</fielddescr>
+			<fieldname>redirect_ipv4</fieldname>
+			<description>
+				<![CDATA[
+				 IP address to redirect blocked DNS requests to. Default is <strong>127.0.0.1</strong>.
+				]]>
+			</description>
+			<type>input</type>
+			<size>25</size>
+			<default_value>127.0.0.1</default_value>
+		</field>
+		<field>
+			<fielddescr>Redirect IPv6</fielddescr>
+			<fieldname>redirect_ipv6</fieldname>
+			<description>
+				<![CDATA[
+				 IP address to redirect blocked DNS requests to. Default is <strong>::1</strong>.
+				]]>
+			</description>
+			<type>input</type>
+			<size>25</size>
+			<default_value>::1</default_value>
+		</field>		
+		<field>
+			<type>listtopic</type>
+			<name>Response Rate Limit</name>
+		</field>
+		<field>
 			<fielddescr>Enable Logging</fielddescr>
 			<fieldname>dnssafety_logging</fieldname>
 			<description>
@@ -232,11 +278,6 @@
 			<type>input</type>
 			<size>10</size>
 			<default_value>256M</default_value>
-		</field>
-		
-		<field>
-			<type>listtopic</type>
-			<name>Response Rate Limit</name>
 		</field>
 		<field>
 			<fielddescr>Rate Limit</fielddescr>
