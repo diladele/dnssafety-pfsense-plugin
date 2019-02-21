@@ -206,10 +206,6 @@ function dnssafety_conf_generate_arp($conf) {
         }
     }
 
-    var_dump($enable);
-
-    throw new Exception($enable);
-
     # set no cache
     $nocache = false;
     if (true) {
@@ -256,6 +252,7 @@ function dnssafety_conf_generate_arp($conf) {
 
     // good now, encode addresses as JSON
     $ifaces = json_encode($ifaces, JSON_UNESCAPED_SLASHES);
+    $enable = json_encode($enable);
 
     # generate data
     $data = "{
