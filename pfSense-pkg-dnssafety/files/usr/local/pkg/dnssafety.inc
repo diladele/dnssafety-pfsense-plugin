@@ -191,17 +191,17 @@ function dnssafety_sync() {
     $network = dnssafety_conf_generate_network($conf);
 
     # save them into JSON
-    $data = '{
-        "logging"    : "TODO: logging",
-        "network"    : $network,
-        "blocker"    : "TODO blocker",
-        "forwarders" : "TODO forwarders",
-        "cache"      : "TODO cache",
-        "history"    : "TODO history",
-        "arp"        : "TODO arp",
-        "policies"   : "TODO policies",
-        "settings"   : "TODO settings"
-    }';
+    $data = "{
+        \"logging\"    : \"TODO: logging\",
+        \"network\"    : $network,
+        \"blocker\"    : \"TODO blocker\",
+        \"forwarders\" : \"TODO forwarders\",
+        \"cache\"      : \"TODO cache\",
+        \"history\"    : \"TODO history\",
+        \"arp\"        : \"TODO arp\",
+        \"policies\"   : \"TODO policies\",
+        \"settings\"   : \"TODO settings\"
+    }";
 
     # write it into the system
     $json_new = "/opt/dnssafety/etc/config.json.new";
