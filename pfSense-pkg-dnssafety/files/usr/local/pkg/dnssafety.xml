@@ -115,7 +115,7 @@
 			<fieldname>log_level</fieldname>
 			<description>
 				<![CDATA[
-				Choose log level for DNS Safety daemon. Log records are stored in /opt/dnssafety/var/log/dsdnsd.log.
+				Choose log level for DNS Safety daemon. Log records are stored in /opt/dnssafety/var/log/dsdnsd.log. Default and recommended value is <strong>Info</strong>.
 				]]>
 			</description>
 			<type>select</type>

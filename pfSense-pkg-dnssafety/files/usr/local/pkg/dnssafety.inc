@@ -111,6 +111,34 @@ if (!function_exists('pf_version')) {
 //
 //
 //
+function dnssafety_conf_generate_logging($conf) {
+
+    # set level
+    $level = $conf['log_level'];
+
+    # ensure value is ok
+    switch ($level) {
+        case "DEBUG"   : break;
+        case "WARNING" : break;
+        case "ERROR"   : break;
+        default:
+            $level = "INFO";
+    }
+
+    # generate data
+    $data = "{
+        \"level\" : $level
+    }";
+
+    # and return it
+    return $data;
+}
+
+
+
+//
+//
+//
 function dnssafety_conf_generate_network($conf) {
 
     # set port
@@ -226,10 +254,11 @@ function dnssafety_sync() {
 
     # generate various configuration parts
     $network = dnssafety_conf_generate_network($conf);
+    $logging = dnssafety_conf_generate_logging($conf);
 
     # save them into JSON
     $data = "{
-        \"logging\"    : \"TODO: logging\",
+        \"logging\"    : $logging,
         \"network\"    : $network,
         \"blocker\"    : \"TODO blocker\",
         \"forwarders\" : \"TODO forwarders\",
