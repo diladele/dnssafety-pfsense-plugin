@@ -121,7 +121,7 @@ function dnssafety_conf_generate_network($conf) {
 
     # set addresses
     $addrs = array("tcp://0.0.0.0:$port", "udp://0.0.0.0:$port");
-    $addrs = json_encode($addrs)
+    $addrs = json_encode($addrs);
 
     # generate data
     $data = "{
