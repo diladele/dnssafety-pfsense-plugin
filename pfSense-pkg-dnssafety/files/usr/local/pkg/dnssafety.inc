@@ -123,11 +123,11 @@ function dnssafety_conf_generate_network($conf) {
     $addrs = array("tcp://0.0.0.0:$port", "udp://0.0.0.0:$port");
 
     # generate data
-    $data = '{
-        "listen" : {
-            "addresses" : $addrs
+    $data = "{
+        \"listen\" : {
+            \"addresses\" : $addrs
         }
-    }';
+    }";
 
     # and return it
     return $data;
