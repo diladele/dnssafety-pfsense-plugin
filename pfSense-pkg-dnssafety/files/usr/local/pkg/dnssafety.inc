@@ -206,6 +206,8 @@ function dnssafety_conf_generate_arp($conf) {
         }
     }
 
+    throw new Exception($enable)
+
     # set no cache
     $nocache = false;
     if (true) {
@@ -247,48 +249,6 @@ function dnssafety_conf_generate_arp($conf) {
 
             # and save
             array_push($ifaces, $real);
-
-            /*
-
-            // if it is an IP address (IPv6 or IPv4 does not matter, just add it to the array)
-            if (is_ipaddrv6($interface) || is_ipaddr($interface)) {
-
-                // specific encodings for IPv6 addresses
-                if (is_ipaddrv6($interface)) {
-                    $interface = "[" . $interface . "]";
-                }
-
-                array_push($addrs, "udp://$interface:$port");
-                if ($tcp) {
-                    array_push($addrs, "tcp://$interface:$port");
-                }
-
-            } else {
-
-                // it is not the IP address, then must be an interface name, look it up
-                $info  = pfSense_get_interface_addresses(convert_friendly_interface_to_real_interface_name($interface));
-
-                // get the actual values
-                $addr4 = $info['ipaddr'];
-                $addr6 = $info['ipaddr6'];
-
-                // validate and add them
-                if (is_ipaddr($addr4)) {
-
-                    array_push($addrs, "udp://$addr4:$port");                        
-                    if ($tcp) {
-                        array_push($addrs, "tcp://$addr4:$port");
-                    }
-                }
-
-                if (is_ipaddrv6($addr6)) {
-
-                    array_push($addrs, "udp://[$addr6]:$port");                        
-                    if ($tcp) {
-                        array_push($addrs, "tcp://[$addr6]:$port");
-                    }
-                }
-            }*/
         }
     }
 
