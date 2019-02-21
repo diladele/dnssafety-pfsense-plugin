@@ -119,8 +119,64 @@ function dnssafety_conf_generate_network($conf) {
         $port = '5353';
     }
 
-    # set addresses
+    # set default listen on all addresses
     $addrs = array("tcp://0.0.0.0:$port", "udp://0.0.0.0:$port");
+
+    # fill in the addresses
+    if (true) {
+
+        // for convinience
+        $value = $conf['listenon'];
+        
+        // see if we have to listen on all
+        if (preg_match("/All/", $value)) {
+
+            // do nothing as we already listening on all by default
+
+        } else {
+
+            // we have to listen on specific interfaces only, so reset the defaults
+            $addrs = array();
+
+            // split the interfaces string
+            $interfaces = explode(",", $value);
+
+            // loop over each interface            
+            foreach ($interfaces as $interface) {
+
+                // if it is an IP address (IPv6 or IPv4 does not matter, just add it to the array)
+                if (is_ipaddrv6($interface) || is_ipaddr($interface)) {
+
+                    array_push($addrs, "tcp://$interface:$port");
+                    array_push($addrs, "udp://$interface:$port");
+
+                } else {
+
+                    // it is not the IP address, then must be an interface name, look it up
+                    $info  = pfSense_get_interface_addresses(convert_friendly_interface_to_real_interface_name($interface));
+
+                    // get the actual values
+                    $addr4 = $info['ipaddr'];
+                    $addr6 = $info['ipaddr6'];
+
+                    // validate and add them
+                    if (is_ipaddr($addr4)) {
+
+                        array_push($addrs, "tcp://$addr4:$port");
+                        array_push($addrs, "udp://$addr4:$port");                        
+                    }
+
+                    if (is_ipaddrv6($addr6)) {
+
+                        array_push($addrs, "tcp://$addr6:$port");
+                        array_push($addrs, "udp://$addr6:$port");                        
+                    }
+                }
+            }
+        }
+    }
+
+    // good now, encode addresses as JSON
     $addrs = json_encode($addrs, JSON_UNESCAPED_SLASHES);
 
     # generate data
@@ -134,43 +190,6 @@ function dnssafety_conf_generate_network($conf) {
     return $data;
 
     // throw new Exception("at dnssafety_conf_generate_network!" . var_export($conf,true));
-
-    /*
-
-    // Check IPs to listen on
-    if (preg_match("/All/", $bind['listenon'])) {
-        $bind_listenonv6 = "any;";
-        $bind_listenon = "any;";
-    } else {
-        $bind_listenonv6 = "";
-        $bind_listenon = "";
-        foreach (explode(',', $bind['listenon']) as $listenon) {
-            if (is_ipaddrv6($listenon)) {
-                $bind_listenonv6 .= $listenon."; ";
-            } elseif (is_ipaddr($listenon)) {
-                $bind_listenon .= $listenon."; ";
-            } else {
-                $listenon = pfSense_get_interface_addresses(convert_friendly_interface_to_real_interface_name($listenon));
-                if (is_ipaddr($listenon['ipaddr'])) {
-                    $bind_listenon .= $listenon['ipaddr']."; ";
-                }
-                if (is_ipaddrv6($listenon['ipaddr6'])) {
-                    $bind_listenonv6 .= $listenon['ipaddr6']."; ";
-                }
-            }
-        }
-    }
-    $bind_listenonv6 = $bind_listenonv6 == "" ? "none;" : $bind_listenonv6;
-    $bind_listenon = $bind_listenon == "" ? "none;" : $bind_listenon;
-    // Print "<pre>$bind_listenonv6 $bind_listenon";
-
-    $bind_listenport = $bind['listenport'] == "" ? "53" : $bind['listenport'];
-    if (array_key_exists("ipv6allow", $config['system'])) {
-        $bind_conf .= "\tlisten-on-v6 port {$bind_listenport} { {$bind_listenonv6} };\n";
-    }
-    $bind_conf .= "\tlisten-on port {$bind_listenport} { {$bind_listenon} };\n";
-
-    */
 
 }
 
