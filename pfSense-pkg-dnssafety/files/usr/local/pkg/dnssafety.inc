@@ -111,6 +111,63 @@ if (!function_exists('pf_version')) {
 //
 //
 //
+function dnssafety_conf_generate_blocker($conf) {
+
+    # set action
+    $action = $conf['action'];
+    if (true) {
+
+        # ensure value is ok
+        switch ($action) {
+            case "redirect" : break;
+            default:
+                $action = "nxdomain";
+        }
+
+        # and recode
+        $action = json_encode($action);
+    }
+
+    # set redirect v4
+    $ipv4 = $conf['redirect_ipv4'];
+    if (true) {
+
+        # ensure value is ok
+        if ($ipv4 == '') {
+            $ipv4 = "127.0.0.1";
+        }
+
+        # and recode
+        $ipv4 = json_encode($ipv4);
+    }
+
+    # set redirect v6
+    $ipv6 = $conf['redirect_ipv6'];
+    if (true) {
+
+        # ensure value is ok
+        if ($ipv6 == '') {
+            $ipv6 = "::1";
+        }
+
+        # and recode
+        $ipv6 = json_encode($ipv6);
+    }
+
+    # generate data
+    $data = "{
+        \"action\"       : $action,
+        \"redirect_ip4\" : $ipv4,
+        \"redirect_ip6\" : $ipv6
+    }";
+
+    # and return it
+    return $data;
+}
+
+//
+//
+//
 function dnssafety_conf_generate_logging($conf) {
 
     # set level
@@ -257,12 +314,13 @@ function dnssafety_sync() {
     # generate various configuration parts
     $network = dnssafety_conf_generate_network($conf);
     $logging = dnssafety_conf_generate_logging($conf);
+    $blocker = dnssafety_conf_generate_blocker($conf);
 
     # save them into JSON
     $data = "{
         \"logging\"    : $logging,
         \"network\"    : $network,
-        \"blocker\"    : \"TODO blocker\",
+        \"blocker\"    : $blocker,
         \"forwarders\" : \"TODO forwarders\",
         \"cache\"      : \"TODO cache\",
         \"history\"    : \"TODO history\",
