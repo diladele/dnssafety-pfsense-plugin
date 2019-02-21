@@ -206,7 +206,7 @@ function dnssafety_conf_generate_arp($conf) {
         }
     }
 
-    throw new Exception($enable)
+    throw new Exception($enable);
 
     # set no cache
     $nocache = false;
