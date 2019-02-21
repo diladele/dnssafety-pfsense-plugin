@@ -251,8 +251,9 @@ function dnssafety_conf_generate_arp($conf) {
     }
 
     // good now, encode addresses as JSON
-    $ifaces = json_encode($ifaces, JSON_UNESCAPED_SLASHES);
-    $enable = json_encode($enable);
+    $ifaces  = json_encode($ifaces, JSON_UNESCAPED_SLASHES);
+    $enable  = json_encode($enable);
+    $nocache = json_encode($nocache);
 
     # generate data
     $data = "{
