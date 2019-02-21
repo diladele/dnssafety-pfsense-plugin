@@ -111,6 +111,22 @@
 			<name>Logging Options</name>
 		</field>
 		<field>
+			<fielddescr>Log Level</fielddescr>
+			<fieldname>log_level</fieldname>
+			<description>
+				<![CDATA[
+				Choose log level for DNS Safety daemon. Log records are stored in /opt/dnssafety/var/log/dsdnsd.log.
+				]]>
+			</description>
+			<type>select</type>
+			<options>
+				<option><name>Debug</name><value>DEBUG</value></option>
+				<option><name>Info</name><value>INFO</value></option>
+				<option><name>Warning</name><value>WARNING</value></option>
+				<option><name>Error</name><value>ERROR</value></option>
+			</options>
+		</field>
+		<field>
 			<fielddescr>Enable Logging</fielddescr>
 			<fieldname>dnssafety_logging</fieldname>
 			<description>
@@ -119,28 +135,6 @@
 				]]>
 			</description>
 			<type>checkbox</type>
-		</field>
-		<field>
-			<fielddescr>Logging Severity</fielddescr>
-			<fieldname>log_severity</fieldname>
-			<description>
-				<![CDATA[
-				Choose logging level for selected categories.<br />
-				The value 'dynamic' means assume the global level defined by either the command line parameter -d or by running rndc trace.
-				]]>
-			</description>
-			<type>select</type>
-			<options>
-				<option><name>Critical</name><value>critical</value></option>
-				<option><name>Error</name><value>error</value></option>
-				<option><name>Warning</name><value>warning</value></option>
-				<option><name>Notice</name><value>Notice</value></option>
-				<option><name>Info</name><value>info</value></option>
-				<option><name>Debug level 1</name><value>debug 1</value></option>
-				<option><name>Debug level 3</name><value>debug 3</value></option>
-				<option><name>Debug level 5</name><value>debug 5</value></option>
-				<option><name>Dynamic</name><value>dynamic</value></option>
-			</options>
 		</field>
 		<field>
 			<fielddescr>Logging Options</fielddescr>
