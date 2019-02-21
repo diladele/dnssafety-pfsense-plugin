@@ -119,8 +119,17 @@ function dnssafety_conf_generate_network($conf) {
         $port = '5353';
     }
 
+    # set tcp listen flag
+    $tcp = false;
+    if ($conf['listentcp'] == "on") {
+        $tcp = true;
+    }
+
     # set default listen on all addresses
-    $addrs = array("tcp://0.0.0.0:$port", "udp://0.0.0.0:$port");
+    $addrs = array("udp://0.0.0.0:$port");
+    if ($tcp) {
+        array_push($addrs, "tcp://0.0.0.0:$port");
+    }
 
     # fill in the addresses
     if (true) {
@@ -147,8 +156,10 @@ function dnssafety_conf_generate_network($conf) {
                 // if it is an IP address (IPv6 or IPv4 does not matter, just add it to the array)
                 if (is_ipaddrv6($interface) || is_ipaddr($interface)) {
 
-                    array_push($addrs, "tcp://$interface:$port");
                     array_push($addrs, "udp://$interface:$port");
+                    if ($tcp) {
+                        array_push($addrs, "tcp://$interface:$port");
+                    }
 
                 } else {
 
@@ -162,14 +173,18 @@ function dnssafety_conf_generate_network($conf) {
                     // validate and add them
                     if (is_ipaddr($addr4)) {
 
-                        array_push($addrs, "tcp://$addr4:$port");
                         array_push($addrs, "udp://$addr4:$port");                        
+                        if ($tcp) {
+                            array_push($addrs, "tcp://$addr4:$port");
+                        }
                     }
 
                     if (is_ipaddrv6($addr6)) {
 
-                        array_push($addrs, "tcp://$addr6:$port");
                         array_push($addrs, "udp://$addr6:$port");                        
+                        if ($tcp) {
+                            array_push($addrs, "tcp://$addr6:$port");
+                        }
                     }
                 }
             }

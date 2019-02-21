@@ -91,7 +91,7 @@
 			<fieldname>listenport</fieldname>
 			<description>
 				<![CDATA[
-				TCP and UDP port DNS Safety daemon listens for incoming queries on. Remember to create firewall rules to allow queries on this port.<br />
+				Network port DNS Safety daemon listens for incoming queries on. Remember to create firewall rules to allow queries on this port.<br />
 				Note that DNS Safety runs as non-privileged <strong>daemon</strong> user and thus cannot bind to normal port 53. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in the <a target="new" href="https://docs.dnssafety.io/install/pfsense">tutorial</a>.
 				]]>
 			</description>
@@ -101,9 +101,9 @@
 		</field>
 		
 		<field>
-			<fielddescr>Enable Notify</fielddescr>
-			<fieldname>dnssafety_notify</fieldname>
-			<description>Notify slave server after any update on master.</description>
+			<fielddescr>Listen TCP</fielddescr>
+			<fieldname>listentcp</fieldname>
+			<description>Listen for DNS requests on TCP port too in addition to default listening for DNS requests to UDP port.</description>
 			<type>checkbox</type>
 		</field>
 		<field>
