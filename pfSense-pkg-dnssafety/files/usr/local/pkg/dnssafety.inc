@@ -113,7 +113,26 @@ if (!function_exists('pf_version')) {
 //
 function dnssafety_conf_generate_network($conf) {
 
-    throw new Exception("at dnssafety_conf_generate_network!" . var_export($conf,true));
+    # set port
+    $port = $conf['listenport'];
+    if ($port == ''){
+        $port = '5353';
+    }
+
+    # set addresses
+    $addrs = array("tcp://0.0.0.0:$port", "udp://0.0.0.0:$port");
+
+    # generate data
+    $data = '{
+        "listen" : {
+            "addresses" : $addrs
+        }
+    }';
+
+    # and return it
+    return $data;
+
+    // throw new Exception("at dnssafety_conf_generate_network!" . var_export($conf,true));
 
     /*
 
@@ -185,10 +204,12 @@ function dnssafety_sync() {
     }';
 
     # write it into the system
-    @file_put_contents("/opt/dnssafety/etc/config.json.new", $data);
+    $json_new = "/opt/dnssafety/etc/config.json.new";
+
+    @file_put_contents($json_new, $data);
 
     # 
-    throw new Exception("OK check the generated config file!");
+    throw new Exception("OK check the generated config file $json_new!");
 
     /*
 
