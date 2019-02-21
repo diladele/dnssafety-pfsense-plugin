@@ -107,20 +107,6 @@
 			<type>checkbox</type>
 		</field>
 		<field>
-			<fielddescr>Hide Version</fielddescr>
-			<fieldname>dnssafety_hide_version</fieldname>
-			<description>Hide the version of dnssafety (ignore queries for version.dnssafety).</description>
-			<type>checkbox</type>
-		</field>
-		<field>
-			<fielddescr>Limit Memory Use</fielddescr>
-			<fieldname>dnssafety_ram_limit</fieldname>
-			<description>Limits RAM use for DNS server (Recommended: 256M)</description>
-			<type>input</type>
-			<size>10</size>
-			<default_value>256M</default_value>
-		</field>
-		<field>
 			<type>listtopic</type>
 			<name>Logging Options</name>
 		</field>
@@ -239,6 +225,21 @@
 			<multiple/>
 			<size>18</size>
 		</field>
+		<field>
+			<fielddescr>Hide Version</fielddescr>
+			<fieldname>dnssafety_hide_version</fieldname>
+			<description>Hide the version of dnssafety (ignore queries for version.dnssafety).</description>
+			<type>checkbox</type>
+		</field>
+		<field>
+			<fielddescr>Limit Memory Use</fielddescr>
+			<fieldname>dnssafety_ram_limit</fieldname>
+			<description>Limits RAM use for DNS server (Recommended: 256M)</description>
+			<type>input</type>
+			<size>10</size>
+			<default_value>256M</default_value>
+		</field>
+		
 		<field>
 			<type>listtopic</type>
 			<name>Response Rate Limit</name>
