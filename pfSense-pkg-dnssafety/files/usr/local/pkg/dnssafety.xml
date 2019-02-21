@@ -98,6 +98,47 @@
 			<type>input</type>
 			<size>5</size>
 			<default_value>5353</default_value>			
+		</field>		
+		<field>
+			<fielddescr>Listen TCP</fielddescr>
+			<fieldname>listentcp</fieldname>
+			<description>Listen for DNS requests on TCP port too in addition to default listening for DNS requests on UDP port.</description>
+			<type>checkbox</type>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>ARP to IP Resolve</name>
+		</field>
+		<field>
+			<fielddescr>Enable</fielddescr>
+			<fieldname>enable_dnssafety</fieldname>
+			<description>Enable DNS Safety filter.</description>
+			<sethelp>
+				Enables or disables the startup of DNS Safety filtering daemon at /usr/local/etc/rc.d/dsdnsd.sh script.
+			</sethelp>
+			<type>checkbox</type>
+		</field>
+		<field>
+			<fielddescr>Listen on</fielddescr>
+			<fieldname>listenon</fieldname>
+			<description>Choose the interfaces on which DNS Safety will be listening on for incoming requests. Default value - All Interfaces/IP Addresses.</description>
+			<type>interfaces_selection</type>
+			<showlistenall/>
+			<showvirtualips/>
+			<multiple/>
+		</field>
+		<field>
+			<fielddescr>Listen port</fielddescr>
+			<fieldname>listenport</fieldname>
+			<description>
+				<![CDATA[
+				Network port DNS Safety daemon listens for incoming queries on. Remember to create firewall rules to allow queries on this port.<br />
+				Note that DNS Safety runs as non-privileged <strong>daemon</strong> user and thus cannot bind to normal port 53. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in the <a target="new" href="https://docs.dnssafety.io/install/pfsense">tutorial</a>.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>5353</default_value>			
 		</field>
 		
 		<field>
