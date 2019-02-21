@@ -78,6 +78,15 @@
 			<type>checkbox</type>
 		</field>
 		<field>
+			<fielddescr>Listen on</fielddescr>
+			<fieldname>listenon</fieldname>
+			<description>Choose the interfaces on which DNS Safety will be listening on for incoming requests. Default value - All Interfaces/IP Addresses.</description>
+			<type>interfaces_selection</type>
+			<showlistenall/>
+			<showvirtualips/>
+			<multiple/>
+		</field>
+		<field>
 			<fielddescr>Listen port</fielddescr>
 			<fieldname>listenport</fieldname>
 			<description>
@@ -90,15 +99,7 @@
 			<size>5</size>
 			<default_value>5353</default_value>			
 		</field>
-		<field>
-			<fielddescr>Listen on</fielddescr>
-			<fieldname>listenon</fieldname>
-			<description>Choose the interfaces on which to enable dnssafety.</description>
-			<type>interfaces_selection</type>
-			<showlistenall/>
-			<showvirtualips/>
-			<multiple/>
-		</field>
+		
 		<field>
 			<fielddescr>Enable Notify</fielddescr>
 			<fieldname>dnssafety_notify</fieldname>
