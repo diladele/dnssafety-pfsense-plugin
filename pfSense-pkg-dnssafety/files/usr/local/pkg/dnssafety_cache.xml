@@ -5,12 +5,9 @@
 	<copyright>
 <![CDATA[
 /*
- * bind_zones.xml
+ * dnssafety_cache.xml
  *
- * part of pfSense (https://www.pfsense.org)
- * Copyright (c) 2015 Rubicon Communications, LLC (Netgate)
- * Copyright (c) 2013 Juliano Oliveira
- * Copyright (c) 2013 Adriano Brancher
+ * Copyright (c) 2019 Diladele B.V.
  * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,8 +24,7 @@
  */
 	]]>
 	</copyright>
-	<name>bindzone</name>
-	<version>0.4.3</version>
+	<name>dnssafety_cache</name>
 	<title>DNS Safety</title>
 	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
 	<tabs>
@@ -53,8 +49,20 @@
 			<text>Sync</text>
 			<url>/pkg_edit.php?xml=dnssafety_sync.xml</url>
 		</tab>
-
 	</tabs>
+	<fields>
+		<field>
+			<type>listtopic</type>
+			<name>Forwarder Configuration</name>
+		</field>
+		<field>
+			<fielddescr>Enable Forwarding</fielddescr>
+			<fieldname>dnssafety_forwarder</fieldname>
+			<description>Enable forwarding queries to other DNS servers listed below rather than this server performing its own recursion.</description>
+			<type>checkbox</type>
+			<enablefields>dnssafety_forwarder_ips</enablefields>
+		</field>
+	</fields>
 	<adddeleteeditpagefields>
 		<columnitem>
 			<fielddescr>Status</fielddescr>
