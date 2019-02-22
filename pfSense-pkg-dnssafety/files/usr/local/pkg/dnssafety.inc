@@ -341,7 +341,7 @@ function dnssafety_conf_generate_forwarders($conf){
         $hosts["hosts"] = array_map('trim', $hosts["hosts"]);
 
         # and encode
-        $hosts = json_encode($hosts, JSON_PRETTY_PRINT);
+        $hosts = json_encode($hosts, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
 
     # generate data

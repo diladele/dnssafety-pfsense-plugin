@@ -79,10 +79,10 @@
 		</field>
 		<field>
 			<fieldname>etc_hosts_path</fieldname>
-			<fielddescr>hosts</fielddescr>
+			<fielddescr>Hosts Paths</fielddescr>
 			<description>
 				<![CDATA[
-				hosts
+				Path to /etc/hosts file that contains hosts to IP address mappings. Separate multiple paths by comma (,) without spaces.
 				]]>
 			</description>
 			<type>input</type>
