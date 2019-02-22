@@ -149,11 +149,11 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<fielddescr>googledns_forward_fqdn_only</fielddescr>
 			<fieldname>googledns_forward_fqdn_only</fieldname>
+			<fielddescr>Forward FQDN</fielddescr>
 			<description>
 				<![CDATA[
-				googledns_forward_fqdn_only
+				Only forward requests for fully qualified domains. Recommended. If set, only names like <strong>www.example.com</strong> are forwarded to the upstream server. Names like <strong>example</strong> are not forwarded.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
@@ -195,11 +195,11 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<fielddescr>customdns1_forward_fqdn_only</fielddescr>
 			<fieldname>customdns1_forward_fqdn_only</fieldname>
+			<fielddescr>Forward FQDN</fielddescr>
 			<description>
 				<![CDATA[
-				customdns1_forward_fqdn_only
+				Only forward requests for fully qualified domains. Recommended. If set, only names like <strong>www.example.com</strong> are forwarded to the upstream server. Names like <strong>example</strong> are not forwarded.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
@@ -241,11 +241,11 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<fielddescr>customdns2_forward_fqdn_only</fielddescr>
 			<fieldname>customdns2_forward_fqdn_only</fieldname>
+			<fielddescr>Forward FQDN</fielddescr>
 			<description>
 				<![CDATA[
-				customdns2_forward_fqdn_only
+				Only forward requests for fully qualified domains. Recommended. If set, only names like <strong>www.example.com</strong> are forwarded to the upstream server. Names like <strong>example</strong> are not forwarded.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
