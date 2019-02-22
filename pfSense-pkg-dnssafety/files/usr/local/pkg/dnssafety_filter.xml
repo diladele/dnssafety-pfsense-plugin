@@ -123,18 +123,80 @@
 		<field>
 			<type>listtopic</type>
 			<name>Members</name>
-			<fieldname>temp</fieldname>
+			<fieldname>members</fieldname>
 		</field>
 		<field>
-			<fielddescr>Custom Options</fielddescr>
-			<fieldname>bind_custom_options</fieldname>
-			<description>You can put your own custom options here, separated by semi-colons (;).</description>
+			<fielddescr>Names</fielddescr>
+			<fieldname>member_names</fieldname>
+			<description>List of names, one name per line.</description>
 			<type>textarea</type>
 			<cols>65</cols>
 			<rows>8</rows>
 			<encoding>base64</encoding>
 		</field>
-
+		<field>
+			<fielddescr>MAC Addresses</fielddescr>
+			<fieldname>member_macs</fieldname>
+			<description>List of MAC addresses, one address per line.</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv4 Subnets</fielddescr>
+			<fieldname>member_ipv4subnets</fieldname>
+			<description>List of IPv4 subnets, one subnet per line.</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv4 Ranges</fielddescr>
+			<fieldname>member_ipv4ranges</fieldname>
+			<description>List of IPv4 ranges, one range per line.</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv4 Addresses</fielddescr>
+			<fieldname>member_ipv4addrs</fieldname>
+			<description>List of IPv4 addresses, one address per line.</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv6 Subnets</fielddescr>
+			<fieldname>member_ipv6subnets</fieldname>
+			<description>List of IPv6 subnets, one subnet per line.</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv6 Ranges</fielddescr>
+			<fieldname>member_ipv6ranges</fieldname>
+			<description>List of IPv6 ranges, one range per line.</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv6 Addresses</fielddescr>
+			<fieldname>member_ipv6addrs</fieldname>
+			<description>List of IPv6 addresses, one address per line.</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
 		<field>
 			<fielddescr>Recursion</fielddescr>
 			<fieldname>recursion</fieldname>
