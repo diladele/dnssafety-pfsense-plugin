@@ -91,6 +91,19 @@
 			<type>input</type>
 			<size>5</size>
 			<default_value>300</default_value>			
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>History / Access Log</name>
+		</field>
+		<field>
+			<fielddescr>Enable</fielddescr>
+			<fieldname>enable_history</fieldname>
+			<description>
+				<![CDATA[
+				Enable history of DNS requests and responses. Entries are written to /opt/dnssafety/var/log/access.log.
+				]]></description>
+			<type>checkbox</type>			
 		</field>				
 	</fields>
 	<custom_php_resync_config_command>

@@ -196,6 +196,31 @@ function dnssafety_conf_generate_logging($conf) {
 //
 //
 //
+function dnssafety_conf_generate_history($conf){
+
+    # set enable
+    $enable = false;
+    if (true) {
+        if ($conf['enable_history'] == "on") {
+            $enable = true;
+        }
+    }
+
+    // good now, encode addresses as JSON
+    $enable = json_encode($enable);
+    
+    # generate data
+    $data = "{
+        \"enable\"       : $enable
+    }";
+
+    # and return it
+    return $data;
+
+}
+//
+//
+//
 function dnssafety_conf_generate_cache($conf) {
 
     # set enable
@@ -443,6 +468,7 @@ function dnssafety_sync() {
     $blocker = dnssafety_conf_generate_blocker($conf0);
     $arp     = dnssafety_conf_generate_arp($conf0);
     $cache   = dnssafety_conf_generate_cache($conf1);
+    $history = dnssafety_conf_generate_history($conf1);
 
     # save them into JSON
     $data = "{
@@ -452,7 +478,7 @@ function dnssafety_sync() {
         \"arp\"        : $arp,
         \"forwarders\" : \"TODO forwarders\",
         \"cache\"      : $cache,
-        \"history\"    : \"TODO history\",
+        \"history\"    : $history,
         \"policies\"   : \"TODO policies\",
         \"settings\"   : \"TODO settings\"
     }";
