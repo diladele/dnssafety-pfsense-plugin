@@ -334,6 +334,8 @@ function dnssafety_conf_generate_forwarders($conf){
             $hosts["enable"] = true;
         }
 
+        var_dump($conf);
+
         # assign path to hosts
         $hosts["hosts"] = explode(",", $conf['hosts']);
         $hosts["hosts"] = array_map('trim', $hosts["hosts"]);
@@ -351,7 +353,7 @@ function dnssafety_conf_generate_forwarders($conf){
         \"custom1\" : $custom1,
         \"custom1\" : $custom2
     }";
-    
+
     # and return it
     return $data;
 }
