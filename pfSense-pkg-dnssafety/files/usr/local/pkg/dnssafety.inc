@@ -198,6 +198,7 @@ function dnssafety_conf_generate_logging($conf) {
 //
 function dnssafety_conf_generate_forwarders($conf){
 
+    # fill open dns
     $opendns = array();
     if (true) {
 
@@ -225,11 +226,40 @@ function dnssafety_conf_generate_forwarders($conf){
         $opendns = json_encode($opendns, JSON_PRETTY_PRINT);
     };
 
+    # fill google dns
+    $google = array();
+    if (true) {
+
+        # assign enable
+        $google["enable"] = false;
+        if ($conf['googledns_enable'] == "on") {
+            $google["enable"] = true;
+        }
+
+        # assign forward fqdn only
+        $google["forward-fqdn-only"] = false;
+        if ($conf['googledns_forward_fqdn_only'] == "on") {
+            $google["forward-fqdn-only"] = true;
+        }
+
+        # assign ipv4
+        $google["ipv4"] = explode(",", $conf['googledns_v4']);
+        $google["ipv4"] = array_map('trim', $google["ipv4"]);
+
+        # assign ipv6
+        $google["ipv6"] = explode(",", $conf['googledns_v6']);
+        $google["ipv6"] = array_map('trim', $google["ipv6"]);
+
+        # and encoude
+        $google = json_encode($google, JSON_PRETTY_PRINT);
+    };
+
 
 
     # generate data
     $data = "{
-        \"opendns-family-shield\" : $opendns
+        \"opendns-family-shield\" : $opendns,
+        \"google-public-dns\" : $google
     }";
 
 /*
@@ -239,12 +269,6 @@ function dnssafety_conf_generate_forwarders($conf){
         "etc-hosts" : {
             "enable" : true,
             "hosts"  : ["/etc/hosts"]
-        },
-        "google-public-dns" : {
-            "enable" : true,
-            "forward-fqdn-only" : true,
-            "ipv4" : ["8.8.8.8", "8.8.4.4"],
-            "ipv6" : ["2001:4860:4860::8888", "2001:4860:4860::8844"]
         },
         "custom1" : {
             "enable"  : false,
