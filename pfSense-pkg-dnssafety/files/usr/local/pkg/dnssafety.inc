@@ -435,7 +435,7 @@ function dnssafety_sync() {
 
     # get the dns safety config nodes
     $conf0 = $config['installedpackages']['dnssafety']['config'][0];
-    $conf1 = $config['installedpackages']['dnssafety_cache']['config'][0];
+    $conf1 = $config['installedpackages']['dnssafetycache']['config'][0];
     
     # generate various configuration parts
     $network = dnssafety_conf_generate_network($conf0);
