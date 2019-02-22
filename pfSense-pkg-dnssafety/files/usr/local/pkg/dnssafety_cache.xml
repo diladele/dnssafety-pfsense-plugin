@@ -24,7 +24,7 @@
  */
 	]]>
 	</copyright>
-	<name>bindsync</name>
+	<name>dnssafety_cache</name>
 	<title>DNS Safety</title>
 	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
 	<tabs>
@@ -61,7 +61,7 @@
 		</field>
 		<field>
 			<fielddescr>Enable</fielddescr>
-			<fieldname>cache_enable</fieldname>
+			<fieldname>enable</fieldname>
 			<description>
 				<![CDATA[
 				Enable caching of DNS responses. It is recommended to set the value to enabled.

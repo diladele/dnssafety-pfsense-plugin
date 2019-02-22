@@ -196,6 +196,59 @@ function dnssafety_conf_generate_logging($conf) {
 //
 //
 //
+function dnssafety_conf_generate_cache($conf) {
+
+    # set enable
+    $enable = false;
+    if (true) {
+        if ($conf['enable'] == "on") {
+            $enable = true;
+        }
+    }
+
+    # set positive ttl
+    $pttl = $conf['positive-ttl'];
+    if (true) {
+        if ($pttl == ''){
+            $pttl = 3600;
+        } else {
+            $pttl = intval($pttl);
+        }
+        if ($pttl <= 0 || $pttl > 3600 * 10) {
+            $pttl = 3600;
+        }
+    }
+
+    # set negative ttl
+    $nttl = $conf['negative-ttl'];
+    if (true) {
+        if ($nttl == ''){
+            $nttl = 300;
+        } else {
+            $nttl = intval($nttl);
+        }
+        if ($nttl <= 0 || $nttl > 300 * 10) {
+            $nttl = 300;
+        }
+    }
+
+    // good now, encode addresses as JSON
+    $enable  = json_encode($enable);
+    
+    # generate data
+    $data = "{
+        \"enable\"       : $enable,
+        \"positive-ttl\" : $pttl,
+        \"negative-ttl\" : $nttl
+    }";
+
+    # and return it
+    return $data;
+}
+
+//
+//
+//
 function dnssafety_conf_generate_arp($conf) {
 
     # set enable
@@ -380,14 +433,16 @@ function dnssafety_sync() {
     // mount configuration read-write
     conf_mount_rw();
 
-    # get the dns safety config node
-    $conf = $config['installedpackages']['dnssafety']['config'][0];
-
+    # get the dns safety config nodes
+    $conf0 = $config['installedpackages']['dnssafety']['config'][0];
+    $conf1 = $config['installedpackages']['dnssafety_cache']['config'][0];
+    
     # generate various configuration parts
-    $network = dnssafety_conf_generate_network($conf);
-    $logging = dnssafety_conf_generate_logging($conf);
-    $blocker = dnssafety_conf_generate_blocker($conf);
-    $arp     = dnssafety_conf_generate_arp($conf);
+    $network = dnssafety_conf_generate_network($conf0);
+    $logging = dnssafety_conf_generate_logging($conf0);
+    $blocker = dnssafety_conf_generate_blocker($conf0);
+    $arp     = dnssafety_conf_generate_arp($conf0);
+    $cache   = dnssafety_conf_generate_cache($conf1);
 
     # save them into JSON
     $data = "{
@@ -396,7 +451,7 @@ function dnssafety_sync() {
         \"blocker\"    : $blocker,
         \"arp\"        : $arp,
         \"forwarders\" : \"TODO forwarders\",
-        \"cache\"      : \"TODO cache\",
+        \"cache\"      : $cache,
         \"history\"    : \"TODO history\",
         \"policies\"   : \"TODO policies\",
         \"settings\"   : \"TODO settings\"
