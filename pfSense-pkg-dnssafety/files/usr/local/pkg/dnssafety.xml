@@ -62,7 +62,6 @@
 			<url>/pkg_edit.php?xml=dnssafety_sync.xml</url>
 		</tab>
 	</tabs>
-	<advanced_options>enabled</advanced_options>
 	<fields>
 		<field>
 			<type>listtopic</type>
