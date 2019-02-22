@@ -107,7 +107,7 @@
 			<fielddescr>Forward FQDN</fielddescr>
 			<description>
 				<![CDATA[
-				Only forward requests for fully qualified domains. Recommended. If set, only names like <strong>www.example.com</strong> are forwarded to the upstream server. Names like <strong>example</strong> are not forwarded.
+				Only forward requests for fully qualified domains. Recommended. If set, only names like "www.example.com" are forwarded to the upstream server. Names like "example" are not forwarded.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
@@ -144,7 +144,7 @@
 			<fielddescr>Enable</fielddescr>
 			<description>
 				<![CDATA[
-				googledns_enable
+				Enable Google Public DNS forwarder.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
@@ -153,7 +153,7 @@
 			<fielddescr>Forward FQDN</fielddescr>
 			<description>
 				<![CDATA[
-				Only forward requests for fully qualified domains. Recommended. If set, only names like <strong>www.example.com</strong> are forwarded to the upstream server. Names like <strong>example</strong> are not forwarded.
+				Only forward requests for fully qualified domains. Recommended. If set, only names like "www.example.com" are forwarded to the upstream server. Names like "example" are not forwarded.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
@@ -190,7 +190,7 @@
 			<fielddescr>Enable</fielddescr>
 			<description>
 				<![CDATA[
-				customdns1_enable
+				Enable first Custom DNS forwarder.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
@@ -199,7 +199,7 @@
 			<fielddescr>Forward FQDN</fielddescr>
 			<description>
 				<![CDATA[
-				Only forward requests for fully qualified domains. Recommended. If set, only names like <strong>www.example.com</strong> are forwarded to the upstream server. Names like <strong>example</strong> are not forwarded.
+				Only forward requests for fully qualified domains. Recommended. If set, only names like "www.example.com" are forwarded to the upstream server. Names like "example" are not forwarded.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
@@ -236,7 +236,7 @@
 			<fielddescr>Enable</fielddescr>
 			<description>
 				<![CDATA[
-				customdns2_enable
+				Enable second Custom DNS forwarder.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
@@ -245,7 +245,7 @@
 			<fielddescr>Forward FQDN</fielddescr>
 			<description>
 				<![CDATA[
-				Only forward requests for fully qualified domains. Recommended. If set, only names like <strong>www.example.com</strong> are forwarded to the upstream server. Names like <strong>example</strong> are not forwarded.
+				Only forward requests for fully qualified domains. Recommended. If set, only names like "www.example.com" are forwarded to the upstream server. Names like "example" are not forwarded.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
