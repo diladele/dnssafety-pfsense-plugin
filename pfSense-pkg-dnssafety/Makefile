@@ -27,7 +27,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety_cache.xml ${STAGEDIR}${PREFIX}/pkg
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety_sync.xml ${STAGEDIR}${PREFIX}/pkg
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety_filter.xml ${STAGEDIR}${PREFIX}/pkg
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety_forwarder.xml ${STAGEDIR}${PREFIX}/pkg
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety_forwarders.xml ${STAGEDIR}${PREFIX}/pkg
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/pkg_dnssafety.inc ${STAGEDIR}${PREFIX}/pkg
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/pkg/dnssafety.inc ${STAGEDIR}${PREFIX}/pkg
 	${INSTALL_DATA} ${FILESDIR}/etc/inc/priv/dnssafety.priv.inc ${STAGEDIR}/etc/inc/priv
