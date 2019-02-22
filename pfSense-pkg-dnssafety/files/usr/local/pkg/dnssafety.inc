@@ -196,6 +196,78 @@ function dnssafety_conf_generate_logging($conf) {
 //
 //
 //
+function dnssafety_conf_generate_forwarders($conf){
+
+    $opendns = array();
+    if (true) {
+
+        # assign enable
+        $opendns["enable"] = false;
+        if ($conf['opendns_enable'] == "on") {
+            $opendns["enable"] = true;
+        }
+
+        # assign forward fqdn only
+        $opendns["forward-fqdn-only"] = false;
+        if ($conf['opendns_forward_fqdn_only'] == "on") {
+            $opendns["forward-fqdn-only"] = true;
+        }
+
+        # assign ipv4
+        $opendns["ipv4"] = explode(",", $conf['opendns_v4']);
+        $opendns["ipv4"] = array_map('trim', $opendns["ipv4"]);
+
+        # assign ipv6
+        $opendns["ipv6"] = explode(",", $conf['opendns_v6']);
+        $opendns["ipv6"] = array_map('trim', $opendns["ipv6"]);
+
+        # and encoude
+        $opendns = json_encode($opendns);
+    };
+
+
+
+    # generate data
+    $data = "{
+        \"opendns-family-shield\" : $opendns
+    }";
+
+/*
+     "settings" : {
+            "lookup_etc_resolv_conf" : true
+        },
+        "etc-hosts" : {
+            "enable" : true,
+            "hosts"  : ["/etc/hosts"]
+        },
+        "google-public-dns" : {
+            "enable" : true,
+            "forward-fqdn-only" : true,
+            "ipv4" : ["8.8.8.8", "8.8.4.4"],
+            "ipv6" : ["2001:4860:4860::8888", "2001:4860:4860::8844"]
+        },
+        "custom1" : {
+            "enable"  : false,
+            "forward-fqdn-only" : false,
+            "ipv4"    : [],
+            "ipv6"    : [],
+            "comment" : "First custom DNS server"
+        },
+        "custom2" : {
+            "enable" : false,
+            "forward-fqdn-only" : false,
+            "ipv4" : [],
+            "ipv6" : [],
+            "comment" : "Second custom DNS server"
+        }*/
+
+    # and return it
+    return $data;
+}
+
+//
+//
+//
 function dnssafety_conf_generate_history($conf){
 
     # set enable
@@ -461,6 +533,7 @@ function dnssafety_sync() {
     # get the dns safety config nodes
     $conf0 = $config['installedpackages']['dnssafety']['config'][0];
     $conf1 = $config['installedpackages']['dnssafetycache']['config'][0];
+    $conf2 = $config['installedpackages']['dnssafetyforwarders']['config'][0];
     
     # generate various configuration parts
     $network = dnssafety_conf_generate_network($conf0);
@@ -469,6 +542,7 @@ function dnssafety_sync() {
     $arp     = dnssafety_conf_generate_arp($conf0);
     $cache   = dnssafety_conf_generate_cache($conf1);
     $history = dnssafety_conf_generate_history($conf1);
+    $forward = dnssafety_conf_generate_forwarders($conf2);
 
     # save them into JSON
     $data = "{
@@ -476,7 +550,7 @@ function dnssafety_sync() {
         \"network\"    : $network,
         \"blocker\"    : $blocker,
         \"arp\"        : $arp,
-        \"forwarders\" : \"TODO forwarders\",
+        \"forwarders\" : $forward,
         \"cache\"      : $cache,
         \"history\"    : $history,
         \"policies\"   : \"TODO policies\",
