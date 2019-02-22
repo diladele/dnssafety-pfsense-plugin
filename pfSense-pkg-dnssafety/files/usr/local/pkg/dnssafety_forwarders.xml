@@ -79,7 +79,7 @@
 		</field>
 		<field>
 			<fieldname>etc_hosts_path</fieldname>
-			<fielddescr>Hosts Paths</fielddescr>
+			<fielddescr>Hosts File Path</fielddescr>
 			<description>
 				<![CDATA[
 				Path to /etc/hosts file that contains hosts to IP address mappings. Separate multiple paths by comma (,) without spaces.
@@ -94,11 +94,11 @@
 			<name>OpenDNS Family Shield</name>
 		</field>
 		<field>
-			<fielddescr>opendns_enable</fielddescr>
 			<fieldname>opendns_enable</fieldname>
+			<fielddescr>Enable</fielddescr>
 			<description>
 				<![CDATA[
-				opendns_enable
+				Enable OpenDNS Family Shield forwarder.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
