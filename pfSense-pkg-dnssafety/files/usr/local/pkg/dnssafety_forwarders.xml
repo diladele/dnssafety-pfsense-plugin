@@ -112,8 +112,8 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<fielddescr>opendns_v4</fielddescr>
 			<fieldname>opendns_v4</fieldname>
+			<fielddescr>IPv4 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
 				opendns_v4
@@ -124,8 +124,8 @@
 			<default_value>208.67.222.123, 208.67.220.123</default_value>			
 		</field>		
 		<field>
-			<fielddescr>opendns_v6</fielddescr>
 			<fieldname>opendns_v6</fieldname>
+			<fielddescr>IPv6 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
 				opendns_v6
@@ -158,8 +158,8 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<fielddescr>googledns_v4</fielddescr>
 			<fieldname>googledns_v4</fieldname>
+			<fielddescr>IPv4 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
 				googledns_v4
@@ -170,8 +170,8 @@
 			<default_value>8.8.8.8, 8.8.4.4</default_value>			
 		</field>		
 		<field>
-			<fielddescr>googledns_v6</fielddescr>
 			<fieldname>googledns_v6</fieldname>
+			<fielddescr>IPv6 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
 				googledns_v6
@@ -204,8 +204,8 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<fielddescr>customdns1_v4</fielddescr>
 			<fieldname>customdns1_v4</fieldname>
+			<fielddescr>IPv4 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
 				customdns1_v4
@@ -216,8 +216,8 @@
 			<default_value></default_value>			
 		</field>		
 		<field>
-			<fielddescr>customdns1_v6</fielddescr>
 			<fieldname>customdns1_v6</fieldname>
+			<fielddescr>IPv6 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
 				customdns1_v6
@@ -250,8 +250,8 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<fielddescr>customdns2_v4</fielddescr>
 			<fieldname>customdns2_v4</fieldname>
+			<fielddescr>IPv4 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
 				customdns2_v4
@@ -262,8 +262,8 @@
 			<default_value></default_value>			
 		</field>		
 		<field>
-			<fielddescr>customdns2_v6</fielddescr>
 			<fieldname>customdns2_v6</fieldname>
+			<fielddescr>IPv6 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
 				customdns2_v6
