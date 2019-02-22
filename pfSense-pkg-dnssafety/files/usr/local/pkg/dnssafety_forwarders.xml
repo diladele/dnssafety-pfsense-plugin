@@ -60,11 +60,11 @@
 			<name>Settings</name>
 		</field>
 		<field>
-			<fielddescr>lookup_etc_resolv_conf</fielddescr>
+			<fielddescr>Upstream DNS</fielddescr>
 			<fieldname>lookup_etc_resolv_conf</fieldname>
 			<description>
 				<![CDATA[
-				lookup_etc_resolv_conf
+				Retrieve upstream DNS settings from /etc/resolve.conf automatically.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
