@@ -56,12 +56,16 @@
 	</tabs>
 	<adddeleteeditpagefields>
 		<columnitem>
-			<fielddescr>View</fielddescr>
+			<fielddescr>Policy Name</fielddescr>
 			<fieldname>name</fieldname>
 		</columnitem>
 		<columnitem>
-			<fielddescr>Description</fielddescr>
-			<fieldname>description</fieldname>
+			<fielddescr>Enabled</fielddescr>
+			<fieldname>enable</fieldname>
+		</columnitem>
+		<columnitem>
+			<fielddescr>Policy Description</fielddescr>
+			<fieldname>comment</fieldname>
 		</columnitem>
 		<movable>on</movable>
 	</adddeleteeditpagefields>
