@@ -193,8 +193,8 @@
 			<fieldname>member_ipv6addrs</fieldname>
 			<description>List of IPv6 addresses, one address per line.</description>
 			<type>textarea</type>
-			<cols>65</cols>
-			<rows>8</rows>
+			<cols>80</cols>
+			<rows>4</rows>
 			<encoding>base64</encoding>
 		</field>
 		<field>
