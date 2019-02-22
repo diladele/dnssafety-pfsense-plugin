@@ -53,46 +53,42 @@
 	<fields>
 		<field>
 			<type>listtopic</type>
-			<name>Forwarder Configuration</name>
+			<name>DNS Cache</name>
 		</field>
 		<field>
-			<fielddescr>Enable Forwarding</fielddescr>
-			<fieldname>dnssafety_forwarder</fieldname>
-			<description>Enable forwarding queries to other DNS servers listed below rather than this server performing its own recursion.</description>
+			<fielddescr>Enable</fielddescr>
+			<fieldname>cache_enable</fieldname>
+			<description>
+				<![CDATA[
+				Enable caching of DNS responses. Default and recommended value is <strong>Enabled</strong>.
+				]]></description>
 			<type>checkbox</type>
 			<enablefields>dnssafety_forwarder_ips</enablefields>
 		</field>
-	</fields>
-	<adddeleteeditpagefields>
-		<columnitem>
-			<fielddescr>Status</fielddescr>
-			<fieldname>disabled</fieldname>
-			<listmodeon>Disabled</listmodeon>
-			<listmodeoff>Enabled</listmodeoff>
-		</columnitem>
-		<columnitem>
-			<fielddescr>Name</fielddescr>
-			<fieldname>name</fieldname>
-		</columnitem>
-		<columnitem>
-			<fielddescr>Type</fielddescr>
-			<fieldname>type</fieldname>
-		</columnitem>
-		<columnitem>
-			<fielddescr>View(s)</fielddescr>
-			<fieldname>view</fieldname>
-		</columnitem>
-		<columnitem>
-			<fielddescr>Serial</fielddescr>
-			<fieldname>serial</fieldname>
-		</columnitem>
-		<columnitem>
-			<fielddescr>Description</fielddescr>
-			<fieldname>description</fieldname>
-		</columnitem>
-		<movable>on</movable>
-	</adddeleteeditpagefields>
-	<fields>
+		<field>
+			<fielddescr>Positive TTL</fielddescr>
+			<fieldname>positive-ttl</fieldname>
+			<description>
+				<![CDATA[
+				Successful DNS responses will be cached for the indicated number of seconds. Default value is 3600 seconds.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>3600</default_value>			
+		</field>		
+		<field>
+			<fielddescr>Negative TTL</fielddescr>
+			<fieldname>negative-ttl</fieldname>
+			<description>
+				<![CDATA[
+				Failed DNS responses will be cached for the indicated number of seconds. Default value is 300 seconds.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>300</default_value>			
+		</field>		
 		<field>
 			<type>listtopic</type>
 			<name>Domain Zone Configuration</name>
