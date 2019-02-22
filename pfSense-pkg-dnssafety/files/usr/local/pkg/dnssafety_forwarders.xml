@@ -116,7 +116,7 @@
 			<fielddescr>IPv4 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
-				opendns_v4
+				List of upstream DNS servers for IPv4. Separate multiple paths by comma (,) without spaces.
 				]]>
 			</description>
 			<type>input</type>
@@ -128,7 +128,7 @@
 			<fielddescr>IPv6 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
-				opendns_v6
+				List of upstream DNS servers for IPv6. Separate multiple paths by comma (,) without spaces.
 				]]>
 			</description>
 			<type>input</type>
@@ -162,7 +162,7 @@
 			<fielddescr>IPv4 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
-				googledns_v4
+				List of upstream DNS servers for IPv4. Separate multiple paths by comma (,) without spaces.
 				]]>
 			</description>
 			<type>input</type>
@@ -174,7 +174,7 @@
 			<fielddescr>IPv6 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
-				googledns_v6
+				List of upstream DNS servers for IPv6. Separate multiple paths by comma (,) without spaces.
 				]]>
 			</description>
 			<type>input</type>
@@ -208,7 +208,7 @@
 			<fielddescr>IPv4 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
-				customdns1_v4
+				List of upstream DNS servers for IPv4. Separate multiple paths by comma (,) without spaces.
 				]]>
 			</description>
 			<type>input</type>
@@ -220,7 +220,7 @@
 			<fielddescr>IPv6 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
-				customdns1_v6
+				List of upstream DNS servers for IPv6. Separate multiple paths by comma (,) without spaces.
 				]]>
 			</description>
 			<type>input</type>
@@ -254,7 +254,7 @@
 			<fielddescr>IPv4 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
-				customdns2_v4
+				List of upstream DNS servers for IPv4. Separate multiple paths by comma (,) without spaces.
 				]]>
 			</description>
 			<type>input</type>
@@ -266,7 +266,7 @@
 			<fielddescr>IPv6 DNS Servers</fielddescr>
 			<description>
 				<![CDATA[
-				customdns2_v6
+				List of upstream DNS servers for IPv6. Separate multiple paths by comma (,) without spaces.
 				]]>
 			</description>
 			<type>input</type>
