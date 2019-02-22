@@ -62,8 +62,7 @@
 				<![CDATA[
 				Enable caching of DNS responses. Default and recommended value is <strong>Enabled</strong>.
 				]]></description>
-			<type>checkbox</type>
-			<enablefields>dnssafety_forwarder_ips</enablefields>
+			<type>checkbox</type>			
 		</field>
 		<field>
 			<fielddescr>Positive TTL</fielddescr>
