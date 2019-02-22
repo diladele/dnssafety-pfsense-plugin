@@ -222,7 +222,7 @@ function dnssafety_conf_generate_forwarders($conf){
         $opendns["ipv6"] = array_map('trim', $opendns["ipv6"]);
 
         # and encoude
-        $opendns = json_encode($opendns);
+        $opendns = json_encode($opendns, JSON_PRETTY_PRINT);
     };
 
 
