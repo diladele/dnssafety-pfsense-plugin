@@ -5,7 +5,7 @@
 	<copyright>
 <![CDATA[
 /*
- * dnssafety_cache.xml
+ * dnssafety_forwarders.xml
  *
  * Copyright (c) 2019 Diladele B.V.
  * All rights reserved.
@@ -24,7 +24,7 @@
  */
 	]]>
 	</copyright>
-	<name>dnssafety_cache</name>
+	<name>dnssafety_forwarders</name>
 	<title>DNS Safety</title>
 	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
 	<tabs>
@@ -35,11 +35,11 @@
 		<tab>
 			<text>Forwarders</text>
 			<url>/pkg_edit.php?xml=dnssafety_forwarders.xml</url>			
+			<active/>
 		</tab>
 		<tab>
 			<text>Cache</text>
-			<url>/pkg_edit.php?xml=dnssafety_cache.xml</url>
-			<active/>
+			<url>/pkg_edit.php?xml=dnssafety_cache.xml</url>			
 		</tab>
 		<tab>
 			<text>Filtering Policies</text>

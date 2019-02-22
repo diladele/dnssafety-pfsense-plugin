@@ -1,7 +1,7 @@
 pkg/dnssafety.inc
 pkg/dnssafety.xml
 pkg/dnssafety_filter.xml
-pkg/dnssafety_forwarder.xml
+pkg/dnssafety_forwarders.xml
 pkg/dnssafety_cache.xml
 pkg/dnssafety_sync.xml
 pkg/pkg_dnssafety.inc
