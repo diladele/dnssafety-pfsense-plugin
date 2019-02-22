@@ -103,11 +103,11 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<fielddescr>opendns_forward_fqdn_only</fielddescr>
 			<fieldname>opendns_forward_fqdn_only</fieldname>
+			<fielddescr>Forward FQDN</fielddescr>
 			<description>
 				<![CDATA[
-				opendns_forward_fqdn_only
+				Only forward requests for fully qualified domains. Recommended. If set, only names like <strong>www.example.com</strong> are forwarded to the upstream server. Names like <strong>example</strong> are not forwarded.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
@@ -140,8 +140,8 @@
 			<name>Google Public DNS</name>
 		</field>
 		<field>
-			<fielddescr>googledns_enable</fielddescr>
 			<fieldname>googledns_enable</fieldname>
+			<fielddescr>Enable</fielddescr>
 			<description>
 				<![CDATA[
 				googledns_enable
@@ -186,8 +186,8 @@
 			<name>Custom DNS 1</name>
 		</field>
 		<field>
-			<fielddescr>customdns1_enable</fielddescr>
 			<fieldname>customdns1_enable</fieldname>
+			<fielddescr>Enable</fielddescr>
 			<description>
 				<![CDATA[
 				customdns1_enable
@@ -232,8 +232,8 @@
 			<name>Custom DNS 2</name>
 		</field>
 		<field>
-			<fielddescr>customdns2_enable</fielddescr>
 			<fieldname>customdns2_enable</fieldname>
+			<fielddescr>Enable</fielddescr>
 			<description>
 				<![CDATA[
 				customdns2_enable
