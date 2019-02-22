@@ -254,37 +254,104 @@ function dnssafety_conf_generate_forwarders($conf){
         $google = json_encode($google, JSON_PRETTY_PRINT);
     };
 
+    # fill custom1
+    $custom1 = array();
+    if (true) {
 
+        # assign enable
+        $custom1["enable"] = false;
+        if ($conf['customdns1_enable'] == "on") {
+            $custom1["enable"] = true;
+        }
+
+        # assign forward fqdn only
+        $custom1["forward-fqdn-only"] = false;
+        if ($conf['customdns1_forward_fqdn_only'] == "on") {
+            $custom1["forward-fqdn-only"] = true;
+        }
+
+        # assign ipv4
+        $custom1["ipv4"] = explode(",", $conf['customdns1_v4']);
+        $custom1["ipv4"] = array_map('trim', $custom1["ipv4"]);
+
+        # assign ipv6
+        $custom1["ipv6"] = explode(",", $conf['customdns1_v6']);
+        $custom1["ipv6"] = array_map('trim', $custom1["ipv6"]);
+
+        # and encoude
+        $custom1 = json_encode($custom1, JSON_PRETTY_PRINT);
+    };
+
+    # fill custom2
+    $custom2 = array();
+    if (true) {
+
+        # assign enable
+        $custom2["enable"] = false;
+        if ($conf['customdns2_enable'] == "on") {
+            $custom2["enable"] = true;
+        }
+
+        # assign forward fqdn only
+        $custom2["forward-fqdn-only"] = false;
+        if ($conf['customdns2_forward_fqdn_only'] == "on") {
+            $custom2["forward-fqdn-only"] = true;
+        }
+
+        # assign ipv4
+        $custom2["ipv4"] = explode(",", $conf['customdns2_v4']);
+        $custom2["ipv4"] = array_map('trim', $custom2["ipv4"]);
+
+        # assign ipv6
+        $custom2["ipv6"] = explode(",", $conf['customdns2_v6']);
+        $custom2["ipv6"] = array_map('trim', $custom2["ipv6"]);
+
+        # and encoude
+        $custom2 = json_encode($custom2, JSON_PRETTY_PRINT);
+    };
+
+    # generate settings
+    $settings = array();
+    if (true) {
+
+        # assign lookup
+        $settings["lookup_etc_resolv_conf"] = false;
+        if ($conf['lookup_etc_resolv_conf'] == "on") {
+            $settings["lookup_etc_resolv_conf"] = true;
+        }
+
+        # and encode
+        $settings = json_encode($settings, JSON_PRETTY_PRINT);
+    }
+
+    # generate etc hosts
+    $hosts = array();
+    if (true) {
+
+        # assign lookup
+        $hosts["enable"] = false;
+        if ($conf['etc_hosts_enable'] == "on") {
+            $hosts["enable"] = true;
+        }
+
+        # assign path to hosts
+        $hosts["hosts"] = explode(",", $conf['hosts']);
+        $hosts["hosts"] = array_map('trim', $hosts["hosts"]);
+
+        # and encode
+        $hosts = json_encode($hosts, JSON_PRETTY_PRINT);
+    }
 
     # generate data
     $data = "{
+        \"settings\" : $settings,
+        \"etc-hosts\" : $hosts,
         \"opendns-family-shield\" : $opendns,
-        \"google-public-dns\" : $google
+        \"google-public-dns\" : $google,
+        \"custom1\" : $custom1,
+        \"custom1\" : $custom2
     }";
-
-/*
-     "settings" : {
-            "lookup_etc_resolv_conf" : true
-        },
-        "etc-hosts" : {
-            "enable" : true,
-            "hosts"  : ["/etc/hosts"]
-        },
-        "custom1" : {
-            "enable"  : false,
-            "forward-fqdn-only" : false,
-            "ipv4"    : [],
-            "ipv6"    : [],
-            "comment" : "First custom DNS server"
-        },
-        "custom2" : {
-            "enable" : false,
-            "forward-fqdn-only" : false,
-            "ipv4" : [],
-            "ipv6" : [],
-            "comment" : "Second custom DNS server"
-        }*/
-
+    
     # and return it
     return $data;
 }
