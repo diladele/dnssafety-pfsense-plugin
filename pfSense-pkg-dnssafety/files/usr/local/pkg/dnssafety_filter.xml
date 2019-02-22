@@ -88,10 +88,53 @@
 			<fieldname>enable</fieldname>
 			<description>
 				<![CDATA[
-				Enable policy. If disabled the policy only stored in the pfSense UI and is not activated in the DNS Safety daemon.
+				Enable policy. If disabled the policy is only stored in the pfSense UI and is not activated in the DNS Safety daemon.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Filtering Rules</name>
+			<fieldname>temp</fieldname>
+		</field>
+		<field>
+			<fielddescr>Custom Options</fielddescr>
+			<fieldname>bind_custom_options</fieldname>
+			<description>You can put your own custom options here, separated by semi-colons (;).</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Exclusions</name>
+			<fieldname>temp</fieldname>
+		</field>
+		<field>
+			<fielddescr>Custom Options</fielddescr>
+			<fieldname>bind_custom_options</fieldname>
+			<description>You can put your own custom options here, separated by semi-colons (;).</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Members</name>
+			<fieldname>temp</fieldname>
+		</field>
+		<field>
+			<fielddescr>Custom Options</fielddescr>
+			<fieldname>bind_custom_options</fieldname>
+			<description>You can put your own custom options here, separated by semi-colons (;).</description>
+			<type>textarea</type>
+			<cols>65</cols>
+			<rows>8</rows>
+			<encoding>base64</encoding>
+		</field>
+
 		<field>
 			<fielddescr>Recursion</fielddescr>
 			<fieldname>recursion</fieldname>
