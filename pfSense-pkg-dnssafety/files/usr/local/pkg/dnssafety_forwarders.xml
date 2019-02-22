@@ -57,54 +57,226 @@
 	<fields>
 		<field>
 			<type>listtopic</type>
-			<name>DNS Cache</name>
+			<name>Settings</name>
 		</field>
 		<field>
-			<fielddescr>Enable</fielddescr>
-			<fieldname>enable</fieldname>
+			<fielddescr>lookup_etc_resolv_conf</fielddescr>
+			<fieldname>lookup_etc_resolv_conf</fieldname>
 			<description>
 				<![CDATA[
-				Enable caching of DNS responses. It is recommended to set the value to enabled.
+				lookup_etc_resolv_conf
 				]]></description>
 			<type>checkbox</type>			
-		</field>
-		<field>
-			<fielddescr>Positive TTL</fielddescr>
-			<fieldname>positive-ttl</fieldname>
-			<description>
-				<![CDATA[
-				Successful DNS responses will be cached for the indicated number of seconds. Default value is 3600 seconds.
-				]]>
-			</description>
-			<type>input</type>
-			<size>5</size>
-			<default_value>3600</default_value>			
-		</field>		
-		<field>
-			<fielddescr>Negative TTL</fielddescr>
-			<fieldname>negative-ttl</fieldname>
-			<description>
-				<![CDATA[
-				Failed DNS responses will be cached for the indicated number of seconds. Default value is 300 seconds.
-				]]>
-			</description>
-			<type>input</type>
-			<size>5</size>
-			<default_value>300</default_value>			
 		</field>
 		<field>
 			<type>listtopic</type>
-			<name>History / Access Log</name>
+			<name>Hosts</name>
 		</field>
 		<field>
-			<fielddescr>Enable</fielddescr>
-			<fieldname>enable_history</fieldname>
+			<fielddescr>etc_hosts_enable</fielddescr>
+			<fieldname>etc_hosts_enable</fieldname>
 			<description>
 				<![CDATA[
-				Enable history of DNS requests and responses. Entries are written to /opt/dnssafety/var/log/access.log.
+				etc_hosts_enable
 				]]></description>
 			<type>checkbox</type>			
-		</field>				
+		</field>
+		<field>
+			<fielddescr>hosts</fielddescr>
+			<fieldname>hosts</fieldname>
+			<description>
+				<![CDATA[
+				hosts
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>/etc/hosts</default_value>			
+		</field>		
+		<field>
+			<type>listtopic</type>
+			<name>OpenDNS Family Shield</name>
+		</field>
+		<field>
+			<fielddescr>opendns_enable</fielddescr>
+			<fieldname>opendns_enable</fieldname>
+			<description>
+				<![CDATA[
+				opendns_enable
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>opendns_forward_fqdn_only</fielddescr>
+			<fieldname>opendns_forward_fqdn_only</fieldname>
+			<description>
+				<![CDATA[
+				opendns_forward_fqdn_only
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>opendns_v4</fielddescr>
+			<fieldname>opendns_v4</fieldname>
+			<description>
+				<![CDATA[
+				opendns_v4
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>208.67.222.123, 208.67.220.123</default_value>			
+		</field>		
+		<field>
+			<fielddescr>opendns_v6</fielddescr>
+			<fieldname>opendns_v6</fieldname>
+			<description>
+				<![CDATA[
+				opendns_v6
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>		
+		<field>
+			<type>listtopic</type>
+			<name>Google Public DNS</name>
+		</field>
+		<field>
+			<fielddescr>googledns_enable</fielddescr>
+			<fieldname>googledns_enable</fieldname>
+			<description>
+				<![CDATA[
+				googledns_enable
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>googledns_forward_fqdn_only</fielddescr>
+			<fieldname>googledns_forward_fqdn_only</fieldname>
+			<description>
+				<![CDATA[
+				googledns_forward_fqdn_only
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>googledns_v4</fielddescr>
+			<fieldname>googledns_v4</fieldname>
+			<description>
+				<![CDATA[
+				googledns_v4
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>8.8.8.8, 8.8.4.4</default_value>			
+		</field>		
+		<field>
+			<fielddescr>googledns_v6</fielddescr>
+			<fieldname>googledns_v6</fieldname>
+			<description>
+				<![CDATA[
+				googledns_v6
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>2001:4860:4860::8888, 2001:4860:4860::8844</default_value>			
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Custom DNS 1</name>
+		</field>
+		<field>
+			<fielddescr>customdns1_enable</fielddescr>
+			<fieldname>customdns1_enable</fieldname>
+			<description>
+				<![CDATA[
+				customdns1_enable
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>customdns1_forward_fqdn_only</fielddescr>
+			<fieldname>customdns1_forward_fqdn_only</fieldname>
+			<description>
+				<![CDATA[
+				customdns1_forward_fqdn_only
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>customdns1_v4</fielddescr>
+			<fieldname>customdns1_v4</fieldname>
+			<description>
+				<![CDATA[
+				customdns1_v4
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>		
+		<field>
+			<fielddescr>customdns1_v6</fielddescr>
+			<fieldname>customdns1_v6</fieldname>
+			<description>
+				<![CDATA[
+				customdns1_v6
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Custom DNS 2</name>
+		</field>
+		<field>
+			<fielddescr>customdns2_enable</fielddescr>
+			<fieldname>customdns2_enable</fieldname>
+			<description>
+				<![CDATA[
+				customdns2_enable
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>customdns2_forward_fqdn_only</fielddescr>
+			<fieldname>customdns2_forward_fqdn_only</fieldname>
+			<description>
+				<![CDATA[
+				customdns2_forward_fqdn_only
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>customdns2_v4</fielddescr>
+			<fieldname>customdns2_v4</fieldname>
+			<description>
+				<![CDATA[
+				customdns2_v4
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>		
+		<field>
+			<fielddescr>customdns2_v6</fielddescr>
+			<fieldname>customdns2_v6</fieldname>
+			<description>
+				<![CDATA[
+				customdns2_v6
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>
 	</fields>
 	<custom_php_resync_config_command>
 		dnssafety_sync();
