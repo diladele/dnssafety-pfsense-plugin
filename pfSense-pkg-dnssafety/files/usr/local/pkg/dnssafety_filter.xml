@@ -56,12 +56,12 @@
 	</tabs>
 	<adddeleteeditpagefields>
 		<columnitem>
-			<fielddescr>Policy Name</fielddescr>
-			<fieldname>name</fieldname>
-		</columnitem>
-		<columnitem>
 			<fielddescr>Enabled</fielddescr>
 			<fieldname>enable</fieldname>
+		</columnitem>
+		<columnitem>
+			<fielddescr>Policy Name</fielddescr>
+			<fieldname>name</fieldname>
 		</columnitem>
 		<columnitem>
 			<fielddescr>Policy Description</fielddescr>
@@ -71,17 +71,26 @@
 	</adddeleteeditpagefields>
 	<fields>
 		<field>
-			<fielddescr>View Name</fielddescr>
+			<fielddescr>Policy Name</fielddescr>
 			<fieldname>name</fieldname>
-			<description>Enter the name of the View.</description>
+			<description>Enter the name of the policy.</description>
 			<type>input</type>
 			<required/>
 		</field>
 		<field>
 			<fielddescr>Description</fielddescr>
-			<fieldname>description</fieldname>
-			<description>Enter a description of the View.</description>
+			<fieldname>comment</fieldname>
+			<description>Enter a description of the policy.</description>
 			<type>input</type>
+		</field>
+		<field>
+			<fielddescr>Enable</fielddescr>
+			<fieldname>enable</fieldname>
+			<description>
+				<![CDATA[
+				Enable policy. If disabled the policy only stored in the pfSense UI and is not activated in the DNS Safety daemon.
+				]]></description>
+			<type>checkbox</type>			
 		</field>
 		<field>
 			<fielddescr>Recursion</fielddescr>
