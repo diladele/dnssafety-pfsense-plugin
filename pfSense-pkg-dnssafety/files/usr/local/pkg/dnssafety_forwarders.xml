@@ -57,11 +57,11 @@
 	<fields>
 		<field>
 			<type>listtopic</type>
-			<name>Settings</name>
+			<name>Upstream</name>
 		</field>
 		<field>
-			<fielddescr>Upstream DNS</fielddescr>
 			<fieldname>lookup_etc_resolv_conf</fieldname>
+			<fielddescr>Upstream DNS</fielddescr>
 			<description>
 				<![CDATA[
 				Retrieve upstream DNS settings from /etc/resolve.conf automatically.
@@ -69,15 +69,11 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<type>listtopic</type>
-			<name>Hosts</name>
-		</field>
-		<field>
-			<fielddescr>etc_hosts_enable</fielddescr>
 			<fieldname>etc_hosts_enable</fieldname>
+			<fielddescr>Use Hosts File</fielddescr>
 			<description>
 				<![CDATA[
-				etc_hosts_enable
+				Respond with entries from /etc/hosts file.
 				]]></description>
 			<type>checkbox</type>			
 		</field>
