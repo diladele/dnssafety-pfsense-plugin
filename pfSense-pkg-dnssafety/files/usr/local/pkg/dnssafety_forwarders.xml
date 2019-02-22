@@ -78,8 +78,8 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
+			<fieldname>etc_hosts_path</fieldname>
 			<fielddescr>hosts</fielddescr>
-			<fieldname>hosts</fieldname>
 			<description>
 				<![CDATA[
 				hosts
@@ -87,7 +87,7 @@
 			</description>
 			<type>input</type>
 			<size>5</size>
-			<default_value>/etc/hosts</default_value>			
+			<default_value><![CDATA[/etc/hosts]]></default_value>			
 		</field>		
 		<field>
 			<type>listtopic</type>

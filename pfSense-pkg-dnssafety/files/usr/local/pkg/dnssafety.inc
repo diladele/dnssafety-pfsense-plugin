@@ -337,7 +337,7 @@ function dnssafety_conf_generate_forwarders($conf){
         var_dump($conf);
 
         # assign path to hosts
-        $hosts["hosts"] = explode(",", $conf['hosts']);
+        $hosts["hosts"] = explode(",", $conf['etc_hosts_path']);
         $hosts["hosts"] = array_map('trim', $hosts["hosts"]);
 
         # and encode
