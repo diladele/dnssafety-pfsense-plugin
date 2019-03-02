@@ -515,11 +515,14 @@ function dnssafety_conf_generate_policy_exclusions($conf) {
 
     $exclusions = array();
 
-    # <exclusions_domain_names>LmV4YW1wbGUuY29tDQphbm90aGVyLmV4YW1wbGUub3Jn</exclusions_domain_names>
-    # <exclusions_domain_regex></exclusions_domain_regex>
+    $names   = base64_decode($conf['exclusions_domain_names']);
+    $regexes = base64_decode($conf['exclusions_domain_regex']);
+
+    var_dump($names);
+    var_dump($regexes);
 
     $exclusions["dummy"] = "dummy";               
-    
+
     return $exclusions;
 }
 
