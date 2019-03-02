@@ -511,6 +511,55 @@ function dnssafety_conf_generate_arp($conf) {
 //
 //
 //
+function dnssafety_conf_generate_policy_exclusions($conf) {
+
+    $exclusions = array();
+
+    # <exclusions_domain_names>LmV4YW1wbGUuY29tDQphbm90aGVyLmV4YW1wbGUub3Jn</exclusions_domain_names>
+    # <exclusions_domain_regex></exclusions_domain_regex>
+
+    $exclusions["dummy"] = "dummy";               
+    
+    return $exclusions;
+}
+
+//
+//
+//
+function dnssafety_conf_generate_policy_members($conf) {
+
+    $members = array();
+
+    #<member_names></member_names>
+    #<member_macs>MDA6NTA6NTY6QzA6MDA6MDENCjAwOjUwOjU2OkMwOjAwOjAyDQowMDo1MDo1NjpDMDowMDowMw==</member_macs>
+    #<member_ipv4subnets></member_ipv4subnets>
+    #<member_ipv4ranges>MTkyLjE2OC4xLjEtMTkyLjE2OC4xLjEwMA0KMTkyLjE2OC4yLjEtMTkyLjE2OC4yLjEwMA==</member_ipv4ranges>
+    #<member_ipv4addrs></member_ipv4addrs>
+    #<member_ipv6subnets></member_ipv6subnets>
+    #<member_ipv6ranges></member_ipv6ranges>
+    #<member_ipv6addrs></member_ipv6addrs> 
+
+    $members["dummy"] = "dummy";               
+
+    return $members;
+}
+
+
+//
+//
+//
+function dnssafety_conf_generate_policy_rules($conf) {
+
+    $rules = array();
+
+    $rules["dummy"] = "dummy";
+
+    return $rules;
+}
+
+//
+//
+//
 function dnssafety_conf_generate_policy($conf) {
 
     # declare policy
@@ -540,26 +589,10 @@ function dnssafety_conf_generate_policy($conf) {
         $policy["enable"] = $enable;
 
     }
-    
 
-        
-/*
-    
-                <temp></temp>
-                <bind_custom_options></bind_custom_options>
-                <exclusions_domain_names>LmV4YW1wbGUuY29tDQphbm90aGVyLmV4YW1wbGUub3Jn</exclusions_domain_names>
-                <exclusions_domain_regex></exclusions_domain_regex>
-                <members></members>
-                <member_names></member_names>
-                <member_macs>MDA6NTA6NTY6QzA6MDA6MDENCjAwOjUwOjU2OkMwOjAwOjAyDQowMDo1MDo1NjpDMDowMDowMw==</member_macs>
-                <member_ipv4subnets></member_ipv4subnets>
-                <member_ipv4ranges>MTkyLjE2OC4xLjEtMTkyLjE2OC4xLjEwMA0KMTkyLjE2OC4yLjEtMTkyLjE2OC4yLjEwMA==</member_ipv4ranges>
-                <member_ipv4addrs></member_ipv4addrs>
-                <member_ipv6subnets></member_ipv6subnets>
-                <member_ipv6ranges></member_ipv6ranges>
-                <member_ipv6addrs></member_ipv6addrs>                
-                */
-
+    $policy["exclusions"] = dnssafety_conf_generate_policy_exclusions($conf);
+    $policy["members"]    = dnssafety_conf_generate_policy_members($conf);
+    $policy["rules"]      = dnssafety_conf_generate_policy_rules($conf);
     
     # and return the policy
     return $policy;
