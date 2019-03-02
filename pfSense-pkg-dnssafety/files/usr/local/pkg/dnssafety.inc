@@ -671,6 +671,11 @@ function dnssafety_conf_generate_policies($confs) {
 
     var_dump($data);
 
+    # note we have regex in data and json encoder turns \ into \\, we we will revert now
+    $data = str_replace("\\\\", "\\", $data);
+
+    var_dump($data);
+
     # and return it
     return $data;
 }
