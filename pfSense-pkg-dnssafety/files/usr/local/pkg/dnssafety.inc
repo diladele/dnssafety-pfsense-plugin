@@ -334,8 +334,6 @@ function dnssafety_conf_generate_forwarders($conf){
             $hosts["enable"] = true;
         }
 
-        var_dump($conf);
-
         # assign path to hosts
         $hosts["hosts"] = explode(",", $conf['etc_hosts_path']);
         $hosts["hosts"] = array_map('trim', $hosts["hosts"]);
@@ -575,8 +573,12 @@ function dnssafety_conf_generate_policies($confs) {
     # declare policies
     $policies = array();
 
+    #var_dump($confs);
+
     # loop over the configuration and fill in the policy
     foreach ($conf as $confs) {
+
+        var_dump($conf);
 
         # declare policy
         $policy = dnssafety_conf_generate_policy($conf);
@@ -710,8 +712,6 @@ function dnssafety_sync() {
     $conf1 = $config['installedpackages']['dnssafetycache']['config'][0];
     $conf2 = $config['installedpackages']['dnssafetyforwarders']['config'][0];
     $conf3 = $config['installedpackages']['dnssafetyfilter']['config'];
-
-    var_dump($conf3);
     
     # generate various configuration parts
     $network  = dnssafety_conf_generate_network($conf0);
