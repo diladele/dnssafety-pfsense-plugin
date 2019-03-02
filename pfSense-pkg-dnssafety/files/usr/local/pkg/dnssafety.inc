@@ -576,7 +576,12 @@ function dnssafety_conf_generate_policies($confs) {
     #var_dump($confs);
 
     # loop over the configuration and fill in the policy
-    foreach ($conf as $confs) {
+    // foreach ($conf as $confs) {
+
+    // 
+    for ($i = 0; $i < sizeof($confs); $i++) {
+        
+        $conf = $confs[$i];
 
         var_dump($conf);
 
