@@ -94,7 +94,7 @@
 		</field>
 		<field>
 			<type>listtopic</type>
-			<name>Filtering Rules</name>
+			<name>Filtering Rules / Block Sites by Category</name>
 			<fieldname>temp</fieldname>
 		</field>
 		<field>
@@ -179,12 +179,28 @@
 			</options>
 		</field>
 		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_blogs_personal</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category blogs_personal</name><value>allow</value></option>
+				<option><name>Block Category blogs_personal</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_business_services_industry</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category business_services_industry</name><value>allow</value></option>
+				<option><name>Block Category business_services_industry</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
 			<fielddescr>temp</fielddescr>
 			<fieldname>category_temp</fieldname>
 			<description>
 				<![CDATA[				
-                "blogs_personal",            
-                "business_services_industry",
                 "classifieds_auctions",
                 "content_delivery_networks",
                 "cracks_hacking_illegal",
@@ -236,6 +252,11 @@
 				<option><name>Block</name><value>block</value></option>
 				<option><name>Allow</name><value>allow</value></option>
 			</options>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Filtering Rules / Domain Black Listing</name>
+			<fieldname>temp</fieldname>
 		</field>
 		<field>
 			<fielddescr>Domain Name Blacklist</fielddescr>
