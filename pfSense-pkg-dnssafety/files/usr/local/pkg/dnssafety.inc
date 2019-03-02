@@ -710,6 +710,8 @@ function dnssafety_sync() {
     $conf1 = $config['installedpackages']['dnssafetycache']['config'][0];
     $conf2 = $config['installedpackages']['dnssafetyforwarders']['config'][0];
     $conf3 = $config['installedpackages']['dnssafetyfilter']['config'];
+
+    var_dump($conf3);
     
     # generate various configuration parts
     $network  = dnssafety_conf_generate_network($conf0);
