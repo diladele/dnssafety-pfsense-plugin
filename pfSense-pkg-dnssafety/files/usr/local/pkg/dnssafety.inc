@@ -557,7 +557,7 @@ function dnssafety_conf_generate_policy_exclusions($conf) {
 
             $regex = trim($line);
 
-            if (strlen($regex)) {
+            if (strlen($regex) == 0) {
                 continue;
             }
 
