@@ -116,12 +116,12 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
-			<fielddescr>Advertising</fielddescr>
+			<fielddescr></fielddescr>
 			<fieldname>category_advertising</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block</name><value>block</value></option>
-				<option><name>Allow</name><value>allow</value></option>
+				<option><name>Block Advertising</name><value>block</value></option>
+				<option><name>Allow Advertising</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
