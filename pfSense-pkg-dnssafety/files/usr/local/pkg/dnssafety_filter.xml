@@ -427,43 +427,246 @@
 			</options>
 		</field>
 		<field>
-			<fielddescr>temp</fielddescr>
-			<fieldname>category_temp</fieldname>
-			<description>
-				<![CDATA[				
-                "hate_discrimination_violence",
-                "health_medicine_fitness",
-                "jobs_employment_career",
-                "messaging_chat",            
-                "movies",
-                "music_radio",
-                "network_infrastructure",
-                "news_media",
-                "nudity_pornography",
-                "p2p_file_sharing",
-                "photo_sharing",            
-                "politics",
-                "portals",
-                "proxy_anonymizer",
-                "real_estate_home_interior",
-                "religious",            
-                "search_engines",            
-                "self_harm"            
-                "social_networking",
-                "software_technology_hardware",
-                "sports",
-                "television",
-                "travel",            
-                "user_tracking",
-                "video_sharing",
-                "weapons",
-                "webmail"
-				]]>
-			</description>
+			<fielddescr></fielddescr>
+			<fieldname>category_hate_discrimination_violence</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block</name><value>block</value></option>
-				<option><name>Allow</name><value>allow</value></option>
+				<option><name>Block Category hate_discrimination_violence</name><value>block</value></option>
+				<option><name>Allow Category hate_discrimination_violence</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_health_medicine_fitness</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category health_medicine_fitness</name><value>allow</value></option>
+				<option><name>Block Category health_medicine_fitness</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_jobs_employment_career</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category jobs_employment_career</name><value>allow</value></option>
+				<option><name>Block Category jobs_employment_career</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_messaging_chat</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category messaging_chat</name><value>allow</value></option>
+				<option><name>Block Category messaging_chat</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_movies</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category movies</name><value>allow</value></option>
+				<option><name>Block Category movies</name><value>block</value></option>
+			</options>
+		</field>		
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_music_radio</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category music_radio</name><value>allow</value></option>
+				<option><name>Block Category music_radio</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_network_infrastructure</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category network_infrastructure</name><value>allow</value></option>
+				<option><name>Block Category network_infrastructure</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_news_media</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category news_media</name><value>allow</value></option>
+				<option><name>Block Category news_media</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_nudity_pornography</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block Category nudity_pornography</name><value>block</value></option>
+				<option><name>Allow Category nudity_pornography</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_p2p_file_sharing</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category p2p_file_sharing</name><value>allow</value></option>
+				<option><name>Block Category p2p_file_sharing</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_photo_sharing</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category photo_sharing</name><value>allow</value></option>
+				<option><name>Block Category photo_sharing</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_politics</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category politics</name><value>allow</value></option>
+				<option><name>Block Category politics</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_portals</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category portals</name><value>allow</value></option>
+				<option><name>Block Category portals</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_proxy_anonymizer</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block Category proxy_anonymizer</name><value>block</value></option>
+				<option><name>Allow Category proxy_anonymizer</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_real_estate_home_interior</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category real_estate_home_interior</name><value>allow</value></option>
+				<option><name>Block Category real_estate_home_interior</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_religious</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category religious</name><value>allow</value></option>
+				<option><name>Block Category religious</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_search_engines</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category search_engines</name><value>allow</value></option>
+				<option><name>Block Category search_engines</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_self_harm</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block Category self_harm</name><value>block</value></option>
+				<option><name>Allow Category self_harm</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_social_networking</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category social_networking</name><value>allow</value></option>
+				<option><name>Block Category social_networking</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_software_technology_hardware</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category software_technology_hardware</name><value>allow</value></option>
+				<option><name>Block Category software_technology_hardware</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_sports</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category sports</name><value>allow</value></option>
+				<option><name>Block Category sports</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_television</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category television</name><value>allow</value></option>
+				<option><name>Block Category television</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_travel</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category travel</name><value>allow</value></option>
+				<option><name>Block Category travel</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_user_tracking</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category user_tracking</name><value>allow</value></option>
+				<option><name>Block Category user_tracking</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_video_sharing</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category video_sharing</name><value>allow</value></option>
+				<option><name>Block Category video_sharing</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_weapons</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category weapons</name><value>allow</value></option>
+				<option><name>Block Category weapons</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_webmail</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category webmail</name><value>allow</value></option>
+				<option><name>Block Category webmail</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
