@@ -346,19 +346,91 @@
 			</options>
 		</field>
 		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_expired_parked</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category expired_parked</name><value>allow</value></option>
+				<option><name>Block Category expired_parked</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_fashion_beauty_cosmetics</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category fashion_beauty_cosmetics</name><value>allow</value></option>
+				<option><name>Block Category fashion_beauty_cosmetics</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_file_storage</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category file_storage</name><value>allow</value></option>
+				<option><name>Block Category file_storage</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_food_dining_restaurants</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category food_dining_restaurants</name><value>allow</value></option>
+				<option><name>Block Category food_dining_restaurants</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_forums_message_boards</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category forums_message_boards</name><value>allow</value></option>
+				<option><name>Block Category forums_message_boards</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_gambling</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block Category gambling</name><value>block</value></option>
+				<option><name>Allow Category gambling</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_games</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category games</name><value>allow</value></option>
+				<option><name>Block Category games</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_generic_non_categorized</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category generic_non_categorized</name><value>allow</value></option>
+				<option><name>Block Category generic_non_categorized</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_government</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category government</name><value>allow</value></option>
+				<option><name>Block Category government</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
 			<fielddescr>temp</fielddescr>
 			<fieldname>category_temp</fieldname>
 			<description>
 				<![CDATA[				
-                "expired_parked",
-                "fashion_beauty_cosmetics",            
-                "file_storage",            
-                "food_dining_restaurants",
-                "forums_message_boards",
-                "gambling",
-                "games",            
-                "generic_non_categorized",
-                "government",
                 "hate_discrimination_violence",
                 "health_medicine_fitness",
                 "jobs_employment_career",
