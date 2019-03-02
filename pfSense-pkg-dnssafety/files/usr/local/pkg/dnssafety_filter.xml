@@ -94,6 +94,83 @@
 		</field>
 		<field>
 			<type>listtopic</type>
+			<name>Policy Members</name>
+			<fieldname>members</fieldname>
+		</field>
+		<field>
+			<fielddescr>Names</fielddescr>
+			<fieldname>member_names</fieldname>
+			<description>List of names, one name per line. For example, user1.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>MAC Addresses</fielddescr>
+			<fieldname>member_macs</fieldname>
+			<description>List of MAC addresses, one address per line. For example, 00:50:56:C0:00:01.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv4 Subnets</fielddescr>
+			<fieldname>member_ipv4subnets</fieldname>
+			<description>List of IPv4 subnets, one subnet per line. For example, 192.168.1.0/24.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv4 Ranges</fielddescr>
+			<fieldname>member_ipv4ranges</fieldname>
+			<description>List of IPv4 ranges, one range per line. For example, 192.168.1.1-192.168.1.100</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv4 Addresses</fielddescr>
+			<fieldname>member_ipv4addrs</fieldname>
+			<description>List of IPv4 addresses, one address per line. For example, 192.168.1.100.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv6 Subnets</fielddescr>
+			<fieldname>member_ipv6subnets</fieldname>
+			<description>List of IPv6 subnets, one subnet per line.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv6 Ranges</fielddescr>
+			<fieldname>member_ipv6ranges</fieldname>
+			<description>List of IPv6 ranges, one range per line.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv6 Addresses</fielddescr>
+			<fieldname>member_ipv6addrs</fieldname>
+			<description>List of IPv6 addresses, one address per line.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<type>listtopic</type>
 			<name>Filtering Rules / Block Sites by Category</name>
 			<fieldname>temp</fieldname>
 		</field>
@@ -278,7 +355,7 @@
 		</field>
 		<field>
 			<type>listtopic</type>
-			<name>Exclusions</name>
+			<name>Filtering Rules / Domain White Listing</name>
 			<fieldname>temp</fieldname>
 		</field>
 		<field>
@@ -298,84 +375,7 @@
 			<cols>80</cols>
 			<rows>4</rows>
 			<encoding>base64</encoding>
-		</field>		
-		<field>
-			<type>listtopic</type>
-			<name>Members</name>
-			<fieldname>members</fieldname>
-		</field>
-		<field>
-			<fielddescr>Names</fielddescr>
-			<fieldname>member_names</fieldname>
-			<description>List of names, one name per line. For example, user1.</description>
-			<type>textarea</type>
-			<cols>80</cols>
-			<rows>4</rows>
-			<encoding>base64</encoding>
-		</field>
-		<field>
-			<fielddescr>MAC Addresses</fielddescr>
-			<fieldname>member_macs</fieldname>
-			<description>List of MAC addresses, one address per line. For example, 00:50:56:C0:00:01.</description>
-			<type>textarea</type>
-			<cols>80</cols>
-			<rows>4</rows>
-			<encoding>base64</encoding>
-		</field>
-		<field>
-			<fielddescr>IPv4 Subnets</fielddescr>
-			<fieldname>member_ipv4subnets</fieldname>
-			<description>List of IPv4 subnets, one subnet per line. For example, 192.168.1.0/24.</description>
-			<type>textarea</type>
-			<cols>80</cols>
-			<rows>4</rows>
-			<encoding>base64</encoding>
-		</field>
-		<field>
-			<fielddescr>IPv4 Ranges</fielddescr>
-			<fieldname>member_ipv4ranges</fieldname>
-			<description>List of IPv4 ranges, one range per line. For example, 192.168.1.1-192.168.1.100</description>
-			<type>textarea</type>
-			<cols>80</cols>
-			<rows>4</rows>
-			<encoding>base64</encoding>
-		</field>
-		<field>
-			<fielddescr>IPv4 Addresses</fielddescr>
-			<fieldname>member_ipv4addrs</fieldname>
-			<description>List of IPv4 addresses, one address per line. For example, 192.168.1.100.</description>
-			<type>textarea</type>
-			<cols>80</cols>
-			<rows>4</rows>
-			<encoding>base64</encoding>
-		</field>
-		<field>
-			<fielddescr>IPv6 Subnets</fielddescr>
-			<fieldname>member_ipv6subnets</fieldname>
-			<description>List of IPv6 subnets, one subnet per line.</description>
-			<type>textarea</type>
-			<cols>80</cols>
-			<rows>4</rows>
-			<encoding>base64</encoding>
-		</field>
-		<field>
-			<fielddescr>IPv6 Ranges</fielddescr>
-			<fieldname>member_ipv6ranges</fieldname>
-			<description>List of IPv6 ranges, one range per line.</description>
-			<type>textarea</type>
-			<cols>80</cols>
-			<rows>4</rows>
-			<encoding>base64</encoding>
-		</field>
-		<field>
-			<fielddescr>IPv6 Addresses</fielddescr>
-			<fieldname>member_ipv6addrs</fieldname>
-			<description>List of IPv6 addresses, one address per line.</description>
-			<type>textarea</type>
-			<cols>80</cols>
-			<rows>4</rows>
-			<encoding>base64</encoding>
-		</field>
+		</field>				
 		<field>
 			<type>listtopic</type>
 			<name>Custom Views</name>
