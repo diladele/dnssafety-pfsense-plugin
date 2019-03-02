@@ -117,11 +117,28 @@
 		</field>
 		<field>
 			<fielddescr>Advertising</fielddescr>
-			<fieldname>category_advertising</fieldname>
+			<fieldname>category_advertising</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block</name><value>block</value></option>
+				<option><name>Allow</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr>Adult Themes / Sexuality</fielddescr>
+			<fieldname>category_adult_themes_sexuality</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block</name><value>block</value></option>
+				<option><name>Allow</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr>temp</fielddescr>
+			<fieldname>category_temp</fieldname>
 			<description>
-				<![CDATA[
-				"advertising",
-                "adult_themes_sexuality",
+				<![CDATA[				
+                "",
                 "alcohol_tobacco",
                 "anime_manga_webcomic",
                 "arts_society_culture",
