@@ -561,8 +561,6 @@ function dnssafety_conf_generate_policy_exclusions($conf) {
                 continue;
             }
 
-            var_dump($regex);
-
             # and save it
             array_push($regexes, $regex);
         }
@@ -645,6 +643,8 @@ function dnssafety_conf_generate_policy($conf) {
     $policy["exclusions"] = dnssafety_conf_generate_policy_exclusions($conf);
     $policy["members"]    = dnssafety_conf_generate_policy_members($conf);
     $policy["rules"]      = dnssafety_conf_generate_policy_rules($conf);
+
+    var_dump($policy);
     
     # and return the policy
     return $policy;
