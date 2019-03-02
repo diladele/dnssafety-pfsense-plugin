@@ -667,7 +667,7 @@ function dnssafety_conf_generate_policies($confs) {
     }
 
     # convert to string
-    $data = json_encode($policies, JSON_PRETTY_PRINT);
+    $data = json_encode($policies, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
     # and return it
     return $data;
