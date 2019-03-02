@@ -562,8 +562,7 @@ function dnssafety_conf_generate_policy($conf) {
                 <member_ipv6addrs></member_ipv6addrs>                
                 */
 
-    }
-
+    
     # and return the policy
     return $policy;
 }
