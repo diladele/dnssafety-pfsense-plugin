@@ -120,17 +120,26 @@
 			<fieldname>category_advertising</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Advertising</name><value>block</value></option>
-				<option><name>Allow Advertising</name><value>allow</value></option>
+				<option><name>Block Category Advertising</name><value>block</value></option>
+				<option><name>Allow Category Advertising</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
-			<fielddescr>Adult Themes / Sexuality</fielddescr>
+			<fielddescr></fielddescr>
 			<fieldname>category_adult_themes_sexuality</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block</name><value>block</value></option>
-				<option><name>Allow</name><value>allow</value></option>
+				<option><name>Block Category Adult Themes / Sexuality</name><value>block</value></option>
+				<option><name>Allow Category Adult Themes / Sexuality</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_alcohol_tobacco</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block Category Alcohol / Tobacco</name><value>block</value></option>
+				<option><name>Allow Category Alcohol / Tobacco</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -138,8 +147,6 @@
 			<fieldname>category_temp</fieldname>
 			<description>
 				<![CDATA[				
-                "",
-                "alcohol_tobacco",
                 "anime_manga_webcomic",
                 "arts_society_culture",
                 "automotive",
