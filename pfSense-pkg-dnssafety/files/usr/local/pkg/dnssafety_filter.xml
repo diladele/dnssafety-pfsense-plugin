@@ -134,15 +134,6 @@
 			<encoding>base64</encoding>
 		</field>
 		<field>
-			<fielddescr>Custom Options</fielddescr>
-			<fieldname>bind_custom_options</fieldname>
-			<description>You can put your own custom options here, separated by semi-colons (;).</description>
-			<type>textarea</type>
-			<cols>65</cols>
-			<rows>8</rows>
-			<encoding>base64</encoding>
-		</field>
-		<field>
 			<type>listtopic</type>
 			<name>Exclusions</name>
 			<fieldname>temp</fieldname>
