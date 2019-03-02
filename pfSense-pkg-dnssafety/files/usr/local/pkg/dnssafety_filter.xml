@@ -116,6 +116,72 @@
 			<type>checkbox</type>			
 		</field>
 		<field>
+			<fielddescr>Advertising</fielddescr>
+			<fieldname>category_advertising</fieldname>
+			<description>
+				<![CDATA[
+				"advertising",
+                "adult_themes_sexuality",
+                "alcohol_tobacco",
+                "anime_manga_webcomic",
+                "arts_society_culture",
+                "automotive",
+                "banking_insurance_finance",
+                "blogs_personal",            
+                "business_services_industry",
+                "classifieds_auctions",
+                "content_delivery_networks",
+                "cracks_hacking_illegal",
+                "dating",
+                "drugs",
+                "ecommerce_shopping",
+                "education_science_research",
+                "entertainment_humor_hobby",
+                "expired_parked",
+                "fashion_beauty_cosmetics",            
+                "file_storage",            
+                "food_dining_restaurants",
+                "forums_message_boards",
+                "gambling",
+                "games",            
+                "generic_non_categorized",
+                "government",
+                "hate_discrimination_violence",
+                "health_medicine_fitness",
+                "jobs_employment_career",
+                "messaging_chat",            
+                "movies",
+                "music_radio",
+                "network_infrastructure",
+                "news_media",
+                "nudity_pornography",
+                "p2p_file_sharing",
+                "photo_sharing",            
+                "politics",
+                "portals",
+                "proxy_anonymizer",
+                "real_estate_home_interior",
+                "religious",            
+                "search_engines",            
+                "self_harm"            
+                "social_networking",
+                "software_technology_hardware",
+                "sports",
+                "television",
+                "travel",            
+                "user_tracking",
+                "video_sharing",
+                "weapons",
+                "webmail"
+				]]>
+			</description>
+			<type>select</type>
+			<options>
+				<option><name>Block</name><value>block</value></option>
+				<option><name>Allow</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
 			<fielddescr>Domain Name Blacklist</fielddescr>
 			<fieldname>rules_blacklist_domain_names</fieldname>
 			<description>List of domain names that shall always be blocked in this filtering policy, one name per line. For example, example.com or .example.com. The first blocks exact domain name and the second blocks a domain name with all its sub-domains.</description>
