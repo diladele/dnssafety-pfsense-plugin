@@ -643,8 +643,6 @@ function dnssafety_conf_generate_policy($conf) {
     $policy["exclusions"] = dnssafety_conf_generate_policy_exclusions($conf);
     $policy["members"]    = dnssafety_conf_generate_policy_members($conf);
     $policy["rules"]      = dnssafety_conf_generate_policy_rules($conf);
-
-    var_dump($policy);
     
     # and return the policy
     return $policy;
@@ -670,6 +668,8 @@ function dnssafety_conf_generate_policies($confs) {
 
     # convert to string
     $data = json_encode($policies, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+
+    var_dump($data);
 
     # and return it
     return $data;
