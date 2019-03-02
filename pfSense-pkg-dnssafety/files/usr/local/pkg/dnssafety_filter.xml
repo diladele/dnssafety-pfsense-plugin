@@ -98,6 +98,42 @@
 			<fieldname>temp</fieldname>
 		</field>
 		<field>
+			<fielddescr>Enable</fielddescr>
+			<fieldname>rules_enable</fieldname>
+			<description>
+				<![CDATA[
+				Apply all filtering rules. If disabled, no filtering rules are applied and the policy in-fact acts as 'allow all' policy. Default value is 'Enable'.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>Categories</fielddescr>
+			<fieldname>rules_categories</fieldname>
+			<description>
+				<![CDATA[
+				Checkbox Control is Wrong. Need to use something like groups in User Manager in pfSense.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>Domain Name Blacklist</fielddescr>
+			<fieldname>rules_blacklist_domain_names</fieldname>
+			<description>List of domain names that shall always be blocked in this filtering policy, one name per line. For example, example.com or .example.com. The first blocks exact domain name and the second blocks a domain name with all its sub-domains.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>Domain Regex Blacklist</fielddescr>
+			<fieldname>rules_blacklist_domain_regex</fieldname>
+			<description>List of regular expression for domain names that shall always be blocked in this filtering policy, one regular expression per line. For example, regular expression .*\.example\.com blocks all sub-domains of example.com domain.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
 			<fielddescr>Custom Options</fielddescr>
 			<fieldname>bind_custom_options</fieldname>
 			<description>You can put your own custom options here, separated by semi-colons (;).</description>
