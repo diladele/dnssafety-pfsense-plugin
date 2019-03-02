@@ -515,14 +515,61 @@ function dnssafety_conf_generate_policy_exclusions($conf) {
 
     $exclusions = array();
 
-    $names   = base64_decode($conf['exclusions_domain_names']);
-    $regexes = base64_decode($conf['exclusions_domain_regex']);
+    # parse names
+    if (true) {
 
-    var_dump($names);
-    var_dump($regexes);
+        # declare names
+        $names = array();
 
-    $exclusions["dummy"] = "dummy";               
+        # read from config and split into array
+        $value = base64_decode($conf['exclusions_domain_names']);
+        $lines = explode("\n", $value);
 
+        # loop over each line
+        foreach ($lines as $line) {
+
+            $name = trim($line);
+
+            if (len($name) == 0 || $name == '') {
+                continue;
+            }
+
+            # and save it
+            array_push($names, $name);
+        }
+
+        # save now
+        $exclusions["domain_names"] = $names;
+    }
+
+    # parse regexes
+    if (true) {
+
+        # declare regexes
+        $regexes = array();
+
+        # read from config and split into array
+        $value = base64_decode($conf['exclusions_domain_regex']);
+        $lines = explode("\n", $value);
+
+        # loop over each line
+        foreach ($lines as $line) {
+
+            $regex = trim($line);
+
+            if (len($regex) == 0 || $regex == '') {
+                continue;
+            }
+
+            # and save it
+            array_push($regexes, $regex);
+        }
+
+        # save now
+        $exclusions["domain_regex"] = $regexes;
+    }
+
+    # and return nicely
     return $exclusions;
 }
 
