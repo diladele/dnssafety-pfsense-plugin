@@ -530,7 +530,7 @@ function dnssafety_conf_generate_policy_exclusions($conf) {
 
             $name = trim($line);
 
-            if (len($name) == 0 || $name == '') {
+            if (strlen($name) == 0) {
                 continue;
             }
 
@@ -557,7 +557,7 @@ function dnssafety_conf_generate_policy_exclusions($conf) {
 
             $regex = trim($line);
 
-            if (len($regex) == 0 || $regex == '') {
+            if (strlen($regex)) {
                 continue;
             }
 
