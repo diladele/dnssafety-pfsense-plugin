@@ -152,13 +152,37 @@
 			</options>
 		</field>
 		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_arts_society_culture</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category arts_society_culture</name><value>allow</value></option>
+				<option><name>Block Category arts_society_culture</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_automotive</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category automotive</name><value>allow</value></option>
+				<option><name>Block Category automotive</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_banking_insurance_finance</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category banking_insurance_finance</name><value>allow</value></option>
+				<option><name>Block Category banking_insurance_finance</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
 			<fielddescr>temp</fielddescr>
 			<fieldname>category_temp</fieldname>
 			<description>
 				<![CDATA[				
-                "arts_society_culture",
-                "automotive",
-                "banking_insurance_finance",
                 "blogs_personal",            
                 "business_services_industry",
                 "classifieds_auctions",
