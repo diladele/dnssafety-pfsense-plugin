@@ -573,27 +573,18 @@ function dnssafety_conf_generate_policies($confs) {
     # declare policies
     $policies = array();
 
-    #var_dump($confs);
-
     # loop over the configuration and fill in the policy
-    // foreach ($conf as $confs) {
-
-    // 
     for ($i = 0; $i < sizeof($confs); $i++) {
-        
-        $conf = $confs[$i];
 
-        var_dump($conf);
-
-        # declare policy
-        $policy = dnssafety_conf_generate_policy($conf);
+        # fill in a policy
+        $policy = dnssafety_conf_generate_policy($confs[$i]);
 
         # and append it
         array_push($policies, $policy);
     }
 
     # convert to string
-    $data = json_encode($policies);
+    $data = json_encode($policies, JSON_PRETTY_PRINT);
 
     # and return it
     return $data;
