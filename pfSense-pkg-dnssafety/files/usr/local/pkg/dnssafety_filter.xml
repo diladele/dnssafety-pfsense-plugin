@@ -143,11 +143,19 @@
 			</options>
 		</field>
 		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_anime_manga_webcomic</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category Anime / Manga / Web Comics</name><value>allow</value></option>
+				<option><name>Block Category Anime / Manga / Web Comics</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
 			<fielddescr>temp</fielddescr>
 			<fieldname>category_temp</fieldname>
 			<description>
 				<![CDATA[				
-                "anime_manga_webcomic",
                 "arts_society_culture",
                 "automotive",
                 "banking_insurance_finance",
