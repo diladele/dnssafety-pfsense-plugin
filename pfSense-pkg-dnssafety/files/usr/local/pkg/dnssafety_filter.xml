@@ -271,6 +271,6 @@
 		</field>
 	</fields>
 	<custom_php_resync_config_command>
-		bind_sync();
+		dnssafety_sync();
 	</custom_php_resync_config_command>
 </packagegui>

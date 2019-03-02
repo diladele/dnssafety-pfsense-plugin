@@ -513,6 +513,89 @@ function dnssafety_conf_generate_arp($conf) {
 //
 //
 //
+function dnssafety_conf_generate_policy($conf) {
+
+    # declare policy
+    $policy = array();
+
+    # set name and comment
+    if (true) {        
+        $policy["name"]    = strtolower(trim($conf['name']));
+        $policy["comment"] = strtolower(trim($conf['comment']));
+    }
+
+    # set enable
+    if (true) {
+
+        # assume not enabled
+        $enable = false;    
+        if ($conf['enable'] == "on") {
+            $enable = true;
+        }
+
+        # default policy is always enabled
+        if ( $policy["name"] == "default") {
+            $enable = true;
+        }
+
+        # save it
+        $policy["enable"] = $enable;
+
+    }
+    
+
+        
+/*
+    
+                <temp></temp>
+                <bind_custom_options></bind_custom_options>
+                <exclusions_domain_names>LmV4YW1wbGUuY29tDQphbm90aGVyLmV4YW1wbGUub3Jn</exclusions_domain_names>
+                <exclusions_domain_regex></exclusions_domain_regex>
+                <members></members>
+                <member_names></member_names>
+                <member_macs>MDA6NTA6NTY6QzA6MDA6MDENCjAwOjUwOjU2OkMwOjAwOjAyDQowMDo1MDo1NjpDMDowMDowMw==</member_macs>
+                <member_ipv4subnets></member_ipv4subnets>
+                <member_ipv4ranges>MTkyLjE2OC4xLjEtMTkyLjE2OC4xLjEwMA0KMTkyLjE2OC4yLjEtMTkyLjE2OC4yLjEwMA==</member_ipv4ranges>
+                <member_ipv4addrs></member_ipv4addrs>
+                <member_ipv6subnets></member_ipv6subnets>
+                <member_ipv6ranges></member_ipv6ranges>
+                <member_ipv6addrs></member_ipv6addrs>                
+                */
+
+    }
+
+    # and return the policy
+    return $policy;
+}
+
+//
+//
+//
+function dnssafety_conf_generate_policies($confs) {
+
+    # declare policies
+    $policies = array();
+
+    # loop over the configuration and fill in the policy
+    foreach ($conf as $confs) {
+
+        # declare policy
+        $policy = dnssafety_conf_generate_policy($conf);
+
+        # and append it
+        array_push($policies, $policy);
+    }
+
+    # convert to string
+    $data = json_encode($policies);
+
+    # and return it
+    return $data;
+}
+
+//
+//
+//
 function dnssafety_conf_generate_network($conf) {
 
     # set port
@@ -627,15 +710,17 @@ function dnssafety_sync() {
     $conf0 = $config['installedpackages']['dnssafety']['config'][0];
     $conf1 = $config['installedpackages']['dnssafetycache']['config'][0];
     $conf2 = $config['installedpackages']['dnssafetyforwarders']['config'][0];
+    $conf3 = $config['installedpackages']['dnssafetyfilter']['config'];
     
     # generate various configuration parts
-    $network = dnssafety_conf_generate_network($conf0);
-    $logging = dnssafety_conf_generate_logging($conf0);
-    $blocker = dnssafety_conf_generate_blocker($conf0);
-    $arp     = dnssafety_conf_generate_arp($conf0);
-    $cache   = dnssafety_conf_generate_cache($conf1);
-    $history = dnssafety_conf_generate_history($conf1);
-    $forward = dnssafety_conf_generate_forwarders($conf2);
+    $network  = dnssafety_conf_generate_network($conf0);
+    $logging  = dnssafety_conf_generate_logging($conf0);
+    $blocker  = dnssafety_conf_generate_blocker($conf0);
+    $arp      = dnssafety_conf_generate_arp($conf0);
+    $cache    = dnssafety_conf_generate_cache($conf1);
+    $history  = dnssafety_conf_generate_history($conf1);
+    $forward  = dnssafety_conf_generate_forwarders($conf2);
+    $policies = dnssafety_conf_generate_policies($conf3);
 
     # save them into JSON
     $data = "{
@@ -646,7 +731,7 @@ function dnssafety_sync() {
         \"forwarders\" : $forward,
         \"cache\"      : $cache,
         \"history\"    : $history,
-        \"policies\"   : \"TODO policies\",
+        \"policies\"   : $policies,
         \"settings\"   : \"TODO settings\"
     }";
 
