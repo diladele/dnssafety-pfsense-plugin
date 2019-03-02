@@ -509,65 +509,44 @@ function dnssafety_conf_generate_arp($conf) {
 }
 
 //
+// helper function
+//
+function dnssafety_conf_split_in_lines($encoded) {
+
+    # declare names
+    $items = array();
+
+    # read from config and split into array
+    $value = base64_decode($encoded);
+    $lines = explode("\n", $value);
+
+    # loop over each line
+    foreach ($lines as $line) {
+
+        $item = trim($line);
+
+        if (strlen($item) == 0) {
+            continue;
+        }
+
+        # save it
+        array_push($items, $item);
+    }
+
+    # and return nicely
+    return $items;
+}
+
+//
 //
 //
 function dnssafety_conf_generate_policy_exclusions($conf) {
 
     $exclusions = array();
 
-    # parse names
-    if (true) {
-
-        # declare names
-        $names = array();
-
-        # read from config and split into array
-        $value = base64_decode($conf['exclusions_domain_names']);
-        $lines = explode("\n", $value);
-
-        # loop over each line
-        foreach ($lines as $line) {
-
-            $name = trim($line);
-
-            if (strlen($name) == 0) {
-                continue;
-            }
-
-            # and save it
-            array_push($names, $name);
-        }
-
-        # save now
-        $exclusions["domain_names"] = $names;
-    }
-
-    # parse regexes
-    if (true) {
-
-        # declare regexes
-        $regexes = array();
-
-        # read from config and split into array
-        $value = base64_decode($conf['exclusions_domain_regex']);
-        $lines = explode("\n", $value);
-
-        # loop over each line
-        foreach ($lines as $line) {
-
-            $regex = trim($line);
-
-            if (strlen($regex) == 0) {
-                continue;
-            }
-
-            # and save it
-            array_push($regexes, $regex);
-        }
-
-        # save now
-        $exclusions["domain_regex"] = $regexes;
-    }
+    # parse and return
+    $exclusions["domain_names"] = dnssafety_conf_split_in_lines($conf['exclusions_domain_names']);
+    $exclusions["domain_regex"] = dnssafety_conf_split_in_lines($conf['exclusions_domain_regex']);
 
     # and return nicely
     return $exclusions;
@@ -578,19 +557,38 @@ function dnssafety_conf_generate_policy_exclusions($conf) {
 //
 function dnssafety_conf_generate_policy_members($conf) {
 
+    # fill ipv4
+    $ipv4 = array();
+
+    if(true) {
+
+        $ipv4["subnets"]   = dnssafety_conf_split_in_lines($conf['member_ipv4subnets']);
+        $ipv4["ranges"]    = dnssafety_conf_split_in_lines($conf['member_ipv4ranges']);
+        $ipv4["addresses"] = dnssafety_conf_split_in_lines($conf['member_ipv4addrs']);
+    }
+
+    # fill ipv6
+    $ipv6 = array();
+
+    if (true) {
+
+        $ipv6["subnets"]   = dnssafety_conf_split_in_lines($conf['member_ipv6subnets']);
+        $ipv6["ranges"]    = dnssafety_conf_split_in_lines($conf['member_ipv6ranges']);
+        $ipv6["addresses"] = dnssafety_conf_split_in_lines($conf['member_ipv6addrs']);
+    }
+
+    # fill members
     $members = array();
 
-    #<member_names></member_names>
-    #<member_macs>MDA6NTA6NTY6QzA6MDA6MDENCjAwOjUwOjU2OkMwOjAwOjAyDQowMDo1MDo1NjpDMDowMDowMw==</member_macs>
-    #<member_ipv4subnets></member_ipv4subnets>
-    #<member_ipv4ranges>MTkyLjE2OC4xLjEtMTkyLjE2OC4xLjEwMA0KMTkyLjE2OC4yLjEtMTkyLjE2OC4yLjEwMA==</member_ipv4ranges>
-    #<member_ipv4addrs></member_ipv4addrs>
-    #<member_ipv6subnets></member_ipv6subnets>
-    #<member_ipv6ranges></member_ipv6ranges>
-    #<member_ipv6addrs></member_ipv6addrs> 
+    if (true) {
 
-    $members["dummy"] = "dummy";               
+        $members["names"] = dnssafety_conf_split_in_lines($conf['member_names']);
+        $members["macs"]  = dnssafety_conf_split_in_lines($conf['member_macs']);
+        $members["ipv4"]  = $ipv4;
+        $members["ipv6"]  = $ipv6;
+    }
 
+    # and return nicely
     return $members;
 }
 
@@ -668,13 +666,6 @@ function dnssafety_conf_generate_policies($confs) {
 
     # convert to string
     $data = json_encode($policies, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-
-    var_dump($data);
-
-    # note we have regex in data and json encoder turns \ into \\, we we will revert now
-    $data = str_replace("\\\\", "\\", $data);
-
-    var_dump($data);
 
     # and return it
     return $data;
