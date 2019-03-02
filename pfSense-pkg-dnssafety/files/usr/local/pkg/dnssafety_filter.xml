@@ -274,18 +274,82 @@
 			</options>
 		</field>
 		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_classifieds_auctions</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category classifieds_auctions</name><value>allow</value></option>
+				<option><name>Block Category classifieds_auctions</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_content_delivery_networks</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category content_delivery_networks</name><value>allow</value></option>
+				<option><name>Block Category content_delivery_networks</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_cracks_hacking_illegal</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block Category cracks_hacking_illegal</name><value>block</value></option>
+				<option><name>Allow Category cracks_hacking_illegal</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_dating</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block Category dating</name><value>block</value></option>
+				<option><name>Allow Category dating</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_drugs</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block Category drugs</name><value>block</value></option>
+				<option><name>Allow Category drugs</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_ecommerce_shopping</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category ecommerce_shopping</name><value>allow</value></option>
+				<option><name>Block Category ecommerce_shopping</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_education_science_research</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category education_science_research</name><value>allow</value></option>
+				<option><name>Block Category education_science_research</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_entertainment_humor_hobby</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow Category entertainment_humor_hobby</name><value>allow</value></option>
+				<option><name>Block Category entertainment_humor_hobby</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
 			<fielddescr>temp</fielddescr>
 			<fieldname>category_temp</fieldname>
 			<description>
 				<![CDATA[				
-                "classifieds_auctions",
-                "content_delivery_networks",
-                "cracks_hacking_illegal",
-                "dating",
-                "drugs",
-                "ecommerce_shopping",
-                "education_science_research",
-                "entertainment_humor_hobby",
                 "expired_parked",
                 "fashion_beauty_cosmetics",            
                 "file_storage",            
