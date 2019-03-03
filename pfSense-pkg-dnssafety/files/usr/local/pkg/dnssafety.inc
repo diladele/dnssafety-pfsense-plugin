@@ -359,17 +359,20 @@ function dnssafety_conf_generate_forwarders($conf){
 //
 //
 //
+class RecategorizedDomains
+{
+}
+
 function dnssafety_conf_generate_settings($conf) {
 
     # declare settings
     $settings = array();
 
-    # TODO: not implemented for now
+    # declare the empty object
+    $domains = new RecategorizedDomains();
 
-
-    #"recategorized_domains" : {
-    #        "test.filter.global" : ["proxy_anonymizer"]
-    #    }
+    # save the empty object into settings
+    $settings["recategorized_domains"] = $domains
 
     # convert to string
     $data = json_encode($settings, JSON_PRETTY_PRINT);
