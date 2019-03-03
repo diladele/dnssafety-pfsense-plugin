@@ -921,14 +921,25 @@ function dnssafety_sync() {
         \"settings\"   : \"TODO settings\"
     }";
 
-    # write it into the system
-    $json_new = "/opt/dnssafety/etc/config.json.new";
+    # this is the path to configuration file
+    $json_conf = "/opt/dnssafety/etc/config.json";
+    $json_bak  = "/opt/dnssafety/etc/config.json.bak";
 
-    @file_put_contents($json_new, $data);
+    # backup current conf file
+    if (file_exists($json_conf)) {
+
+        # read old data
+        $contents = file_get_contents($json_conf);
+
+        # and write to bak file
+        @file_put_contents($json_bak, $contents);
+    }
+
+    # and write data into current conf
+    @file_put_contents($json_conf, $data);
 
     # 
-    // throw new Exception("OK check the generated config file $json_new!");
-
+    
     /*
 
 
