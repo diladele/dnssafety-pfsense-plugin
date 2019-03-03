@@ -372,7 +372,7 @@ function dnssafety_conf_generate_settings($conf) {
     $domains = new RecategorizedDomains();
 
     # save the empty object into settings
-    $settings["recategorized_domains"] = $domains
+    $settings["recategorized_domains"] = $domains;
 
     # convert to string
     $data = json_encode($settings, JSON_PRETTY_PRINT);
