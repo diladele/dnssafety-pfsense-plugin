@@ -1013,16 +1013,16 @@ EOD;
 
     # constants
     $dsdnsd_sh = "/usr/local/etc/rc.d/dsdnsd.sh";
-    $dsdnsd_rc = "dsdnsd"
+    $dsdnsd_rc = "dsdnsd";
 
     # save rc text
-    file_put_contents($dsdnsd_sh, $text);
+    @file_put_contents($dsdnsd_sh, $text);
 
     # make it runnable
     if ($enable == "yes" ) {
 
         # mark rc file as executable
-        chmod($dsdnsd_sh, 0755);
+        @chmod($dsdnsd_sh, 0755);
 
         # and start the service
         restart_service($dsdnsd_rc);
@@ -1030,7 +1030,7 @@ EOD;
     } else {
 
         # otherwise the rc file is not executable
-        chmod($dsdnsd_sh, 0644);
+        @chmod($dsdnsd_sh, 0644);
 
         # and service shall be stopped
         stop_service($dsdnsd_rc);    
