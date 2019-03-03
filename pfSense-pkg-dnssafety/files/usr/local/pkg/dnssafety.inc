@@ -349,7 +349,7 @@ function dnssafety_conf_generate_forwarders($conf){
         \"opendns-family-shield\" : $opendns,
         \"google-public-dns\" : $google,
         \"custom1\" : $custom1,
-        \"custom1\" : $custom2
+        \"custom2\" : $custom2
     }";
 
     # and return it
