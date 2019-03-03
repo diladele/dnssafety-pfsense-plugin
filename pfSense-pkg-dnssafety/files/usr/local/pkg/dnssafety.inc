@@ -1012,28 +1012,28 @@ EOD;
     conf_mount_rw();
 
     # constants
-    const dsdnsd_sh = "/usr/local/etc/rc.d/dsdnsd.sh";
-    const dsdnsd    = "dsdnsd"
+    $dsdnsd_sh = "/usr/local/etc/rc.d/dsdnsd.sh";
+    $dsdnsd_rc = "dsdnsd"
 
     # save rc text
-    @file_put_contents(dsdnsd_sh, $text);
+    @file_put_contents($dsdnsd_sh, $text);
 
     # make it runnable
     if ($enable == "yes" ) {
 
         # mark rc file as executable
-        @chmod(dsdnsd_sh, 0755);
+        @chmod($dsdnsd_sh, 0755);
 
         # and start the service
-        restart_service(dsdnsd);
+        restart_service($dsdnsd_rc);
 
     } else {
 
         # otherwise the rc file is not executable
-        @chmod(dsdnsd_sh, 0644);
+        @chmod($dsdnsd_sh, 0644);
 
         # and service shall be stopped
-        stop_service(dsdnsd);    
+        stop_service($dsdnsd_rc);    
     }
 
     # mount configuration read-only    
