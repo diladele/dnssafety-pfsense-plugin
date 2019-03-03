@@ -698,7 +698,7 @@ function dnssafety_conf_generate_policy_rules($conf) {
     $rules = array();
 
     # fill it in
-    $rules["enable"]     = dnssafety_conf_read_bool($conf['rules_enable']);
+    $rules["enable"]     = dnssafety_conf_read_bool($conf, 'rules_enable');
     $rules["categories"] = array( 
         "block_noncategorized_domains" => false, # for now not used
         "blocked_categories" => $blocked, 
