@@ -511,6 +511,23 @@ function dnssafety_conf_generate_arp($conf) {
 //
 // helper function
 //
+function dnssafety_conf_read_bool($conf, $name) {
+
+    # assume false
+    $value = false;    
+
+    # see if it is set to on
+    if ($conf[$name] == "on") {
+        $value = true;
+    }
+
+    # and return it
+    return $value;
+}
+
+//
+// helper function
+//      
 function dnssafety_conf_split_in_lines($encoded) {
 
     # declare names
@@ -598,10 +615,101 @@ function dnssafety_conf_generate_policy_members($conf) {
 //
 function dnssafety_conf_generate_policy_rules($conf) {
 
+    # array of all available categories
+    $categories = array(
+        "adult_themes_sexuality",
+        "advertising",
+        "alcohol_tobacco",
+        "anime_manga_webcomic",
+        "arts_society_culture",
+        "automotive",
+        "banking_insurance_finance",
+        "blogs_personal",            
+        "business_services_industry",
+        "classifieds_auctions",
+        "content_delivery_networks",
+        "cracks_hacking_illegal",
+        "dating",
+        "drugs",
+        "ecommerce_shopping",
+        "education_science_research",
+        "entertainment_humor_hobby",
+        "expired_parked",
+        "fashion_beauty_cosmetics",            
+        "file_storage",            
+        "food_dining_restaurants",
+        "forums_message_boards",
+        "gambling",
+        "games",            
+        "generic_non_categorized",
+        "government",
+        "hate_discrimination_violence",
+        "health_medicine_fitness",
+        "jobs_employment_career",
+        "messaging_chat",            
+        "movies",
+        "music_radio",
+        "network_infrastructure",
+        "news_media",
+        "nudity_pornography",
+        "p2p_file_sharing",
+        "photo_sharing",            
+        "politics",
+        "portals",
+        "proxy_anonymizer",
+        "real_estate_home_interior",
+        "religious",            
+        "search_engines",            
+        "self_harm",
+        "social_networking",
+        "software_technology_hardware",
+        "sports",
+        "television",
+        "travel",            
+        "user_tracking",
+        "video_sharing",
+        "weapons",
+        "webmail"
+    );
+
+    # these are arrays with blocked and allowed categories
+    $blocked = array();
+    $allowed = array();
+
+    # loop over all available categories
+    foreach($categories as $category) {
+
+        # read from config
+        $name  = "category_{$category}";
+        $block = false;    
+        if ($conf[$name] == "block") {
+            $block = true;
+        }
+
+        # and assign to appropriate array
+        if ($block) {
+            array_push($blocked, $category);
+        } else {
+            array_push($allowed, $category);
+        }
+    }
+
+    # cool now construct rules
     $rules = array();
 
-    $rules["dummy"] = "dummy";
+    # fill it in
+    $rules["enable"]     = dnssafety_conf_read_bool($conf['rules_enable']);
+    $rules["categories"] = array( 
+        "block_noncategorized_domains" => false, # for now not used
+        "blocked_categories" => $blocked, 
+        "allowed_categories" => $allowed
+    );
+    $rules["blacklist"] = array( 
+        "domain_names"  => dnssafety_conf_split_in_lines($conf['rules_blacklist_domain_names']), 
+        "domain_regex"  => dnssafety_conf_split_in_lines($conf['rules_blacklist_domain_regex'])
+    );
 
+    # nice return it
     return $rules;
 }
 
