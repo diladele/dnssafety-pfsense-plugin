@@ -197,8 +197,8 @@
 			<fieldname>category_advertising</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category Advertising</name><value>block</value></option>
-				<option><name>Allow Category Advertising</name><value>allow</value></option>
+				<option><name>Block category Advertising</name><value>block</value></option>
+				<option><name>Allow category Advertising</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -206,8 +206,8 @@
 			<fieldname>category_adult_themes_sexuality</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category Adult Themes / Sexuality</name><value>block</value></option>
-				<option><name>Allow Category Adult Themes / Sexuality</name><value>allow</value></option>
+				<option><name>Block category Adult Themes/Sexuality</name><value>block</value></option>
+				<option><name>Allow category Adult Themes/Sexuality</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -215,8 +215,8 @@
 			<fieldname>category_alcohol_tobacco</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category Alcohol / Tobacco</name><value>block</value></option>
-				<option><name>Allow Category Alcohol / Tobacco</name><value>allow</value></option>
+				<option><name>Block category Alcohol/Tobacco</name><value>block</value></option>
+				<option><name>Allow category Alcohol/Tobacco</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -224,8 +224,8 @@
 			<fieldname>category_anime_manga_webcomic</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category Anime / Manga / Web Comics</name><value>allow</value></option>
-				<option><name>Block Category Anime / Manga / Web Comics</name><value>block</value></option>
+				<option><name>Allow category Anime/Manga/Web Comics</name><value>allow</value></option>
+				<option><name>Block category Anime/Manga/Web Comics</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -233,8 +233,8 @@
 			<fieldname>category_arts_society_culture</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category arts_society_culture</name><value>allow</value></option>
-				<option><name>Block Category arts_society_culture</name><value>block</value></option>
+				<option><name>Allow category Arts/Society/Culture</name><value>allow</value></option>
+				<option><name>Block category Arts/Society/Culture</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -242,8 +242,8 @@
 			<fieldname>category_automotive</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category automotive</name><value>allow</value></option>
-				<option><name>Block Category automotive</name><value>block</value></option>
+				<option><name>Allow category Automotive</name><value>allow</value></option>
+				<option><name>Block category Automotive</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -251,8 +251,8 @@
 			<fieldname>category_banking_insurance_finance</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category banking_insurance_finance</name><value>allow</value></option>
-				<option><name>Block Category banking_insurance_finance</name><value>block</value></option>
+				<option><name>Allow category Banking/Insurance/Finance</name><value>allow</value></option>
+				<option><name>Block category Banking/Insurance/Finance</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -260,8 +260,8 @@
 			<fieldname>category_blogs_personal</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category blogs_personal</name><value>allow</value></option>
-				<option><name>Block Category blogs_personal</name><value>block</value></option>
+				<option><name>Allow category Blogs/Personal</name><value>allow</value></option>
+				<option><name>Block category Blogs/Personal</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -269,8 +269,8 @@
 			<fieldname>category_business_services_industry</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category business_services_industry</name><value>allow</value></option>
-				<option><name>Block Category business_services_industry</name><value>block</value></option>
+				<option><name>Allow category Business/Services/Industry</name><value>allow</value></option>
+				<option><name>Block category Business/Services/Industry</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -278,8 +278,8 @@
 			<fieldname>category_classifieds_auctions</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category classifieds_auctions</name><value>allow</value></option>
-				<option><name>Block Category classifieds_auctions</name><value>block</value></option>
+				<option><name>Allow category Classifieds/Auctions</name><value>allow</value></option>
+				<option><name>Block category Classifieds/Auctions</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -287,8 +287,8 @@
 			<fieldname>category_content_delivery_networks</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category content_delivery_networks</name><value>allow</value></option>
-				<option><name>Block Category content_delivery_networks</name><value>block</value></option>
+				<option><name>Allow category Content Delivery Networks</name><value>allow</value></option>
+				<option><name>Block category Content Delivery Networks</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -296,8 +296,8 @@
 			<fieldname>category_cracks_hacking_illegal</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category cracks_hacking_illegal</name><value>block</value></option>
-				<option><name>Allow Category cracks_hacking_illegal</name><value>allow</value></option>
+				<option><name>Block category Cracks/Hacking/Illegal</name><value>block</value></option>
+				<option><name>Allow category Cracks/Hacking/Illegal</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -305,8 +305,8 @@
 			<fieldname>category_dating</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category dating</name><value>block</value></option>
-				<option><name>Allow Category dating</name><value>allow</value></option>
+				<option><name>Block category Dating</name><value>block</value></option>
+				<option><name>Allow category Dating</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -314,8 +314,8 @@
 			<fieldname>category_drugs</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category drugs</name><value>block</value></option>
-				<option><name>Allow Category drugs</name><value>allow</value></option>
+				<option><name>Block category Drugs</name><value>block</value></option>
+				<option><name>Allow category Drugs</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -323,8 +323,8 @@
 			<fieldname>category_ecommerce_shopping</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category ecommerce_shopping</name><value>allow</value></option>
-				<option><name>Block Category ecommerce_shopping</name><value>block</value></option>
+				<option><name>Allow category E-Commerce/Shopping</name><value>allow</value></option>
+				<option><name>Block category E-Commerce/Shopping</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -332,8 +332,8 @@
 			<fieldname>category_education_science_research</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category education_science_research</name><value>allow</value></option>
-				<option><name>Block Category education_science_research</name><value>block</value></option>
+				<option><name>Allow category Education/Science/Research</name><value>allow</value></option>
+				<option><name>Block category Education/Science/Research</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -341,8 +341,8 @@
 			<fieldname>category_entertainment_humor_hobby</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category entertainment_humor_hobby</name><value>allow</value></option>
-				<option><name>Block Category entertainment_humor_hobby</name><value>block</value></option>
+				<option><name>Allow category Entertainment/Humor/Hobby</name><value>allow</value></option>
+				<option><name>Block category Entertainment/Humor/Hobby</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -350,8 +350,8 @@
 			<fieldname>category_expired_parked</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category expired_parked</name><value>allow</value></option>
-				<option><name>Block Category expired_parked</name><value>block</value></option>
+				<option><name>Allow category Expired/Parked</name><value>allow</value></option>
+				<option><name>Block category Expired/Parked</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -359,8 +359,8 @@
 			<fieldname>category_fashion_beauty_cosmetics</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category fashion_beauty_cosmetics</name><value>allow</value></option>
-				<option><name>Block Category fashion_beauty_cosmetics</name><value>block</value></option>
+				<option><name>Allow category Fashion/Beauty/Cosmetics</name><value>allow</value></option>
+				<option><name>Block category Fashion/Beauty/Cosmetics</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -368,8 +368,8 @@
 			<fieldname>category_file_storage</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category file_storage</name><value>allow</value></option>
-				<option><name>Block Category file_storage</name><value>block</value></option>
+				<option><name>Allow category File Storage</name><value>allow</value></option>
+				<option><name>Block category File Storage</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -377,8 +377,8 @@
 			<fieldname>category_food_dining_restaurants</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category food_dining_restaurants</name><value>allow</value></option>
-				<option><name>Block Category food_dining_restaurants</name><value>block</value></option>
+				<option><name>Allow category Food/Dining/Restaurants</name><value>allow</value></option>
+				<option><name>Block category Food/Dining/Restaurants</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -386,8 +386,8 @@
 			<fieldname>category_forums_message_boards</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category forums_message_boards</name><value>allow</value></option>
-				<option><name>Block Category forums_message_boards</name><value>block</value></option>
+				<option><name>Allow category Forums/Message Boards</name><value>allow</value></option>
+				<option><name>Block category Forums/Message Boards</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -395,8 +395,8 @@
 			<fieldname>category_gambling</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category gambling</name><value>block</value></option>
-				<option><name>Allow Category gambling</name><value>allow</value></option>
+				<option><name>Block category Gambling</name><value>block</value></option>
+				<option><name>Allow category Gambling</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -404,8 +404,8 @@
 			<fieldname>category_games</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category games</name><value>allow</value></option>
-				<option><name>Block Category games</name><value>block</value></option>
+				<option><name>Allow category Games</name><value>allow</value></option>
+				<option><name>Block category Games</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -413,8 +413,8 @@
 			<fieldname>category_generic_non_categorized</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category generic_non_categorized</name><value>allow</value></option>
-				<option><name>Block Category generic_non_categorized</name><value>block</value></option>
+				<option><name>Allow category Generic/Non categorized</name><value>allow</value></option>
+				<option><name>Block category Generic/Non categorized</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -422,8 +422,8 @@
 			<fieldname>category_government</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category government</name><value>allow</value></option>
-				<option><name>Block Category government</name><value>block</value></option>
+				<option><name>Allow category Government</name><value>allow</value></option>
+				<option><name>Block category Government</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -431,8 +431,8 @@
 			<fieldname>category_hate_discrimination_violence</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category hate_discrimination_violence</name><value>block</value></option>
-				<option><name>Allow Category hate_discrimination_violence</name><value>allow</value></option>
+				<option><name>Block category Hate/Discrimination/Violence</name><value>block</value></option>
+				<option><name>Allow category Hate/Discrimination/Violence</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -440,8 +440,8 @@
 			<fieldname>category_health_medicine_fitness</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category health_medicine_fitness</name><value>allow</value></option>
-				<option><name>Block Category health_medicine_fitness</name><value>block</value></option>
+				<option><name>Allow category Health/Medicine/Fitness</name><value>allow</value></option>
+				<option><name>Block category Health/Medicine/Fitness</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -449,8 +449,8 @@
 			<fieldname>category_jobs_employment_career</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category jobs_employment_career</name><value>allow</value></option>
-				<option><name>Block Category jobs_employment_career</name><value>block</value></option>
+				<option><name>Allow category Jobs/Employment/Career</name><value>allow</value></option>
+				<option><name>Block category Jobs/Employment/Career</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -458,8 +458,8 @@
 			<fieldname>category_messaging_chat</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category messaging_chat</name><value>allow</value></option>
-				<option><name>Block Category messaging_chat</name><value>block</value></option>
+				<option><name>Allow category Messaging/Chat</name><value>allow</value></option>
+				<option><name>Block category Messaging/Chat</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -467,8 +467,8 @@
 			<fieldname>category_movies</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category movies</name><value>allow</value></option>
-				<option><name>Block Category movies</name><value>block</value></option>
+				<option><name>Allow category Movies</name><value>allow</value></option>
+				<option><name>Block category Movies</name><value>block</value></option>
 			</options>
 		</field>		
 		<field>
@@ -476,8 +476,8 @@
 			<fieldname>category_music_radio</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category music_radio</name><value>allow</value></option>
-				<option><name>Block Category music_radio</name><value>block</value></option>
+				<option><name>Allow category Music/Radio</name><value>allow</value></option>
+				<option><name>Block category Music/Radio</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -485,8 +485,8 @@
 			<fieldname>category_network_infrastructure</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category network_infrastructure</name><value>allow</value></option>
-				<option><name>Block Category network_infrastructure</name><value>block</value></option>
+				<option><name>Allow category Network Infrastructure</name><value>allow</value></option>
+				<option><name>Block category Network Infrastructure</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -494,8 +494,8 @@
 			<fieldname>category_news_media</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category news_media</name><value>allow</value></option>
-				<option><name>Block Category news_media</name><value>block</value></option>
+				<option><name>Allow category News/Media</name><value>allow</value></option>
+				<option><name>Block category News/Media</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -503,8 +503,8 @@
 			<fieldname>category_nudity_pornography</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category nudity_pornography</name><value>block</value></option>
-				<option><name>Allow Category nudity_pornography</name><value>allow</value></option>
+				<option><name>Block category Nudity/Pornography</name><value>block</value></option>
+				<option><name>Allow category Nudity/Pornography</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -512,8 +512,8 @@
 			<fieldname>category_p2p_file_sharing</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category p2p_file_sharing</name><value>allow</value></option>
-				<option><name>Block Category p2p_file_sharing</name><value>block</value></option>
+				<option><name>Allow category P2P File Sharing</name><value>allow</value></option>
+				<option><name>Block category P2P File Sharing</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -521,8 +521,8 @@
 			<fieldname>category_photo_sharing</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category photo_sharing</name><value>allow</value></option>
-				<option><name>Block Category photo_sharing</name><value>block</value></option>
+				<option><name>Allow category Photo Sharing</name><value>allow</value></option>
+				<option><name>Block category Photo Sharing</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -530,8 +530,8 @@
 			<fieldname>category_politics</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category politics</name><value>allow</value></option>
-				<option><name>Block Category politics</name><value>block</value></option>
+				<option><name>Allow category Politics</name><value>allow</value></option>
+				<option><name>Block category Politics</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -539,8 +539,8 @@
 			<fieldname>category_portals</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category portals</name><value>allow</value></option>
-				<option><name>Block Category portals</name><value>block</value></option>
+				<option><name>Allow category Portals</name><value>allow</value></option>
+				<option><name>Block category Portals</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -548,8 +548,8 @@
 			<fieldname>category_proxy_anonymizer</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category proxy_anonymizer</name><value>block</value></option>
-				<option><name>Allow Category proxy_anonymizer</name><value>allow</value></option>
+				<option><name>Block category Proxy/Anonymizer</name><value>block</value></option>
+				<option><name>Allow category Proxy/Anonymizer</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -557,8 +557,8 @@
 			<fieldname>category_real_estate_home_interior</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category real_estate_home_interior</name><value>allow</value></option>
-				<option><name>Block Category real_estate_home_interior</name><value>block</value></option>
+				<option><name>Allow category Real Estate/Home/Interior</name><value>allow</value></option>
+				<option><name>Block category Real Estate/Home/Interior</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -566,8 +566,8 @@
 			<fieldname>category_religious</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category religious</name><value>allow</value></option>
-				<option><name>Block Category religious</name><value>block</value></option>
+				<option><name>Allow category Religious</name><value>allow</value></option>
+				<option><name>Block category Religious</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -575,8 +575,8 @@
 			<fieldname>category_search_engines</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category search_engines</name><value>allow</value></option>
-				<option><name>Block Category search_engines</name><value>block</value></option>
+				<option><name>Allow category Search Engines</name><value>allow</value></option>
+				<option><name>Block category Search Engines</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -584,8 +584,8 @@
 			<fieldname>category_self_harm</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Block Category self_harm</name><value>block</value></option>
-				<option><name>Allow Category self_harm</name><value>allow</value></option>
+				<option><name>Block category Self-Harm</name><value>block</value></option>
+				<option><name>Allow category Self-Harm</name><value>allow</value></option>
 			</options>
 		</field>
 		<field>
@@ -593,8 +593,8 @@
 			<fieldname>category_social_networking</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category social_networking</name><value>allow</value></option>
-				<option><name>Block Category social_networking</name><value>block</value></option>
+				<option><name>Allow category Social Networking</name><value>allow</value></option>
+				<option><name>Block category Social Networking</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -602,8 +602,8 @@
 			<fieldname>category_software_technology_hardware</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category software_technology_hardware</name><value>allow</value></option>
-				<option><name>Block Category software_technology_hardware</name><value>block</value></option>
+				<option><name>Allow category Software/Technology/Hardware</name><value>allow</value></option>
+				<option><name>Block category Software/Technology/Hardware</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -611,8 +611,8 @@
 			<fieldname>category_sports</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category sports</name><value>allow</value></option>
-				<option><name>Block Category sports</name><value>block</value></option>
+				<option><name>Allow category Sports</name><value>allow</value></option>
+				<option><name>Block category Sports</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -620,8 +620,8 @@
 			<fieldname>category_television</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category television</name><value>allow</value></option>
-				<option><name>Block Category television</name><value>block</value></option>
+				<option><name>Allow category Television</name><value>allow</value></option>
+				<option><name>Block category Television</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -629,8 +629,8 @@
 			<fieldname>category_travel</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category travel</name><value>allow</value></option>
-				<option><name>Block Category travel</name><value>block</value></option>
+				<option><name>Allow category Travel</name><value>allow</value></option>
+				<option><name>Block category Travel</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -638,8 +638,8 @@
 			<fieldname>category_user_tracking</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category user_tracking</name><value>allow</value></option>
-				<option><name>Block Category user_tracking</name><value>block</value></option>
+				<option><name>Allow category User Tracking</name><value>allow</value></option>
+				<option><name>Block category User Tracking</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -647,8 +647,8 @@
 			<fieldname>category_video_sharing</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category video_sharing</name><value>allow</value></option>
-				<option><name>Block Category video_sharing</name><value>block</value></option>
+				<option><name>Allow category Video Sharing</name><value>allow</value></option>
+				<option><name>Block category Video Sharing</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -656,8 +656,8 @@
 			<fieldname>category_weapons</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category weapons</name><value>allow</value></option>
-				<option><name>Block Category weapons</name><value>block</value></option>
+				<option><name>Allow category Weapons</name><value>allow</value></option>
+				<option><name>Block category Weapons</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
@@ -665,8 +665,8 @@
 			<fieldname>category_webmail</fieldname>			
 			<type>select</type>
 			<options>
-				<option><name>Allow Category webmail</name><value>allow</value></option>
-				<option><name>Block Category webmail</name><value>block</value></option>
+				<option><name>Allow category Web-Mail</name><value>allow</value></option>
+				<option><name>Block category Web-Mail</name><value>block</value></option>
 			</options>
 		</field>
 		<field>
