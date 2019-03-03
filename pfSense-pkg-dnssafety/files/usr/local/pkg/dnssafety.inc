@@ -359,6 +359,24 @@ function dnssafety_conf_generate_forwarders($conf){
 //
 //
 //
+function dnssafety_conf_generate_settings($conf) {
+
+    # declare settings
+    $settings = array();
+
+    # TODO: not implemented for now
+
+    #"recategorized_domains" : {
+    #        "test.filter.global" : ["proxy_anonymizer"]
+    #    }
+
+    # return it
+    return $settings;
+}
+
+//
+//
+//
 function dnssafety_conf_generate_history($conf){
 
     # set enable
@@ -897,6 +915,7 @@ function dnssafety_sync() {
     $conf1 = $config['installedpackages']['dnssafetycache']['config'][0];
     $conf2 = $config['installedpackages']['dnssafetyforwarders']['config'][0];
     $conf3 = $config['installedpackages']['dnssafetyfilter']['config'];
+    $conf4 = $config['installedpackages']['dnssafetysettings']['config'][0];
     
     # generate various configuration parts
     $network  = dnssafety_conf_generate_network($conf0);
@@ -907,6 +926,7 @@ function dnssafety_sync() {
     $history  = dnssafety_conf_generate_history($conf1);
     $forward  = dnssafety_conf_generate_forwarders($conf2);
     $policies = dnssafety_conf_generate_policies($conf3);
+    $settings = dnssafety_conf_generate_settings($conf4);
 
     # save them into JSON
     $data = "{
@@ -918,7 +938,7 @@ function dnssafety_sync() {
         \"cache\"      : $cache,
         \"history\"    : $history,
         \"policies\"   : $policies,
-        \"settings\"   : \"TODO settings\"
+        \"settings\"   : $settings
     }";
 
     # this is the path to configuration file
