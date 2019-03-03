@@ -366,12 +366,16 @@ function dnssafety_conf_generate_settings($conf) {
 
     # TODO: not implemented for now
 
+
     #"recategorized_domains" : {
     #        "test.filter.global" : ["proxy_anonymizer"]
     #    }
 
-    # return it
-    return $settings;
+    # convert to string
+    $data = json_encode($settings, JSON_PRETTY_PRINT);
+
+    # and return it
+    return $data;
 }
 
 //
