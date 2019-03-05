@@ -32,25 +32,13 @@ if ($savemsg) {
 }
 
 $tab_array = array();
-if ($_REQUEST["menu"] == "reverse") {
-	$tab_array[] = array(gettext("General"), false, "/pkg_edit.php?xml=squid_reverse_general.xml&amp;id=0");
-	$tab_array[] = array(gettext("Web Servers"), false, "/pkg.php?xml=squid_reverse_peer.xml");
-	$tab_array[] = array(gettext("Mappings"), false, "/pkg.php?xml=squid_reverse_uri.xml");
-	$tab_array[] = array(gettext("Redirects"), false, "/pkg.php?xml=squid_reverse_redir.xml");
-	$tab_array[] = array(gettext("Real Time"), true, "/squid_monitor.php?menu=reverse");
-	$tab_array[] = array(gettext("Sync"), false, "/pkg_edit.php?xml=squid_reverse_sync.xml");
-} else {
-	$tab_array[] = array(gettext("General"), false, "/pkg_edit.php?xml=squid.xml&amp;id=0");
-	$tab_array[] = array(gettext("Remote Cache"), false, "/pkg.php?xml=squid_upstream.xml");
-	$tab_array[] = array(gettext("Local Cache"), false, "/pkg_edit.php?xml=squid_cache.xml&amp;id=0");
-	$tab_array[] = array(gettext("Antivirus"), false, "/pkg_edit.php?xml=squid_antivirus.xml&amp;id=0");
-	$tab_array[] = array(gettext("ACLs"), false, "/pkg_edit.php?xml=squid_nac.xml&amp;id=0");
-	$tab_array[] = array(gettext("Traffic Mgmt"), false, "/pkg_edit.php?xml=squid_traffic.xml&amp;id=0");
-	$tab_array[] = array(gettext("Authentication"), false, "/pkg_edit.php?xml=squid_auth.xml&amp;id=0");
-	$tab_array[] = array(gettext("Users"), false, "/pkg.php?xml=squid_users.xml");
-	$tab_array[] = array(gettext("Real Time"), true, "/squid_monitor.php");
-	$tab_array[] = array(gettext("Sync"), false, "/pkg_edit.php?xml=squid_sync.xml");
-}
+
+$tab_array[] = array(gettext("Settings"), false, "/pkg_edit.php?xml=dnssafety.xml");
+$tab_array[] = array(gettext("Forwarders"), false, "/pkg_edit.php?xml=dnssafety_forwarders.xml");
+$tab_array[] = array(gettext("Cache"), false, "/pkg_edit.php?xml=dnssafety_cache.xml");
+$tab_array[] = array(gettext("Filtering Policies"), false, "/pkg.php?xml=dnssafety_filter.xml");
+$tab_array[] = array(gettext("Logs"), true, "/dnssafety_monitor.php");
+
 display_top_tabs($tab_array);
 
 ?>
