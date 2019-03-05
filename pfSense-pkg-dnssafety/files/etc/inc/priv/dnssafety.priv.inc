@@ -40,6 +40,6 @@ $priv_list['page-services-dnssafety']['match'][] = "pkg_edit.php?xml=dnssafety_s
 
 $priv_list['page-services-dnssafety']['match'][] = "shortcuts/pkg_dnssafety.inc*";
 $priv_list['page-services-dnssafety']['match'][] = "dnssafety_access.php*";
-$priv_list['page-services-dnssafety']['match'][] = "dnssafety_dsdnsd.php*";
+$priv_list['page-services-dnssafety']['match'][] = "dnssafety_monitor.php*";
 
 ?>
