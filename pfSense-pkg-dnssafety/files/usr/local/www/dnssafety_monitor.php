@@ -86,7 +86,7 @@ display_top_tabs($tab_array);
 		</div>
 	</div>
 
-	<div class="panel-heading"><h2 class="panel-title"><?=gettext("Squid Access Table"); ?></h2></div>
+	<div class="panel-heading"><h2 class="panel-title"><?=gettext("DNS Safety Access Log"); ?></h2></div>
 	<div class="panel-body">
 		<div class="table-responsive">
 			<table class="table table-hover table-condensed">
@@ -94,9 +94,9 @@ display_top_tabs($tab_array);
 				<tr><td>
 					<table class="tabcont" width="100%" border="0" cellspacing="0" cellpadding="0">
 						<thead><tr>
-							<td colspan="6" class="listtopic" align="center"><?=gettext("Squid - Access Logs"); ?></td>
+							<td colspan="6" class="listtopic" align="center"><?=gettext("DNS Safety Access Log"); ?></td>
 						</tr></thead>
-						<tbody id="squidView">
+						<tbody id="dnssafety_access_log">
 						<tr><td></td></tr>
 						</tbody>
 					</table>
@@ -106,7 +106,7 @@ display_top_tabs($tab_array);
 		</div>
 	</div>
 
-	<div class="panel-heading"><h2 class="panel-title"><?=gettext("Squid Cache Table"); ?></h2></div>
+	<div class="panel-heading"><h2 class="panel-title"><?=gettext("DNS Safety Error Log"); ?></h2></div>
 	<div class="panel-body">
 		<div class="table-responsive">
 			<table class="table table-hover table-condensed">
@@ -114,9 +114,9 @@ display_top_tabs($tab_array);
 				<tr><td>
 					<table class="tabcont" width="100%" border="0" cellspacing="0" cellpadding="0">
 						<thead><tr>
-							<td colspan="2" class="listtopic" align="center"><?=gettext("Squid - Cache Logs"); ?></td>
+							<td colspan="2" class="listtopic" align="center"><?=gettext("DNS Safety Error Log"); ?></td>
 						</tr></thead>
-						<tbody id="squidCacheView">
+						<tbody id="dnssafety_error_log">
 						<tr><td></td></tr>
 						</tbody>
 					</table>
@@ -148,16 +148,10 @@ function showLog(content, url, program) {
 }
 
 function updateAllLogs() {
-	showLog('squidView', 'squid_monitor_data.php', 'squid');
-	showLog('squidCacheView', 'squid_monitor_data.php', 'squid_cache');
-<?php if ($_REQUEST["menu"] != "reverse") {?>
-	showLog('sguardView', 'squid_monitor_data.php', 'sguard');
-	showLog('CICIAPVirusView', 'squid_monitor_data.php', 'cicap_virus');
-	showLog('CICAPAccessView', 'squid_monitor_data.php', 'cicap_access');
-	showLog('CICAPServerView', 'squid_monitor_data.php', 'cicap_server');
-	showLog('freshclamView', 'squid_monitor_data.php', 'freshclam');
-	showLog('clamdView', 'squid_monitor_data.php', 'clamd');
-<?php }?>
+
+	showLog('dnssafety_access_log', 'dnssafety_access_log.php', 'squid');
+	showLog('dnssafety_error_log' , 'dnssafety_error_log.php', 'squid_cache');
+	
 	setTimeout(updateAllLogs, 5000);
 }
 
