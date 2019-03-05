@@ -45,6 +45,7 @@
 			<url>/pkg.php?xml=dnssafety_filter.xml</url>	
 			<active/>		
 		</tab>
+		<!--
 		<tab>
 			<text>Custom Domains</text>
 			<url>/pkg.php?xml=dnssafety_recategorized.xml</url>			
@@ -53,6 +54,7 @@
 			<text>Sync</text>
 			<url>/pkg_edit.php?xml=dnssafety_sync.xml</url>			
 		</tab>
+		-->
 	</tabs>
 	<adddeleteeditpagefields>
 		<columnitem>
