@@ -1,9 +1,8 @@
 <?php
 /*
- * bind.priv.inc
+ * dnssafety.priv.inc
  *
- * part of pfSense (https://www.pfsense.org)
- * Copyright (c) 2015 Rubicon Communications, LLC (Netgate)
+ * Copyright (c) 2019 Diladele B.V.
  * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,23 +19,23 @@
  */
 global $priv_list;
 
-$priv_list['page-services-binddns'] = array();
-$priv_list['page-services-binddns']['name'] = "WebCfg - Services: BIND package";
-$priv_list['page-services-binddns']['descr'] = "Allow access to BIND package GUI";
+$priv_list['page-services-dnssafety'] = array();
+$priv_list['page-services-dnssafety']['name'] = "WebCfg - Services: BIND package";
+$priv_list['page-services-dnssafety']['descr'] = "Allow access to BIND package GUI";
 
-$priv_list['page-services-binddns']['match'] = array();
-$priv_list['page-services-binddns']['match'][] = "pkg.php?xml=bind.xml*";
-$priv_list['page-services-binddns']['match'][] = "pkg.php?xml=bind_acls.xml*";
-$priv_list['page-services-binddns']['match'][] = "pkg.php?xml=bind_sync.xml*";
-$priv_list['page-services-binddns']['match'][] = "pkg.php?xml=bind_views.xml*";
-$priv_list['page-services-binddns']['match'][] = "pkg.php?xml=bind_zones.xml*";
+$priv_list['page-services-dnssafety']['match'] = array();
+$priv_list['page-services-dnssafety']['match'][] = "pkg.php?xml=bind.xml*";
+$priv_list['page-services-dnssafety']['match'][] = "pkg.php?xml=bind_acls.xml*";
+$priv_list['page-services-dnssafety']['match'][] = "pkg.php?xml=bind_sync.xml*";
+$priv_list['page-services-dnssafety']['match'][] = "pkg.php?xml=bind_views.xml*";
+$priv_list['page-services-dnssafety']['match'][] = "pkg.php?xml=bind_zones.xml*";
 
-$priv_list['page-services-binddns']['match'][] = "pkg_edit.php?xml=bind.xml*";
-$priv_list['page-services-binddns']['match'][] = "pkg_edit.php?xml=bind_acls.xml*";
-$priv_list['page-services-binddns']['match'][] = "pkg_edit.php?xml=bind_sync.xml*";
-$priv_list['page-services-binddns']['match'][] = "pkg_edit.php?xml=bind_views.xml*";
-$priv_list['page-services-binddns']['match'][] = "pkg_edit.php?xml=bind_zones.xml*";
+$priv_list['page-services-dnssafety']['match'][] = "pkg_edit.php?xml=bind.xml*";
+$priv_list['page-services-dnssafety']['match'][] = "pkg_edit.php?xml=bind_acls.xml*";
+$priv_list['page-services-dnssafety']['match'][] = "pkg_edit.php?xml=bind_sync.xml*";
+$priv_list['page-services-dnssafety']['match'][] = "pkg_edit.php?xml=bind_views.xml*";
+$priv_list['page-services-dnssafety']['match'][] = "pkg_edit.php?xml=bind_zones.xml*";
 
-$priv_list['page-services-binddns']['match'][] = "widgets/widgets/bind.widget.php*";
+$priv_list['page-services-dnssafety']['match'][] = "widgets/widgets/bind.widget.php*";
 
 ?>

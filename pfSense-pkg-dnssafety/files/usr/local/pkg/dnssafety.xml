@@ -229,4 +229,13 @@
 	<custom_php_install_command>
 		dnssafety_write_rcfile();
 	</custom_php_install_command>
+	<!--
+	<custom_php_deinstall_command>
+		squid_deinstall_command();
+	</custom_php_deinstall_command>
+	<custom_php_validation_command>
+		squid_validate_general($_POST, $input_errors);
+	</custom_php_validation_command>
+	<filter_rules_needed>squid_generate_rules</filter_rules_needed>
+	-->
 </packagegui>
