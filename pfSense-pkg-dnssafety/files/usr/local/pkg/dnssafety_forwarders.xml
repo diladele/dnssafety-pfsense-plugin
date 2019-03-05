@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE packagegui SYSTEM "../schema/packages.dtd">
+<?xml-stylesheet type="text/xsl" href="../xsl/package.xsl"?>
+<packagegui>
+	<copyright>
+<![CDATA[
+/*
+ * dnssafety_forwarders.xml
+ *
+ * Copyright (c) 2019 Diladele B.V.
+ * All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+	]]>
+	</copyright>
+	<name>dnssafety_forwarders</name>
+	<title>DNS Safety</title>
+	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
+	<tabs>
+		<tab>
+			<text>Settings</text>
+			<url>/pkg_edit.php?xml=dnssafety.xml</url>						
+		</tab>
+		<tab>
+			<text>Forwarders</text>
+			<url>/pkg_edit.php?xml=dnssafety_forwarders.xml</url>			
+			<active/>
+		</tab>
+		<tab>
+			<text>Cache</text>
+			<url>/pkg_edit.php?xml=dnssafety_cache.xml</url>			
+		</tab>
+		<tab>
+			<text>Filtering Policies</text>
+			<url>/pkg.php?xml=dnssafety_filter.xml</url>			
+		</tab>
+		<tab>
+			<text>Logs</text>
+			<url>/dnssafety_monitor.php</url>
+		</tab>
+		<!--
+		<tab>
+			<text>Custom Domains</text>
+			<url>/pkg.php?xml=dnssafety_recategorized.xml</url>			
+		</tab>
+		<tab>
+			<text>Sync</text>
+			<url>/pkg_edit.php?xml=dnssafety_sync.xml</url>			
+		</tab>
+		-->
+	</tabs>
+	<fields>
+		<field>
+			<type>listtopic</type>
+			<name>Upstream</name>
+		</field>
+		<field>
+			<fieldname>lookup_etc_resolv_conf</fieldname>
+			<fielddescr>Upstream DNS</fielddescr>
+			<description>
+				<![CDATA[
+				Retrieve upstream DNS settings from /etc/resolve.conf automatically.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>etc_hosts_enable</fieldname>
+			<fielddescr>Use Hosts File</fielddescr>
+			<description>
+				<![CDATA[
+				Respond with entries from /etc/hosts file.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>etc_hosts_path</fieldname>
+			<fielddescr>Hosts File Path</fielddescr>
+			<description>
+				<![CDATA[
+				Path to /etc/hosts file that contains hosts to IP address mappings. Separate multiple paths by comma (,) without spaces.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value><![CDATA[/etc/hosts]]></default_value>			
+		</field>		
+		<field>
+			<type>listtopic</type>
+			<name>OpenDNS Family Shield</name>
+		</field>
+		<field>
+			<fieldname>opendns_enable</fieldname>
+			<fielddescr>Enable</fielddescr>
+			<description>
+				<![CDATA[
+				Enable OpenDNS Family Shield forwarder.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>opendns_forward_fqdn_only</fieldname>
+			<fielddescr>Forward FQDN</fielddescr>
+			<description>
+				<![CDATA[
+				Only forward requests for fully qualified domains. Recommended. If set, only names like "www.example.com" are forwarded to the upstream server. Names like "example" are not forwarded.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>opendns_v4</fieldname>
+			<fielddescr>IPv4 DNS Servers</fielddescr>
+			<description>
+				<![CDATA[
+				List of upstream DNS servers for IPv4. Separate multiple paths by comma (,) without spaces.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>208.67.222.123, 208.67.220.123</default_value>			
+		</field>		
+		<field>
+			<fieldname>opendns_v6</fieldname>
+			<fielddescr>IPv6 DNS Servers</fielddescr>
+			<description>
+				<![CDATA[
+				List of upstream DNS servers for IPv6. Separate multiple paths by comma (,) without spaces.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>		
+		<field>
+			<type>listtopic</type>
+			<name>Google Public DNS</name>
+		</field>
+		<field>
+			<fieldname>googledns_enable</fieldname>
+			<fielddescr>Enable</fielddescr>
+			<description>
+				<![CDATA[
+				Enable Google Public DNS forwarder.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>googledns_forward_fqdn_only</fieldname>
+			<fielddescr>Forward FQDN</fielddescr>
+			<description>
+				<![CDATA[
+				Only forward requests for fully qualified domains. Recommended. If set, only names like "www.example.com" are forwarded to the upstream server. Names like "example" are not forwarded.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>googledns_v4</fieldname>
+			<fielddescr>IPv4 DNS Servers</fielddescr>
+			<description>
+				<![CDATA[
+				List of upstream DNS servers for IPv4. Separate multiple paths by comma (,) without spaces.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>8.8.8.8, 8.8.4.4</default_value>			
+		</field>		
+		<field>
+			<fieldname>googledns_v6</fieldname>
+			<fielddescr>IPv6 DNS Servers</fielddescr>
+			<description>
+				<![CDATA[
+				List of upstream DNS servers for IPv6. Separate multiple paths by comma (,) without spaces.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>2001:4860:4860::8888, 2001:4860:4860::8844</default_value>			
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Custom DNS 1</name>
+		</field>
+		<field>
+			<fieldname>customdns1_enable</fieldname>
+			<fielddescr>Enable</fielddescr>
+			<description>
+				<![CDATA[
+				Enable first Custom DNS forwarder.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>customdns1_forward_fqdn_only</fieldname>
+			<fielddescr>Forward FQDN</fielddescr>
+			<description>
+				<![CDATA[
+				Only forward requests for fully qualified domains. Recommended. If set, only names like "www.example.com" are forwarded to the upstream server. Names like "example" are not forwarded.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>customdns1_v4</fieldname>
+			<fielddescr>IPv4 DNS Servers</fielddescr>
+			<description>
+				<![CDATA[
+				List of upstream DNS servers for IPv4. Separate multiple paths by comma (,) without spaces.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>		
+		<field>
+			<fieldname>customdns1_v6</fieldname>
+			<fielddescr>IPv6 DNS Servers</fielddescr>
+			<description>
+				<![CDATA[
+				List of upstream DNS servers for IPv6. Separate multiple paths by comma (,) without spaces.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Custom DNS 2</name>
+		</field>
+		<field>
+			<fieldname>customdns2_enable</fieldname>
+			<fielddescr>Enable</fielddescr>
+			<description>
+				<![CDATA[
+				Enable second Custom DNS forwarder.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>customdns2_forward_fqdn_only</fieldname>
+			<fielddescr>Forward FQDN</fielddescr>
+			<description>
+				<![CDATA[
+				Only forward requests for fully qualified domains. Recommended. If set, only names like "www.example.com" are forwarded to the upstream server. Names like "example" are not forwarded.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fieldname>customdns2_v4</fieldname>
+			<fielddescr>IPv4 DNS Servers</fielddescr>
+			<description>
+				<![CDATA[
+				List of upstream DNS servers for IPv4. Separate multiple paths by comma (,) without spaces.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>		
+		<field>
+			<fieldname>customdns2_v6</fieldname>
+			<fielddescr>IPv6 DNS Servers</fielddescr>
+			<description>
+				<![CDATA[
+				List of upstream DNS servers for IPv6. Separate multiple paths by comma (,) without spaces.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value></default_value>			
+		</field>
+	</fields>
+	<custom_php_resync_config_command>
+		dnssafety_sync();
+	</custom_php_resync_config_command>
+</packagegui>

@@ -1,0 +1,14 @@
+pkg/dnssafety.inc
+pkg/dnssafety.xml
+pkg/dnssafety_filter.xml
+pkg/dnssafety_forwarders.xml
+pkg/dnssafety_cache.xml
+pkg/dnssafety_sync.xml
+pkg/pkg_dnssafety.inc
+www/shortcuts/pkg_dnssafety.inc
+www/widgets/widgets/dnssafety.widget.php
+www/dnssafety_log.php
+www/dnssafety_monitor.php
+/etc/inc/priv/dnssafety.priv.inc
+%%DATADIR%%/info.xml
+@dir /etc/inc/priv

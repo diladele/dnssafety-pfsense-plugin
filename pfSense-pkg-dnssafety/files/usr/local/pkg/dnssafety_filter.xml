@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE packagegui SYSTEM "../schema/packages.dtd">
+<?xml-stylesheet type="text/xsl" href="../xsl/package.xsl"?>
+<packagegui>
+	<copyright>
+<![CDATA[
+/*
+ * dnssafety_filter.xml
+ *
+ * Copyright (c) 2019 Diladele B.V.
+ * All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+	]]>
+	</copyright>
+	<name>dnssafety_filter</name>
+	<title>DNS Safety</title>
+	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
+	<tabs>
+		<tab>
+			<text>Settings</text>
+			<url>/pkg_edit.php?xml=dnssafety.xml</url>						
+		</tab>
+		<tab>
+			<text>Forwarders</text>
+			<url>/pkg_edit.php?xml=dnssafety_forwarders.xml</url>			
+		</tab>
+		<tab>
+			<text>Cache</text>
+			<url>/pkg_edit.php?xml=dnssafety_cache.xml</url>			
+		</tab>
+		<tab>
+			<text>Filtering Policies</text>
+			<url>/pkg.php?xml=dnssafety_filter.xml</url>	
+			<active/>		
+		</tab>
+		<tab>
+			<text>Logs</text>
+			<url>/dnssafety_monitor.php</url>
+		</tab>
+		<!--
+		<tab>
+			<text>Custom Domains</text>
+			<url>/pkg.php?xml=dnssafety_recategorized.xml</url>			
+		</tab>
+		<tab>
+			<text>Sync</text>
+			<url>/pkg_edit.php?xml=dnssafety_sync.xml</url>			
+		</tab>
+		-->
+	</tabs>
+	<adddeleteeditpagefields>
+		<columnitem>
+			<fielddescr>Enabled</fielddescr>
+			<fieldname>enable</fieldname>
+		</columnitem>
+		<columnitem>
+			<fielddescr>Policy Name</fielddescr>
+			<fieldname>name</fieldname>
+		</columnitem>
+		<columnitem>
+			<fielddescr>Policy Description</fielddescr>
+			<fieldname>comment</fieldname>
+		</columnitem>
+		<movable>on</movable>
+	</adddeleteeditpagefields>
+	<fields>
+		<field>
+			<fielddescr>Policy Name</fielddescr>
+			<fieldname>name</fieldname>
+			<description>Enter the name of the policy.</description>
+			<type>input</type>
+			<required/>
+		</field>
+		<field>
+			<fielddescr>Description</fielddescr>
+			<fieldname>comment</fieldname>
+			<description>Enter a description of the policy.</description>
+			<type>input</type>
+		</field>
+		<field>
+			<fielddescr>Enable</fielddescr>
+			<fieldname>enable</fieldname>
+			<description>
+				<![CDATA[
+				Enable policy. If disabled the policy is only stored in the pfSense UI and is not activated in the DNS Safety daemon.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Policy Members</name>
+			<fieldname>members</fieldname>
+		</field>
+		<field>
+			<fielddescr>Names</fielddescr>
+			<fieldname>member_names</fieldname>
+			<description>List of names, one name per line. For example, user1.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>MAC Addresses</fielddescr>
+			<fieldname>member_macs</fieldname>
+			<description>List of MAC addresses, one address per line. For example, 00:50:56:C0:00:01.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv4 Subnets</fielddescr>
+			<fieldname>member_ipv4subnets</fieldname>
+			<description>List of IPv4 subnets, one subnet per line. For example, 192.168.1.0/24.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv4 Ranges</fielddescr>
+			<fieldname>member_ipv4ranges</fieldname>
+			<description>List of IPv4 ranges, one range per line. For example, 192.168.1.1-192.168.1.100</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv4 Addresses</fielddescr>
+			<fieldname>member_ipv4addrs</fieldname>
+			<description>List of IPv4 addresses, one address per line. For example, 192.168.1.100.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv6 Subnets</fielddescr>
+			<fieldname>member_ipv6subnets</fieldname>
+			<description>List of IPv6 subnets, one subnet per line.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv6 Ranges</fielddescr>
+			<fieldname>member_ipv6ranges</fieldname>
+			<description>List of IPv6 ranges, one range per line.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>IPv6 Addresses</fielddescr>
+			<fieldname>member_ipv6addrs</fieldname>
+			<description>List of IPv6 addresses, one address per line.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Filtering Rules / Block Sites by Category</name>
+			<fieldname>temp</fieldname>
+		</field>
+		<field>
+			<fielddescr>Enable</fielddescr>
+			<fieldname>rules_enable</fieldname>
+			<description>
+				<![CDATA[
+				Apply all filtering rules. If disabled, no filtering rules are applied and the policy in-fact acts as 'allow all' policy. Default value is 'Enable'.
+				]]></description>
+			<type>checkbox</type>			
+		</field>
+		<field>
+			<fielddescr>Categories</fielddescr>
+			<fieldname>category_advertising</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Advertising</name><value>block</value></option>
+				<option><name>Allow category Advertising</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_adult_themes_sexuality</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Adult Themes/Sexuality</name><value>block</value></option>
+				<option><name>Allow category Adult Themes/Sexuality</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_alcohol_tobacco</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Alcohol/Tobacco</name><value>block</value></option>
+				<option><name>Allow category Alcohol/Tobacco</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_anime_manga_webcomic</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Anime/Manga/Web Comics</name><value>allow</value></option>
+				<option><name>Block category Anime/Manga/Web Comics</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_arts_society_culture</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Arts/Society/Culture</name><value>allow</value></option>
+				<option><name>Block category Arts/Society/Culture</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_automotive</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Automotive</name><value>allow</value></option>
+				<option><name>Block category Automotive</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_banking_insurance_finance</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Banking/Insurance/Finance</name><value>allow</value></option>
+				<option><name>Block category Banking/Insurance/Finance</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_blogs_personal</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Blogs/Personal</name><value>allow</value></option>
+				<option><name>Block category Blogs/Personal</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_business_services_industry</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Business/Services/Industry</name><value>allow</value></option>
+				<option><name>Block category Business/Services/Industry</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_classifieds_auctions</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Classifieds/Auctions</name><value>allow</value></option>
+				<option><name>Block category Classifieds/Auctions</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_content_delivery_networks</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Content Delivery Networks</name><value>allow</value></option>
+				<option><name>Block category Content Delivery Networks</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_cracks_hacking_illegal</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Cracks/Hacking/Illegal</name><value>block</value></option>
+				<option><name>Allow category Cracks/Hacking/Illegal</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_dating</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Dating</name><value>block</value></option>
+				<option><name>Allow category Dating</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_drugs</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Drugs</name><value>block</value></option>
+				<option><name>Allow category Drugs</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_ecommerce_shopping</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category E-Commerce/Shopping</name><value>allow</value></option>
+				<option><name>Block category E-Commerce/Shopping</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_education_science_research</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Education/Science/Research</name><value>allow</value></option>
+				<option><name>Block category Education/Science/Research</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_entertainment_humor_hobby</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Entertainment/Humor/Hobby</name><value>allow</value></option>
+				<option><name>Block category Entertainment/Humor/Hobby</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_expired_parked</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Expired/Parked</name><value>allow</value></option>
+				<option><name>Block category Expired/Parked</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_fashion_beauty_cosmetics</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Fashion/Beauty/Cosmetics</name><value>allow</value></option>
+				<option><name>Block category Fashion/Beauty/Cosmetics</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_file_storage</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category File Storage</name><value>allow</value></option>
+				<option><name>Block category File Storage</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_food_dining_restaurants</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Food/Dining/Restaurants</name><value>allow</value></option>
+				<option><name>Block category Food/Dining/Restaurants</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_forums_message_boards</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Forums/Message Boards</name><value>allow</value></option>
+				<option><name>Block category Forums/Message Boards</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_gambling</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Gambling</name><value>block</value></option>
+				<option><name>Allow category Gambling</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_games</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Games</name><value>allow</value></option>
+				<option><name>Block category Games</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_generic_non_categorized</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Generic/Non categorized</name><value>allow</value></option>
+				<option><name>Block category Generic/Non categorized</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_government</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Government</name><value>allow</value></option>
+				<option><name>Block category Government</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_hate_discrimination_violence</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Hate/Discrimination/Violence</name><value>block</value></option>
+				<option><name>Allow category Hate/Discrimination/Violence</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_health_medicine_fitness</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Health/Medicine/Fitness</name><value>allow</value></option>
+				<option><name>Block category Health/Medicine/Fitness</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_jobs_employment_career</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Jobs/Employment/Career</name><value>allow</value></option>
+				<option><name>Block category Jobs/Employment/Career</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_messaging_chat</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Messaging/Chat</name><value>allow</value></option>
+				<option><name>Block category Messaging/Chat</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_movies</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Movies</name><value>allow</value></option>
+				<option><name>Block category Movies</name><value>block</value></option>
+			</options>
+		</field>		
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_music_radio</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Music/Radio</name><value>allow</value></option>
+				<option><name>Block category Music/Radio</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_network_infrastructure</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Network Infrastructure</name><value>allow</value></option>
+				<option><name>Block category Network Infrastructure</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_news_media</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category News/Media</name><value>allow</value></option>
+				<option><name>Block category News/Media</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_nudity_pornography</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Nudity/Pornography</name><value>block</value></option>
+				<option><name>Allow category Nudity/Pornography</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_p2p_file_sharing</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category P2P File Sharing</name><value>allow</value></option>
+				<option><name>Block category P2P File Sharing</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_photo_sharing</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Photo Sharing</name><value>allow</value></option>
+				<option><name>Block category Photo Sharing</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_politics</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Politics</name><value>allow</value></option>
+				<option><name>Block category Politics</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_portals</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Portals</name><value>allow</value></option>
+				<option><name>Block category Portals</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_proxy_anonymizer</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Proxy/Anonymizer</name><value>block</value></option>
+				<option><name>Allow category Proxy/Anonymizer</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_real_estate_home_interior</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Real Estate/Home/Interior</name><value>allow</value></option>
+				<option><name>Block category Real Estate/Home/Interior</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_religious</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Religious</name><value>allow</value></option>
+				<option><name>Block category Religious</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_search_engines</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Search Engines</name><value>allow</value></option>
+				<option><name>Block category Search Engines</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_self_harm</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Block category Self-Harm</name><value>block</value></option>
+				<option><name>Allow category Self-Harm</name><value>allow</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_social_networking</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Social Networking</name><value>allow</value></option>
+				<option><name>Block category Social Networking</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_software_technology_hardware</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Software/Technology/Hardware</name><value>allow</value></option>
+				<option><name>Block category Software/Technology/Hardware</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_sports</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Sports</name><value>allow</value></option>
+				<option><name>Block category Sports</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_television</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Television</name><value>allow</value></option>
+				<option><name>Block category Television</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_travel</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Travel</name><value>allow</value></option>
+				<option><name>Block category Travel</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_user_tracking</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category User Tracking</name><value>allow</value></option>
+				<option><name>Block category User Tracking</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_video_sharing</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Video Sharing</name><value>allow</value></option>
+				<option><name>Block category Video Sharing</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_weapons</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Weapons</name><value>allow</value></option>
+				<option><name>Block category Weapons</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<fielddescr></fielddescr>
+			<fieldname>category_webmail</fieldname>			
+			<type>select</type>
+			<options>
+				<option><name>Allow category Web-Mail</name><value>allow</value></option>
+				<option><name>Block category Web-Mail</name><value>block</value></option>
+			</options>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Filtering Rules / Domain Black Listing</name>
+			<fieldname>temp</fieldname>
+		</field>
+		<field>
+			<fielddescr>Domain Name Blacklist</fielddescr>
+			<fieldname>rules_blacklist_domain_names</fieldname>
+			<description>List of domain names that shall always be blocked in this filtering policy, one name per line. For example, example.com or .example.com. The first blocks exact domain name and the second blocks a domain name with all its sub-domains.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>Domain Regex Blacklist</fielddescr>
+			<fieldname>rules_blacklist_domain_regex</fieldname>
+			<description>List of regular expression for domain names that shall always be blocked in this filtering policy, one regular expression per line. For example, regular expression .*\.example\.com blocks all sub-domains of example.com domain.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Filtering Rules / Domain White Listing</name>
+			<fieldname>temp</fieldname>
+		</field>
+		<field>
+			<fielddescr>Domain Names</fielddescr>
+			<fieldname>exclusions_domain_names</fieldname>
+			<description>List of domain names that shall never be blocked in this filtering policy, one name per line. For example, example.com or .example.com. The first matches exact domain name and the second domain name with all its sub-domains.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>
+		<field>
+			<fielddescr>Domain Regex</fielddescr>
+			<fieldname>exclusions_domain_regex</fieldname>
+			<description>List of regular expression for domain names that shall never be blocked in this filtering policy, one regular expression per line. For example, regular expression .*\.example\.com matches all sub-domains of example.com domain.</description>
+			<type>textarea</type>
+			<cols>80</cols>
+			<rows>4</rows>
+			<encoding>base64</encoding>
+		</field>				
+	</fields>
+	<custom_php_resync_config_command>
+		dnssafety_sync();
+	</custom_php_resync_config_command>
+</packagegui>

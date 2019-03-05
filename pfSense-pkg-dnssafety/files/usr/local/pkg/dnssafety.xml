@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE packagegui SYSTEM "../schema/packages.dtd">
+<?xml-stylesheet type="text/xsl" href="../xsl/package.xsl"?>
+<packagegui>
+	<copyright>
+<![CDATA[
+/*
+ * dnssafety.xml
+ *
+ * Copyright (c) 2019 Diladele B.V.
+ * All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+	]]>
+	</copyright>
+	<name>dnssafety</name>
+	<title>DNS Safety</title>
+	<include_file>/usr/local/pkg/dnssafety.inc</include_file>
+	<menu>
+		<name>DNS Safety</name>
+		<tooltiptext>Modify DNS Safety settings</tooltiptext>
+		<section>Services</section>
+		<url>/pkg_edit.php?xml=dnssafety.xml</url>
+	</menu>
+	<service>
+		<name>dsdnsd</name>
+		<rcfile>dsdnsd.sh</rcfile>
+		<executable>dsdnsd</executable>
+		<description>DNS Safety Server</description>
+	</service>
+	<tabs>
+		<tab>
+			<text>Settings</text>
+			<url>/pkg_edit.php?xml=dnssafety.xml</url>	
+			<active/>		
+		</tab>
+		<tab>
+			<text>Forwarders</text>
+			<url>/pkg_edit.php?xml=dnssafety_forwarders.xml</url>			
+		</tab>
+		<tab>
+			<text>Cache</text>
+			<url>/pkg_edit.php?xml=dnssafety_cache.xml</url>
+		</tab>
+		<tab>
+			<text>Filtering Policies</text>
+			<url>/pkg.php?xml=dnssafety_filter.xml</url>			
+		</tab>
+		<tab>
+			<text>Logs</text>
+			<url>/dnssafety_monitor.php</url>
+		</tab>
+		<!--
+		<tab>
+			<text>Custom Domains</text>
+			<url>/pkg.php?xml=dnssafety_recategorized.xml</url>			
+		</tab>
+		<tab>
+			<text>Sync</text>
+			<url>/pkg_edit.php?xml=dnssafety_sync.xml</url>			
+		</tab>
+		-->
+	</tabs>
+	<fields>
+		<field>
+			<type>listtopic</type>
+			<name>Daemon Settings</name>
+		</field>
+		<field>
+			<fielddescr>Enable</fielddescr>
+			<fieldname>enable_dnssafety</fieldname>
+			<description>Enable DNS Safety filter.</description>
+			<sethelp>
+				Enables or disables the startup of DNS Safety filtering daemon at /usr/local/etc/rc.d/dsdnsd.sh script.
+			</sethelp>
+			<type>checkbox</type>
+		</field>
+		<field>
+			<fielddescr>Listen on</fielddescr>
+			<fieldname>listenon</fieldname>
+			<description>Choose the interfaces on which DNS Safety will be listening on for incoming requests. Default value - All Interfaces/IP Addresses.</description>
+			<type>interfaces_selection</type>
+			<showlistenall/>
+			<showvirtualips/>
+			<multiple/>
+		</field>
+		<field>
+			<fielddescr>Listen port</fielddescr>
+			<fieldname>listenport</fieldname>
+			<description>
+				<![CDATA[
+				Network port DNS Safety daemon listens for incoming queries on. Remember to create firewall rules to allow queries on this port.<br />
+				Note that DNS Safety runs as non-privileged <strong>daemon</strong> user and thus cannot bind to normal port 53. It is recommended to use port 5353 instead and redirect incoming DNS requests to it as described in the <a target="new" href="https://docs.dnssafety.io/install/pfsense">tutorial</a>.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>5353</default_value>			
+		</field>		
+		<field>
+			<fielddescr>Listen TCP</fielddescr>
+			<fieldname>listentcp</fieldname>
+			<description>Listen for DNS requests on TCP port too in addition to default listening for DNS requests on UDP port.</description>
+			<type>checkbox</type>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Arp Resolver</name>
+		</field>
+		<field>
+			<fielddescr>Enable</fielddescr>
+			<fieldname>enable_arp</fieldname>
+			<description>Enable Arp Resolver.</description>
+			<sethelp>
+				<![CDATA[
+				Enables or disables the Arp resolve functionality of DNS Safety. Arp resolve is needed to be able to specify MAC addresses as members in the filtering policies. Default value is <strong>Disabled</strong>.
+				]]>
+			</sethelp>
+			<type>checkbox</type>
+		</field>
+		<field>
+			<fielddescr>Disable Cache</fielddescr>
+			<fieldname>arp_nocache</fieldname>
+			<description>Disable Arp Resolve Cache.</description>
+			<sethelp>
+				<![CDATA[
+				Disables ARP resolve cache (IP to MAC address mapping). It is recommended to have this value cleared. In this case Arp resolver remembers the IP to MAC mapping for 15 minutes thus making policy matching fast. You might need to disable caching to debug the incorrect workings of Arp Resolver.
+				]]>
+			</sethelp>
+			<type>checkbox</type>
+		</field>
+		<field>
+			<fielddescr>Timeout</fielddescr>
+			<fieldname>arp_timeout</fieldname>
+			<description>
+				<![CDATA[
+				Timeout (in seconds) for ARP resolve requests. Default value is 30 seconds.
+				]]>
+			</description>
+			<type>input</type>
+			<size>5</size>
+			<default_value>30</default_value>			
+		</field>
+		<field>
+			<fielddescr>Resolve On</fielddescr>
+			<fieldname>arp_interfaces</fieldname>
+			<description>
+				<![CDATA[
+				Choose the interfaces on which DNS Safety will be running ARP resolve requests. It is recommended to select <strong>ONLY LAN</strong> interfaces. Note, if no interfaces are selected, ARP resolve requests are sent out on all interfaces!
+				]]>
+			</description>
+			<type>interfaces_selection</type>
+			<showvirtualips/>
+			<multiple/>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Logging Options</name>
+		</field>
+		<field>
+			<fielddescr>Log Level</fielddescr>
+			<fieldname>log_level</fieldname>
+			<description>
+				<![CDATA[
+				Choose log level for DNS Safety daemon. Log records are stored in /opt/dnssafety/var/log/dsdnsd.log. Default and recommended value is <strong>Info</strong>.
+				]]>
+			</description>
+			<type>select</type>
+			<options>
+				<option><name>Debug</name><value>DEBUG</value></option>
+				<option><name>Info</name><value>INFO</value></option>
+				<option><name>Warning</name><value>WARNING</value></option>
+				<option><name>Error</name><value>ERROR</value></option>
+			</options>
+		</field>
+		<field>
+			<type>listtopic</type>
+			<name>Actions</name>
+		</field>
+		<field>
+			<fielddescr>Block Action</fielddescr>
+			<fieldname>action</fieldname>
+			<description>
+				<![CDATA[
+				Choose how to block the prohibited domains. Possible values are <strong>NXDOMAIN</strong> and <strong>Redirect</strong>. Default and recommended value is <strong>NXDOMAIN</strong>. If you set action to <strong>Redirect</strong> be sure to specify the redirect IPv4 and IPv6 addresses below.
+				]]>
+			</description>
+			<type>select</type>
+			<options>
+				<option><name>NXDOMAIN</name><value>nxdomain</value></option>
+				<option><name>Redirect</name><value>redirect</value></option>				
+			</options>
+		</field>
+		<field>
+			<fielddescr>Redirect IPv4</fielddescr>
+			<fieldname>redirect_ipv4</fieldname>
+			<description>
+				<![CDATA[
+				 IP address to redirect blocked DNS requests to. Default is <strong>127.0.0.1</strong>.
+				]]>
+			</description>
+			<type>input</type>
+			<size>25</size>
+			<default_value>127.0.0.1</default_value>
+		</field>
+		<field>
+			<fielddescr>Redirect IPv6</fielddescr>
+			<fieldname>redirect_ipv6</fieldname>
+			<description>
+				<![CDATA[
+				 IP address to redirect blocked DNS requests to. Default is <strong>::1</strong>.
+				]]>
+			</description>
+			<type>input</type>
+			<size>25</size>
+			<default_value>::1</default_value>
+		</field>		
+	</fields>
+	<custom_php_resync_config_command>
+		dnssafety_sync();
+	</custom_php_resync_config_command>
+	<custom_php_install_command>
+		dnssafety_write_rcfile();
+	</custom_php_install_command>
+	<!--
+	<custom_php_deinstall_command>
+		squid_deinstall_command();
+	</custom_php_deinstall_command>
+	<custom_php_validation_command>
+		squid_validate_general($_POST, $input_errors);
+	</custom_php_validation_command>
+	<filter_rules_needed>squid_generate_rules</filter_rules_needed>
+	-->
+</packagegui>
