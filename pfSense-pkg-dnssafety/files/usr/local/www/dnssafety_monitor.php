@@ -149,8 +149,8 @@ function showLog(content, url, program) {
 
 function updateAllLogs() {
 
-	showLog('dnssafety_access_log', 'dnssafety_access_log.php', 'squid');
-	showLog('dnssafety_error_log' , 'dnssafety_error_log.php', 'squid_cache');
+	showLog('dnssafety_access_log', 'dnssafety_log.php', 'access_log');
+	showLog('dnssafety_error_log' , 'dnssafety_log.php', 'error_log');
 	
 	setTimeout(updateAllLogs, 5000);
 }

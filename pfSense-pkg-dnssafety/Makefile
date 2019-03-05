@@ -35,8 +35,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/widgets/widgets/dnssafety.widget.php ${STAGEDIR}${PREFIX}/www/widgets/widgets
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/shortcuts/pkg_dnssafety.inc ${STAGEDIR}${PREFIX}/www/shortcuts
 	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/dnssafety_monitor.php ${STAGEDIR}${PREFIX}/www
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/dnssafety_access_log.php ${STAGEDIR}${PREFIX}/www
-	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/dnssafety_error_log.php ${STAGEDIR}${PREFIX}/www
+	${INSTALL_DATA} ${FILESDIR}${PREFIX}/www/dnssafety_log.php ${STAGEDIR}${PREFIX}/www	
 	@${REINPLACE_CMD} -i '' -e "s|%%PKGVERSION%%|${PKGVERSION}|" ${STAGEDIR}${DATADIR}/info.xml
 
 .include <bsd.port.mk>
