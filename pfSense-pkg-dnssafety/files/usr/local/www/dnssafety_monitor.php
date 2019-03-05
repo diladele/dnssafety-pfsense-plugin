@@ -95,7 +95,7 @@ display_top_tabs($tab_array);
 
 	<div class="panel-heading"><h2 class="panel-title"><?=gettext("DNS Safety Access Log"); ?></h2></div>
 	<div class="panel-body">
-	    <pre class="wrapit" id="dnssafety_access_log1"></pre>
+	    <pre class="wrapit" id="dnssafety_access_log"></pre>
 	</div>
 
 	<div class="panel-heading"><h2 class="panel-title"><?=gettext("DNS Safety Error Log"); ?></h2></div>
