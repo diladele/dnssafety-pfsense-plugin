@@ -66,26 +66,12 @@ if ($_POST) {
 			break;
 		
 		case 'error_log';
-			// Define log file
-			$log = "/opt/dnssafety/var/log/dsdnsd.log";
-
-			// Fetch lines
-			$logarr = fetch_log($log);
-			foreach ($logarr as $logent) {
-				// Split line by delimiter
-				$logline = preg_split("@\|@", $logent);
-
-				// Replace some build host nonsense and apply time format
-				$logline[0] = date("d.m.Y H:i:s", strtotime(str_replace("kid1", "", $logline[0])));
-
-				// Word wrap the message
-				$logline[1] = htmlentities($logline[1]);
-				$logline[1] = html_autowrap($logline[1]);
-
-				echo "<tr>\n";
-				echo "<td class=\"listlr\" nowrap=\"nowrap\">{$logline[0]}</td>\n";
-				echo "<td class=\"listr\" nowrap=\"nowrap\">{$logline[1]}</td>\n";
-				echo "</tr>\n";
+			
+			$log   = "/opt/dnssafety/var/log/dsdnsd.log";
+			$lines = fetch_log($log);
+			foreach ($lines as $line) {
+				
+				echo "{$line}\n";
 			}
 			break;
 		
