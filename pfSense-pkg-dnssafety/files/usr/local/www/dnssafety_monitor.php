@@ -120,7 +120,7 @@ display_top_tabs($tab_array);
 	<div class="panel-body">
 
 		<pre class="wrapit" id="dnssafety_error_log1"></pre>
-		
+
 		<div class="table-responsive">
 			<table class="table table-hover table-condensed">
 				<tbody>
@@ -154,7 +154,7 @@ function showLog(content, url, program) {
 			},
 		success: function(ret){
 			$('#' + content).html(ret);
-			$('#' + content + '1').text(ret.replace(/\r\n/g, EOL));
+			$('#' + content + '1').text(ret);
 			}
 	});
 }
