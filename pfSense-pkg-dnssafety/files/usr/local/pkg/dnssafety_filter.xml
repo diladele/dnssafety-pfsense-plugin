@@ -45,6 +45,10 @@
 			<url>/pkg.php?xml=dnssafety_filter.xml</url>	
 			<active/>		
 		</tab>
+		<tab>
+			<text>Logs</text>
+			<url>/dnssafety_monitor.php</url>
+		</tab>
 		<!--
 		<tab>
 			<text>Custom Domains</text>

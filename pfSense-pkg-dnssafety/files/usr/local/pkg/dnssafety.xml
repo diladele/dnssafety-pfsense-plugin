@@ -57,6 +57,10 @@
 			<text>Filtering Policies</text>
 			<url>/pkg.php?xml=dnssafety_filter.xml</url>			
 		</tab>
+		<tab>
+			<text>Logs</text>
+			<url>/dnssafety_monitor.php</url>
+		</tab>
 		<!--
 		<tab>
 			<text>Custom Domains</text>
