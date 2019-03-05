@@ -133,9 +133,9 @@ function fetch_log($log) {
 
 	// Get logs based in filter expression
 	if ($filter != "") {
-		exec("/usr/bin/tail -n 2000 {$log} | /usr/bin/grep {$grep_arg} " . escapeshellarg($filter). " | /usr/bin/tail -r -n {$lines} ", $logarr);
+		exec("/usr/bin/tail -n 2000 {$log} | /usr/bin/grep {$grep_arg} " . escapeshellarg($filter). " | /usr/bin/tail -n {$lines} ", $logarr);
 	} else {
-		exec("/usr/bin/tail -r -n {$lines} {$log} ", $logarr);
+		exec("/usr/bin/tail -n {$lines} {$log} ", $logarr);
 	}
 	// Return logs
 	return $logarr;
