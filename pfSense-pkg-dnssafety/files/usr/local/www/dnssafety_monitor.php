@@ -86,8 +86,18 @@ display_top_tabs($tab_array);
 		</div>
 	</div>
 
+	<style type="text/css">
+        .wrapit {
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
+    </style>
+
 	<div class="panel-heading"><h2 class="panel-title"><?=gettext("DNS Safety Access Log"); ?></h2></div>
 	<div class="panel-body">
+
+	    <pre class="wrapit" id="dnssafety_access_log1"></pre>
+
 		<div class="table-responsive">
 			<table class="table table-hover table-condensed">
 				<tbody>
@@ -108,6 +118,9 @@ display_top_tabs($tab_array);
 
 	<div class="panel-heading"><h2 class="panel-title"><?=gettext("DNS Safety Error Log"); ?></h2></div>
 	<div class="panel-body">
+
+		<pre class="wrapit" id="dnssafety_error_log1"></pre>
+		
 		<div class="table-responsive">
 			<table class="table table-hover table-condensed">
 				<tbody>
@@ -131,20 +144,19 @@ display_top_tabs($tab_array);
 <script type="text/javascript">
 //<![CDATA[
 function showLog(content, url, program) {
-	jQuery.ajax(url,
-		{
+	jQuery.ajax(url, {
 		type: 'post',
 		data: {
-			maxlines: $('#maxlines').val(),
-			strfilter: $('#strfilter').val(),
-			program: program,
-			content: content
+			maxlines  : $('#maxlines').val(),
+			strfilter : $('#strfilter').val(),
+			program   : program,
+			content   : content
 			},
 		success: function(ret){
 			$('#' + content).html(ret);
+			$('#' + content + '1').text(ret.replace(/\r\n/g, EOL));
 			}
-		}
-		);
+	});
 }
 
 function updateAllLogs() {
