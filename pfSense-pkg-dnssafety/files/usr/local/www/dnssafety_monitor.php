@@ -1,11 +1,8 @@
 <?php
 /*
- * squid_monitor.php
+ * dnssafety_monitor.php
  *
- * part of pfSense (https://www.pfsense.org)
- * Copyright (c) 2015 Rubicon Communications, LLC (Netgate)
- * Copyright (C) 2012-2014 Marcello Coutinho
- * Copyright (C) 2012-2014 Carlos Cesario <carloscesario@gmail.com>
+ * Copyright (c) 2019 Diladele B.V.
  * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,15 +17,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 require_once("/etc/inc/util.inc");
 require_once("/etc/inc/functions.inc");
 require_once("/etc/inc/pkg-utils.inc");
 require_once("/etc/inc/globals.inc");
 require_once("guiconfig.inc");
 
-$pgtitle = array(gettext("Package"), gettext("Squid"), gettext("Monitor"));
-$shortcut_section = "squid";
+$pgtitle = array(gettext("Package"), gettext("DNS Safety"), gettext("Logs"));
+$shortcut_section = "dnssafety";
 include("head.inc");
 
 if ($savemsg) {
