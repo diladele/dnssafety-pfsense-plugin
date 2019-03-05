@@ -68,8 +68,7 @@ if ($_POST) {
 		case 'error_log';
 			// Define log file
 			$log = "/opt/dnssafety/var/log/dsdnsd.log";
-			// Show table headers
-			show_tds(array("Date-Time", "Message"));
+
 			// Fetch lines
 			$logarr = fetch_log($log);
 			foreach ($logarr as $logent) {
@@ -98,14 +97,16 @@ if ($_POST) {
 			// Fetch lines
 			$logarr = fetch_log($log);
 			foreach ($logarr as $logent) {
-				$logline = preg_split("/\n/", $logent);
+				
+				#$logline = preg_split("/\n/", $logent);
 				// Word wrap the message
-				$logline[0] = htmlentities($logline[0]);
-				$logline[0] = html_autowrap($logline[0]);
+				#$logline[0] = htmlentities($logline[0]);
+				#$logline[0] = html_autowrap($logline[0]);
 
-				echo "<tr>\n";
-				echo "<td class=\"listlr\" nowrap=\"nowrap\">{$logline[0]}</td>\n";
-				echo "</tr>\n";
+				#echo "<tr>\n";
+				#echo "<td class=\"listlr\" nowrap=\"nowrap\">{$logline[0]}</td>\n";
+				#echo "</tr>\n";
+				echo "{$logent}\n";
 			}
 			break;
 		}
@@ -144,18 +145,11 @@ function fetch_log($log) {
 		$grep_arg = "-i";
 	}
 
-	// Check program to execute or no the parser
-	if ($program == "squid") {
-		$parser = "| /usr/local/bin/php-cgi -q squid_log_parser.php";
-	} else {
-		$parser = "";
-	}
-
 	// Get logs based in filter expression
 	if ($filter != "") {
-		exec("/usr/bin/tail -n 2000 {$log} | /usr/bin/grep {$grep_arg} " . escapeshellarg($filter). " | /usr/bin/tail -r -n {$lines} {$parser} ", $logarr);
+		exec("/usr/bin/tail -n 2000 {$log} | /usr/bin/grep {$grep_arg} " . escapeshellarg($filter). " | /usr/bin/tail -r -n {$lines} ", $logarr);
 	} else {
-		exec("/usr/bin/tail -r -n {$lines} {$log} {$parser}", $logarr);
+		exec("/usr/bin/tail -r -n {$lines} {$log} ", $logarr);
 	}
 	// Return logs
 	return $logarr;
