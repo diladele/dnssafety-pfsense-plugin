@@ -29,39 +29,13 @@ if ($_POST) {
 	
 	switch ($program) {
 		
-		case 'access_log':
-			// Define log file
-			$log = $config['installedpackages']['squid']['config'][0]['log_dir'].'/access.log';
-			// Show table headers
-			show_tds(array("Date", "IP", "Status", "Address", "User", "Destination"));
-			// Fetch lines
-			$logarr = fetch_log($log);
-			// Print lines
-			foreach ($logarr as $logent) {
-				// Split line by space delimiter
-				$logline = preg_split("/\s+/", $logent);
-
-				// Word wrap the URL
-				$logline[7] = htmlentities($logline[7]);
-				$logline[7] = html_autowrap($logline[7]);
-
-				// Remove /(slash) in destination row
-				$logline_dest = preg_split("/\//", $logline[9]);
-
-				// Apply filter and color
-				// Need validate special chars
-				if ($filter != "") {
-					$logline = preg_replace("@($filter)@i","<span><font color='red'>$1</font></span>", $logline);
-				}
-
-				echo "<tr valign=\"top\">\n";
-				echo "<td class=\"listlr\" nowrap=\"nowrap\">{$logline[0]} {$logline[1]}</td>\n";
-				echo "<td class=\"listr\">{$logline[3]}</td>\n";
-				echo "<td class=\"listr\">{$logline[4]}</td>\n";
-				echo "<td class=\"listr\" width=\"*\">{$logline[7]}</td>\n";
-				echo "<td class=\"listr\">{$logline[8]}</td>\n";
-				echo "<td class=\"listr\">{$logline_dest[1]}</td>\n";
-				echo "</tr>\n";
+		case 'access_log';
+			
+			$log   = "/opt/dnssafety/var/log/access.log";
+			$lines = fetch_log($log);
+			foreach ($lines as $line) {
+				
+				echo "{$line}\n";
 			}
 			break;
 		
@@ -74,45 +48,7 @@ if ($_POST) {
 				echo "{$line}\n";
 			}
 			break;
-		
-		case 'freshclam';
-			// Define log file
-			$log = '/var/log/clamav/freshclam.log';
-			// Show table headers
-			show_tds(array("Message"));
-			// Fetch lines
-			$logarr = fetch_log($log);
-			foreach ($logarr as $logent) {
-				
-				#$logline = preg_split("/\n/", $logent);
-				// Word wrap the message
-				#$logline[0] = htmlentities($logline[0]);
-				#$logline[0] = html_autowrap($logline[0]);
-
-				#echo "<tr>\n";
-				#echo "<td class=\"listlr\" nowrap=\"nowrap\">{$logline[0]}</td>\n";
-				#echo "</tr>\n";
-				echo "{$logent}\n";
-			}
-			break;
 		}
-}
-
-/* Functions */
-function html_autowrap($cont) {
-	// split strings
-	$p = 0;
-	$pstep = 25;
-	$str = $cont;
-	$cont = '';
-	for ($p = 0; $p < strlen($str); $p += $pstep) {
-		$s = substr($str, $p, $pstep);
-		if (!$s) {
-			break;
-		}
-		$cont .= $s . "<wbr />";
-	}
-	return $cont;
 }
 
 //
@@ -140,13 +76,5 @@ function fetch_log($log) {
 	// Return logs
 	return $logarr;
 };
-
-function show_tds($tds) {
-	echo "<tr valign='top'>\n";
-	foreach ($tds as $td){
-		echo "<td class='listhdrr'>" . gettext($td) . "</td>\n";
-	}
-	echo "</tr>\n";
-}
 
 ?>

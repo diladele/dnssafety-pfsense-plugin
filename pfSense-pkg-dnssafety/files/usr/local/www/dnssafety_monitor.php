@@ -95,48 +95,12 @@ display_top_tabs($tab_array);
 
 	<div class="panel-heading"><h2 class="panel-title"><?=gettext("DNS Safety Access Log"); ?></h2></div>
 	<div class="panel-body">
-
 	    <pre class="wrapit" id="dnssafety_access_log1"></pre>
-
-		<div class="table-responsive">
-			<table class="table table-hover table-condensed">
-				<tbody>
-				<tr><td>
-					<table class="tabcont" width="100%" border="0" cellspacing="0" cellpadding="0">
-						<thead><tr>
-							<td colspan="6" class="listtopic" align="center"><?=gettext("DNS Safety Access Log"); ?></td>
-						</tr></thead>
-						<tbody id="dnssafety_access_log">
-						<tr><td></td></tr>
-						</tbody>
-					</table>
-				</td></tr>
-				</tbody>
-			</table>
-		</div>
 	</div>
 
 	<div class="panel-heading"><h2 class="panel-title"><?=gettext("DNS Safety Error Log"); ?></h2></div>
 	<div class="panel-body">
-
-		<pre class="wrapit" id="dnssafety_error_log1"></pre>
-
-		<div class="table-responsive">
-			<table class="table table-hover table-condensed">
-				<tbody>
-				<tr><td>
-					<table class="tabcont" width="100%" border="0" cellspacing="0" cellpadding="0">
-						<thead><tr>
-							<td colspan="2" class="listtopic" align="center"><?=gettext("DNS Safety Error Log"); ?></td>
-						</tr></thead>
-						<tbody id="dnssafety_error_log">
-						<tr><td></td></tr>
-						</tbody>
-					</table>
-				</td></tr>
-				</tbody>
-			</table>
-		</div>
+		<pre class="wrapit" id="dnssafety_error_log"></pre>
 	</div>
 </div>
 
@@ -153,8 +117,7 @@ function showLog(content, url, program) {
 			content   : content
 			},
 		success: function(ret){
-			$('#' + content).html(ret);
-			$('#' + content + '1').text(ret);
+			$('#' + content).text(ret);
 			}
 	});
 }
